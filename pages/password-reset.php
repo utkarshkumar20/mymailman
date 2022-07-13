@@ -37,9 +37,9 @@ session_start();
                 <form action="password-reset-code.php" method="post" autocomplete="off">
                     <div>
                         <h4 class="d-flex justify-content">Enter your register E-mail/username</h4>
-              
+                    </div>
                     <div class="col-md-12">
-                        <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail" value="<?php echo $_SESSION['secemail']; ?>">
+                        <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail" >
                         <span id="Emailid" class="text-danger"></span>
                     </div>
                     <br>
