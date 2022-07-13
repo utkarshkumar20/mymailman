@@ -1,0 +1,64 @@
+ <?php
+    require('config.php');
+    session_start();
+    // When form submitted, check and create user session.
+    if (isset($_POST['username'])) {
+        $username = stripslashes($_REQUEST['username']);    // removes backslashes
+        $username = mysqli_real_escape_string($con, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `users` WHERE username='$username'
+                     AND password='$password';";
+        $result = mysqli_query($con, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect to user dashboard page
+            header("Location: dashboard.php");
+        } else {
+            echo "<div class='form-control>
+                  <h3>Incorrect Username/password.</h3><br/>
+                  <p class='link'>Click here to <a href='signin.php'>signin</a> again.</p>
+                  </div>";
+        }
+    } else {
+    ?>
+     <?php
+    }
+    ?>
+    <!-- *************************************************validation************************************************* -->
+    <script>
+        function validate() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email == "") {
+                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
+                return false;
+            } else if ((email.length <= 2) || (email.length >= 20)) {
+                document.getElementById('Emailid').innerHTML = " **username must be between 2 to 20";
+                return false;
+            } else if (email.indexOf('@') <= 0) {
+                document.getElementById('Emailid').innerHTML = " **@ invalid email name";
+                return false;
+            } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
+                return false;
+            } else {
+                document.getElementById('Emailid').innerHTML = "";
+
+            }
+            if (password == "") {
+                document.getElementById('pass').innerHTML = " **please fill the password field";
+                return false;
+            }
+            if ((password.length <= 5) || (password.length >= 20)) {
+                document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
+                return false;
+            }
+            return false;
+
+        }
+    </script>
+
