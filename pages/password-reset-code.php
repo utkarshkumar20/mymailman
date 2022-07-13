@@ -44,7 +44,7 @@ function send_password_reset($get_name,$get_email,$code)
   <h2>Hello</h2>
   <h3>You are receving email Becouse we Received a password Reset Request fir your account.</h3>
   <br/><br/>
-  <a href='http://localhost/project3/pages/password-change.php?code=$code'>Click me</a> ";
+  <a href='http://hestalabs.com/tse/mymailman/pages/password-change.php?code=$code'>Click me</a> ";
   $mail->Body=$email_template;
 }
 if(isset($_POST['password_reset_link']))

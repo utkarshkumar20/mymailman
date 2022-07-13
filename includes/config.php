@@ -7,7 +7,7 @@ $dbName = 'utkarsh';
 $dbUsername = 'tse';
 $dbPassword = 'bPmtHasjyTJ2SgZJ';
 $con= mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName); 
-$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh'); 
+// $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh'); 
 
 
 ?>
