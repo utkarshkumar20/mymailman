@@ -61,10 +61,14 @@ session_start();
                             </ul>
                         </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
 =======
                         <a href="#"><img src="photo/<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
 >>>>>>> 2b7976c0abde861c3b45b935d79bb7bf0883be8d
+=======
+                        <a href="#"><img src="../<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
+>>>>>>> cd934c7dce3b3b42ea12839aeea1efe637b4cf57
                     </form>
                 </div>
             </div>
@@ -111,10 +115,14 @@ session_start();
                         
                         <div class="col-md-4 order-1 order-md-2 ">
 <<<<<<< HEAD
+<<<<<<< HEAD
                            <img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
 =======
                            <img src="photo/<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
 >>>>>>> 2b7976c0abde861c3b45b935d79bb7bf0883be8d
+=======
+                           <img src="../<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
+>>>>>>> cd934c7dce3b3b42ea12839aeea1efe637b4cf57
                         </div>
                     </div>
                 </form>
