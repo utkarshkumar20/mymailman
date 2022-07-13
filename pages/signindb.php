@@ -2,7 +2,7 @@
 session_start();
 // error_reporting(0);
 // ini_set('display_errors', '1');
-$con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
+$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 include('../includes/config.php');
 $email = $_POST['email'];
 $username=$_POST['username'];

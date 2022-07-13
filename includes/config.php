@@ -3,10 +3,11 @@
 <?php
 session_start();
 $dbHost = 'localhost';
-$dbName = 'mailman';
-$dbUsername = 'root';
-$dbPassword = 'hestabit';
+$dbName = 'utkarsh';
+$dbUsername = 'tse';
+$dbPassword = 'bPmtHasjyTJ2SgZJ';
 $con= mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName); 
+$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh'); 
 
 
 ?>
