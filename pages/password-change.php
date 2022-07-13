@@ -31,21 +31,8 @@
             <div class="col-md-1 col-sm-1 col-xs-12"></div>
             <div class="col-md-5 col-sm-5 col-xs-12" id="form-box-1">
                 <form action="password-reset-code.php" method="POST" autocomplete="off">
-                    <input type="hidden" name="password_code" value="<?php if (($_GET['code'] !== NULL)) {
-                                                                            echo $_GET['code'];
-                                                                        } ?>">
-                    <?php
-
-                    if (isset($_session['status'])) {
-                    ?>
-                        <div class="alert alert-success">
-                            <h5><? $_session['status']; ?> </h5>
-                        </div>
-                    <?php
-                        unset($_session['status']);
-                    }
-
-                    ?>
+                    <!-- <input type="hidden" name="password_code"> -->
+           
 
                     <h3 class="d-flex justify-content">Change password</h3>
 
