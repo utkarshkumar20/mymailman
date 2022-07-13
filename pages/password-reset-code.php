@@ -42,8 +42,10 @@ if (isset($_POST['password_reset_link'])) {
         $mail->send();
 
         echo '<script>alert("message has been sent to the users")</script>';
+        header("location:index.php");
     } catch (Exception $e) {
         echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
+        header("location:password-reset.php");
     }
 }
 
