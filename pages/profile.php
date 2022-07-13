@@ -60,7 +60,7 @@ session_start();
                                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
                             </ul>
                         </li>
-                        <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
+                        <a href="#"><img src="photo/<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
                     </form>
                 </div>
             </div>
@@ -106,7 +106,7 @@ session_start();
                         </div>
                         
                         <div class="col-md-4 order-1 order-md-2 ">
-                           <img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
+                           <img src="photo/<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
                         </div>
                     </div>
                 </form>

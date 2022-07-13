@@ -22,7 +22,7 @@ if(isset($_POST['signup'])){
      
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "http://hestalabs.com/tse/mymailman/pages/photo/" . $filename;
+    $folder = "photo/" . $filename;
     move_uploaded_file($tempname, $folder);
 
     if($email=='' || $fname== '' || $lname=='' || $RecEmail=='' || $password==''){
