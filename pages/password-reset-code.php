@@ -66,46 +66,67 @@ if (isset($_POST['password_reset_link'])) {
 if (isset($_POST['password_update'])) {
   $password = mysqli_real_escape_string($con, $_POST['password']);
   $conpassword = mysqli_real_escape_string($con, $_POST['conpassword']);
-
-  $code = mysqli_real_escape_string($con, $_POST['password_code']);
-
-
-  if (!empty($code)) {
-    if (!empty($password) && !empty($conpassword)) {
-      $check_code = "SELECT code FROM Signup_table WHERE code='$code' LIMIT 1";
-      $check_code_run = mysqli_query($con, $check_code);
-
-      if (mysqli_num_rows($check_code_run) > 0) {
-        if ($password == $conpassword) {
-          $update_password = "UPDATE Signup_table SET password='$password' WHERE code='$code' LIMIT 1";
-          $update_password_run = mysqli_query($con, $update_password);
-          if ($update_password_run) {
-            $_SESSION['status'] = "NEw password successfully update.!";
-            header("location:password-change.php?code=$code");
-            exit(0);
-          } else {
-            $_SESSION['status'] = "Did not Update Password,something went wrong.!";
-            header("location:password-change.php?code=$code");
-            exit(0);
-          }
-        } else {
-          $_SESSION['status'] = "password and confirm password does not match";
-          header("location:password-change.php?code=$code");
-          exit(0);
-        }
-      } else {
-        $_SESSION['status'] = " invalid code";
-        header("location:password-change.php?code=$code");
-        exit(0);
-      }
+  $username = $_SESSION["Username"];/* userid of the user */
+    if (count($_POST) > 0) {
+    $result = mysqli_query($con, "SELECT * from signup_table WHERE Username=' . $username . '");
+    $row = mysqli_fetch_array($result);
+    if ($_POST["password"] == $row["conpassword"]) {
+      mysqli_query($con, "UPDATE signup_table set password='" . $_POST["password"] . "' WHERE Username='" . $username . "'");
+      echo '<script type="text/javascript">'; 
+      echo 'alert("password successfully changed");'; 
+      echo 'window.location.href = "index.php";';
+      echo '</script>';
+      // $message = "Password Changed Sucessfully";
+      // var_dump($message);
+      die();
     } else {
-      $_SESSION['status'] = " all field are mendtory";
-      header("location:password-change.php?code=$code");
-      exit(0);
+      echo '<script>alert("Password is not correct")</script>';
+      // $message = "";
     }
-  } else {
-    $_SESSION['status'] = " No code Avilable";
-    header("location:password-reset.php");
-    exit(0);
   }
+
+
+
+
+  // $code = mysqli_real_escape_string($con, $_POST['password_code']);
+
+
+  // if (!empty($code)) {
+  //   if (!empty($password) && !empty($conpassword)) {
+  //     $check_code = "SELECT code FROM Signup_table WHERE code='$code' LIMIT 1";
+  //     $check_code_run = mysqli_query($con, $check_code);
+
+  //     if (mysqli_num_rows($check_code_run) > 0) {
+  //       if ($password == $conpassword) {
+  //         $update_password = "UPDATE Signup_table SET password='$password' WHERE code='$code' LIMIT 1";
+  //         $update_password_run = mysqli_query($con, $update_password);
+  //         if ($update_password_run) {
+  //           $_SESSION['status'] = "NEw password successfully update.!";
+  //           header("location:password-change.php?code=$code");
+  //           exit(0);
+  //         } else {
+  //           $_SESSION['status'] = "Did not Update Password,something went wrong.!";
+  //           header("location:password-change.php?code=$code");
+  //           exit(0);
+  //         }
+  //       } else {
+  //         $_SESSION['status'] = "password and confirm password does not match";
+  //         header("location:password-change.php?code=$code");
+  //         exit(0);
+  //       }
+  //     } else {
+  //       $_SESSION['status'] = " invalid code";
+  //       header("location:password-change.php?code=$code");
+  //       exit(0);
+  //     }
+  //   } else {
+  //     $_SESSION['status'] = " all field are mendtory";
+  //     header("location:password-change.php?code=$code");
+  //     exit(0);
+  //   }
+  // } else {
+  //   $_SESSION['status'] = " No code Avilable";
+  //   header("location:password-reset.php");
+  //   exit(0);
+  // }
 }
