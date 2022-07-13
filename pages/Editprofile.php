@@ -59,7 +59,7 @@ session_start();
                                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
                             </ul>
                         </li>
-                        <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/<?php echo $_SESSION["photo"];  ?>" alt="" width="50px" style="border-radius:50%"></a>
+                        <a href="#"><img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
                     </form>
                 </div>
             </div>
@@ -72,7 +72,7 @@ session_start();
         <div class="row" id="box">
             <div class="col-md-2 col-sm-2 col-xs-12"></div>
             <div class="col-md-8 col-sm-5 col-xs-12" id="profile">
-                <form action="editprofiledb.php" onsubmit="" method="post" enctype="multipart/form-data">
+                <form action="editprofiledb.php" onsubmit="return validation()" method="post" enctype="multipart/form-data">
                     <?php
 
                     // $sql = "SELECT * FROM users WHERE id='{$_SESSION["user_id"]}'";
@@ -116,7 +116,7 @@ session_start();
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="http://hestalabs.com/tse/mymailman/pages/<?php echo $_SESSION["photo"];  ?>" alt="" width="100%" style="border-radius:50%">
+                                    <img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
                             <br>
@@ -129,33 +129,81 @@ session_start();
         </div>
     </div>
 
+    <!-- ************************************************validation******************************************* -->
+    <script>
+        function validation() {
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var sec_email = document.getElementById('sec_email').value;
+            var username = document.getElementById('username').value;
+
+            if (name == "") {
+                document.getElementById('yourname').innerHTML = " **please fill the name field";
+                return false;
+            } else if ((name.length <= 2) || (name.length >= 20)) {
+                document.getElementById('yourname').innerHTML = " **name must be between 2 to 20";
+                return false;
+            } else if (!isNaN(name)) {
+                document.getElementById('yourname').innerHTML = " **only character are allowed";
+                return false;
+            } else {
+                document.getElementById('yourname').innerHTML = "";
+            }
+            // ************************************************************
+            if (email == "") {
+                document.getElementById('emailid').innerHTML = " **please fill the Email field";
+                return false;
+            } else if ((email.length <= 2) || (email.length >= 20)) {
+                document.getElementById('emailid').innerHTML = " **username must be between 2 to 20";
+                return false;
+            } else if (email.indexOf('@') <= 0) {
+                document.getElementById('emailid').innerHTML = " **@ invalid email name";
+                return false;
+            } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById('emailid').innerHTML = " **please fill the Email field";
+                return false;
+            } else {
+                document.getElementById('emailid').innerHTML = "";
+
+            }
+            // ****************************************************************************************
+            if (sec_email == "") {
+                document.getElementById('sec_emailid').innerHTML = " **please fill the secondary Email field";
+                return false;
+            } else if ((sec_email.length <= 2) || (sec_email.length >= 20)) {
+                document.getElementById('sec_emailid').innerHTML = " **username must be between 2 to 20";
+                return false;
+            } else if (sec_email.indexOf('@') <= 0) {
+                document.getElementById('sec_emailid').innerHTML = " **@ invalid email name";
+                return false;
+            } else if ((sec_email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById('sec_emailid').innerHTML = " **please fill the Email field";
+                return false;
+            } else {
+                document.getElementById('sec_emailid').innerHTML = "";
+
+            }
+            // ****************************************************************************************
+            if (username == "") {
+                document.getElementById('usernames').innerHTML = " **please fill the username field";
+                return false;
+            } else if ((username.length <= 2) || (username.length >= 20)) {
+                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
+                return false;
+            } else {
+                document.getElementById('usernames').innerHTML = "";
+
+            }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+        }
+    </script>
     <!-- ******************************************************************************************************** -->
-    <!-- compose mail -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
 </body>
 
 </html>
