@@ -68,7 +68,11 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
+<<<<<<< HEAD
             <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
+=======
+            <a href="#"><img src="photo/<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
+>>>>>>> 2b7976c0abde861c3b45b935d79bb7bf0883be8d
 
           </form>
         </div>
