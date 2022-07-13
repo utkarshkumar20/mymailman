@@ -39,7 +39,7 @@ session_start();
                         <h4 class="d-flex justify-content">Enter your register E-mail/username</h4>
                     </div>
                     <div class="col-md-12">
-                        <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail" >
+                        <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail">
                         <span id="Emailid" class="text-danger"></span>
                     </div>
                     <br>
