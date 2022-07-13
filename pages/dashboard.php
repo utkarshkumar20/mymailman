@@ -68,7 +68,7 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
-            <a href="#"><img src="photo/<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
+            <a href="#"><img src="../<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
 
           </form>
         </div>
