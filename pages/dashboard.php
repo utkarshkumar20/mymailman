@@ -1,16 +1,12 @@
 <?php
 session_start();
-// print_r($_SESSION);
-// echo $_SESSION["name"] ;
-// echo $_SESSION["email"];
-//  die("jjjjj");
+
 $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 include('../includes/config.php');
 $query = "select * from signup_table ";
 ?>
-
 <!doctype html>
 <html lang="en">
 
