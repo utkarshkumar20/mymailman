@@ -30,7 +30,10 @@ if (isset($_POST['sublogin'])) {
         // $_SESSION["Email"] = $email;
         header("Location:dashboard.php");
     } else {
-        echo '<script>alert("failed");</script>';
+        echo '<script type="text/javascript">';
+        echo 'alert("failed to login,please check Email and Password! ");';
+        echo 'window.location.href = "signin.php";';
+        echo '</script>';
     }
 }
 ?>
