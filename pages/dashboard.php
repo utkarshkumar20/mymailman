@@ -1,12 +1,15 @@
 <?php
 session_start();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 581d2818115ea9205250da2ed13fdb116c3a67dd
 $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 include('../includes/config.php');
 $query = "select * from signup_table ";
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -64,10 +67,14 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
+<<<<<<< HEAD
             <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
            
             <a href="#"><img src="../<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
             <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
+=======
+            <a href="#"><img src="<?php echo $_SESSION["photo"]; ?>" alt="not found" width="50px" style="border-radius:50%"></a>
+>>>>>>> 581d2818115ea9205250da2ed13fdb116c3a67dd
 
           </form>
         </div>

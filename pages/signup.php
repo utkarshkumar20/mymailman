@@ -31,7 +31,7 @@
             <div class="row" id="box">
                 <div class="col-md-3 col-sm-3 col-xs-12"></div>
                 <div class="col-md-6 col-sm-6 col-xs-12" id="form-box">
-                    <form action="signupdb.php" method="post" onsubmit="return validation()" enctype="multipart/form-data">
+                    <form action="signupdb.php" method="post"  enctype="multipart/form-data">
                         <h3 class="d-flex justify-content">Create your account</h3>
                         <!-- <span class="error">* Required field </span> -->
                         <div class="row">
@@ -98,7 +98,7 @@
                                 </label>
                             </div>
                             <div class="col-12">
-                                <input type="submit" class="btn btn-success" name="signup" value="signup">
+                                <input type="submit" onclick="return validation()" class="btn btn-success" name="signup" value="signup">
 
                                 <button type="button" class="btn btn-primary">
                                     <a href="index.php" style="text-decoration:none; color:whitesmoke;">Sign-in Instead</a></button>
@@ -112,138 +112,185 @@
 
 
         <!-- *************************************************validation************************************************* -->
-
-        <!-- validation for empty field    -->
         <script>
-            function validation() {
-                // console.log('hello', e);
+        function validation() {
+            // alert("uuuuu");
 
-                var fname = document.getElementById('fname').value;
-                var lname = document.getElementById('lname').value;
-                var username = document.getElementById('username').value;
-                // var photo = document.getElementById('imageUpload').value;
-                var Email = document.getElementById('email').value;
-                var RecEmail = document.getElementById('RecEmail').value;
-                var password = document.getElementById('password').value;
-                var confirmpassword = document.getElementById('passwordconfirm').value;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var username = document.getElementById('username').value;
+            // var Uploadfile = document.getElementById('uploadfile').value;
+            var Email = document.getElementById('email').value;
+            var RecEmail = document.getElementById('RecEmail').value;
+            var password = document.getElementById('password').value;
+            var confirmpassword = document.getElementById('passwordconfirm').value;
+            first_name = '';
+            last_name = '';
+            user_name = '';
+            // photo = "";
+            user_email = '';
+            r_email = '';
+            user_pass = '';
+            user_cpass = '';
+            name_pattern = /^([a-zA-Z' ]+)$/
 
-                if (fname == "") {
-                    document.getElementById('Firstname').innerHTML = " **please fill the Firstname field";
-                    return false;
-                }
-                if ((fname.length <= 2) || (fname.length >= 20)) {
-                    document.getElementById('Firstname').innerHTML = " **firstname must be between 2 to 20";
-                    return false;
-                }
-                if (!isNaN(fname)) {
-                    document.getElementById('Firstname').innerHTML = " **only character are allowed";
-                    return false;
-                }
-                if (!preg_match("/^([a-zA-Z' ]+)$/", "Given_Name")) {
-                    document.getElementById('Firstname').innerHTML = " **invalid First name Given";
-                    return false;
-                }
+            if (fname == "") {
+                document.getElementById('firstname').innerHTML = " **please fill the Firstname field";
+                first_name = false;
+            } else if ((fname.length <= 2) || (fname.length >= 20)) {
+                document.getElementById('firstname').innerHTML = " **firstname must be between 2 to 20";
+                first_name = false;
 
-                // ***********************************************************************
-                if (lname == "") {
-                    document.getElementById('Lastname').innerHTML = " **please fill the lastname field";
-                    return false;
-                }
-                if ((lname.length <= 2) || (lname.length >= 20)) {
-                    document.getElementById('Lastname').innerHTML = " **Lastname must be between 2 to 20";
-                    return false;
-                }
-                if (!isNaN(lname)) {
-                    document.getElementById('Lastname').innerHTML = " **only character are allowed";
-                    return false;
-                }
-                if (!preg_match("/^([a-zA-Z' ]+)$/", "Given_Name")) {
-                    document.getElementById('Lastname').innerHTML = " **invalid Last name Given";
-                    return false;
-                }
-                // ***********************************************************************
-                if (username == "") {
-                    document.getElementById('usernames').innerHTML = " **please fill the username field";
-                    return false;
-                }
-                if ((username.length <= 2) || (username.length >= 20)) {
-                    document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
-                    return false;
-                }
-                if (!preg_match('#^[a-zA-Z][a-zA-Z0-9@.+-_]{2,100}$#')) {
-                    document.getElementById('usernames').innerHTML = " **invalid  username Given";
-                    return false;
-                }
-                // else {
-                // document.getElementById('usernames').innerHTML = "";
-                // }
+            } else if (!name_pattern.test(fname)) {
+                document.getElementById('firstname').innerHTML = " **invalid First name Given";
+                first_name = false;
+            } else {
+                document.getElementById('firstname').innerHTML = "";
+                first_name = true;
+            }
 
-                // if (photo == "") {
-                //     document.getElementById('photos').innerHTML = " **please attach photo";
-                //     return false;
-                // }
-                // ******************************************************************
-                if (Email == "") {
-                    document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
-                    return false;
-                }
-                if ((Email.length <= 2) || (Email.length >= 20)) {
-                    document.getElementById('EmailAdd').innerHTML = " **username must be between 2 to 20";
-                    return false;
-                }
-                if (Email.indexOf('@') <= 0) {
-                    document.getElementById('EmailAdd').innerHTML = " **@ invalid email name";
-                    return false;
-                }
-                if ((Email.charAt(Email.length - 4) != '.') && (Email.charAt(Email.length - 3) != '.')) {
-                    document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
-                    return false;
-                }
-                // else {
-                //     document.getElementById('EmailAdd').innerHTML = "";
-
-                // }
-
-                // ************************************************************************
-                if (RecEmail == "") {
-                    document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
-                    return false;
-                }
-                if ((RecEmail.length <= 2) || (RecEmail.length >= 20)) {
-                    document.getElementById('secemail').innerHTML = " **Email must be between 2 to 20";
-                    return false;
-                }
-                if (RecEmail.indexOf('@') <= 0) {
-                    document.getElementById('secemail').innerHTML = " **@ invalid postion";
-                    return false;
-                }
-                if ((RecEmail.charAt(RecEmail.length - 4) != '.') && (RecEmail.charAt(RecEmail.length - 3) != '.')) {
-                    document.getElementById('secemail').innerHTML = " **please fill the Email field";
-                    return false;
-                }
-
-                // *****************************************************************************
-                if (password == "") {
-                    document.getElementById('pass').innerHTML = " **please fill the password field";
-                    return false;
-                }
-                if ((password.length <= 5) || (password.length >= 20)) {
-                    document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
-                    return false;
-                }
-
-                if (confirmpassword == "") {
-                    document.getElementById('conpass').innerHTML = " **please fill the confirm-password field";
-                    return false;
-                }
-                if (password != confirmpassword) {
-                    document.getElementById('pass').innerHTML = " **password are not matching ";
-                    return false;
-                }
-
+            // ***********************************************************************
+            if (lname == "") {
+                document.getElementById('lastname').innerHTML = " **please fill the lastname field";
+                last_name = false;
+            } else if ((lname.length <= 2) || (lname.length >= 20)) {
+                document.getElementById('lastname').innerHTML = " **Lastname must be between 2 to 20";
+                last_name = false;
+            } else if (!name_pattern.test(lname)) {
+                document.getElementById('lastname').innerHTML = " **invalid Last name Given";
+                last_name = false;
+            } else {
+                document.getElementById('lastname').innerHTML = "";
+                last_name = true;
+            }
+            // ***********************************************************************
+            if (username == "") {
+                document.getElementById('usernames').innerHTML = " **please fill the username field";
+                user_name = false;
+            } else if ((username.length <= 2) || (username.length >= 20)) {
+                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
+                user_name = false;
+            } else if (!name_pattern.test(username)) {
+                document.getElementById('usernames').innerHTML = " **invalid user-name Given";
+                user_name = false;
 
             }
-        </script>
+            // if (!preg_match('#^[a-zA-Z][a-zA-Z0-9@.+-_]{2,100}$#', username)) {
+            //     document.getElementById('usernames').innerHTML = " **invalid  username Given";
+            //     // return false;
+            // }
+            else {
+                document.getElementById('usernames').innerHTML = "";
+                user_name = true;
+            }
+
+            // if (uploadfile == "") {
+            //     document.getElementById('upload_file').innerHTML = " **please attach photo";
+            //     photo = false;
+            //     // return false;
+            // } else {
+            //     document.getElementById('upload_file').innerHTML = "";
+            //     photo = true;
+            // }
+            // ******************************************************************
+            if (Email == "") {
+                document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
+                user_email = false;
+
+                // return false;
+            } else if ((Email.length <= 2) || (Email.length >= 40)) {
+                document.getElementById('EmailAdd').innerHTML = " **username must be between 2 to 40";
+                user_email = false;
+
+                // return false;
+            } else if (Email.indexOf('@') <= 0) {
+                document.getElementById('EmailAdd').innerHTML = " **@ invalid email id";
+                user_email = false;
+
+                // return false;
+            } else {
+                document.getElementById('EmailAdd').innerHTML = "";
+                user_email = true;
+            }
+            // if ((Email.charAt(Email.length - 4) != '.') && (Email.charAt(Email.length - 3) != '.')) {
+            //     document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
+            //     // return false;
+            // }
+            // else {
+            //     document.getElementById('EmailAdd').innerHTML = "";
+
+            // }
+
+            // ************************************************************************
+            if (RecEmail == "") {
+                document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
+                r_email = false;
+
+                // return false;
+            } 
+            // else if ((RecEmail.length <= 2) || (RecEmail.length >= 20)) {
+                // document.getElementById('secemail').innerHTML = " **Email must be between 2 to 20";
+                // r_email = false;
+
+                // return false;
+            // }
+             else if (RecEmail.indexOf('@') <= 0) {
+                document.getElementById('secemail').innerHTML = " **@ invalid postion";
+                r_email = false;
+
+                // return false;
+            } else if ((RecEmail.charAt(RecEmail.length - 4) != '.') && (RecEmail.charAt(RecEmail.length - 3) != '.')) {
+                document.getElementById('secemail').innerHTML = " **please fill the Email field";
+                r_email = false;
+
+                // return false;
+            } else {
+                document.getElementById('secemail').innerHTML = "";
+                r_email = true;
+            }
+
+            // *****************************************************************************
+            if (password == "") {
+                document.getElementById('pass').innerHTML = " **please fill the password field";
+                user_pass = false;
+
+                // return false;
+            }
+            else if ((password.length <= 5) || (password.length >= 20)) {
+                document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
+                user_pass = false;
+
+                // return false;
+            }
+            else if (password != confirmpassword) {
+                document.getElementById('pass').innerHTML = " **password are not matching ";
+                user_pass = false;
+
+                // return false;
+            } else {
+                document.getElementById('pass').innerHTML = "";
+                user_pass = true;
+            }
+
+            if (confirmpassword == "") {
+                document.getElementById('conpass').innerHTML = " **please fill the confirm-password field";
+                user_cpass = false;
+
+            } else {
+                document.getElementById('conpass').innerHTML = "";
+                user_cpass = true;
+
+            }
+
+            if (first_name != true || last_name != true || user_name != true || user_email != true || r_email != true || user_pass != true || user_cpass != true) {
+                // alert("some error occur! please retry!");
+                return false;
+            }
+
+
+        }
+    </script>
+        
         <!-- *********************profile image************************************************* -->
       
             <script>
