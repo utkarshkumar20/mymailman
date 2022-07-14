@@ -13,13 +13,27 @@ if (isset($_POST['signup'])) {
     $passwordconfirm = $_POST['passwordconfirm'];
 
     $imgfile = $_FILES["uploadfile"]["name"];
-    $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
-    $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
+    $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
+    $allowed_extensions = array("jpg", "jpeg", "png", "gif");
     if (!in_array($extension, $allowed_extensions)) {
         header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+<<<<<<< HEAD
     } else 
 {        $imgnewfile = md5($imgfile) . $extension;
         move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "photo/" . $imgnewfile);
+=======
+    } else {
+        //rename the image file
+        $imgnewfile = time()."-".$imgfile;
+        if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)){
+            echo " file uploaded";
+            $user_image = $imgnewfile;
+        }else{
+            echo "not uploaded";
+        }
+        // die(" jjjjj ");
+        // move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile);
+>>>>>>> 711b6b33869ca555e7ec370fcffb967ab2d0cbd7
     }
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
@@ -35,7 +49,7 @@ if (isset($_POST['signup'])) {
 
             $code = rand(999999, 111111);
             $query = "INSERT INTO Signup_table (First_name,Last_name,Username,image,Email,sec_email,password,status,role,code)";
-            $query .= " VALUES ('$fname','$lname','$username','$folder','$email','$RecEmail','$password','NULL','signup_table','$code')";
+            $query .= " VALUES ('$fname','$lname','$username','$user_image','$email','$RecEmail','$password','NULL','signup_table','$code')";
             $run = mysqli_query($con, $query);
             if ($run) {
                 echo '<script type="text/javascript">';
