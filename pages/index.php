@@ -29,7 +29,7 @@
                 <img src="../image/default.png" class="mx-auto pt-0 d-block" alt="cover" width="50%">
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="form-box-1">
-                <form action="signindb.php" onsubmit="return validation()" method="post" enctype="multipart/form-data">
+                <form action="signindb.php" method="post" enctype="multipart/form-data">
                     <h3 class="d-flex justify-content">Login to your account</h3>
                     <div>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="mb-3">
                         <a href="password-reset.php">Forget password?</a>
-                        <span><input type="submit" name="sublogin" class="btn btn-success float-end" value="Login"></span>
+                        <span><input type="submit" name="sublogin" onclick="return validation()" class="btn btn-success float-end" value="Login"></span>
                     </div>
                     <div>
                         <span>Don't have an account yet?</span>
@@ -65,45 +65,40 @@
     <!-- *************************************************validation************************************************* -->
     <!-- validation for empty field    -->
     <script>
-        function validation() {
+            function validation() {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
-            if (email.length == "" && password.length == "") {
-                alert("User Name and Password fields are empty");
-                return false;
+            // if (email.length == "" && password.length == "") {
+            //     alert("User Name and Password fields are empty");
+            //     // return false;
+            // } else {
+            if (email == "") {
+                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
+            } else if (email.indexOf('@') <= 0) {
+                document.getElementById('Emailid').innerHTML = " **@ invalid email name";
+            } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
             } else {
-                if (email == "") {
-                    document.getElementById('Emailid').innerHTML = " **please fill the Email field";
-                    return false;
-                } 
-                if (email.indexOf('@') <= 0) {
-                    document.getElementById('Emailid').innerHTML = " **@ invalid email name";
-                    return false;
-                } 
-                if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
-                    document.getElementById('Emailid').innerHTML = " **please fill the Email field";
-                    return false;
-                }
-                if (password == "") {
-                    document.getElementById('pass').innerHTML = " **please fill the password field";
-                    return false;
-                }
+                document.getElementById('Emailid').innerHTML = "";
+            }
+            // ********************************************************88               
+            if (password == "") {
+                document.getElementById('pass').innerHTML = " **please fill the password field";
+
+            } else {
+                document.getElementById('pass').innerHTML = "";
 
             }
 
+
         }
+    
     </script>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
+  
 </body>
 
 </html>
