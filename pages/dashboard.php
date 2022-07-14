@@ -1,9 +1,5 @@
 <?php
 session_start();
-// print_r($_SESSION);
-// echo $_SESSION["name"] ;
-// echo $_SESSION["email"];
-//  die("jjjjj");
 $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
@@ -68,19 +64,10 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/photo<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
-=======
-            <a href="#"><img src="photo/<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
->>>>>>> 2b7976c0abde861c3b45b935d79bb7bf0883be8d
-=======
+           
             <a href="#"><img src="../<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
->>>>>>> cd934c7dce3b3b42ea12839aeea1efe637b4cf57
-=======
             <a href="#"><img src="http://hestalabs.com/tse/mymailman/pages/<?php echo $_SESSION["photo"] ;  ?>" alt="" width="50px" style="border-radius:50%"></a>
->>>>>>> 0879e23000b326f3b64ec4b56b66b21d9b0bbe9a
 
           </form>
         </div>
