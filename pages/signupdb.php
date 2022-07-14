@@ -12,25 +12,15 @@ if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $passwordconfirm = $_POST['passwordconfirm'];
 
-<<<<<<< HEAD
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "http://hestalabs.com/tse/mymailman/pages/photo/" . $filename;
-    move_uploaded_file($tempname, $folder);
-=======
-
-
     $imgfile = $_FILES["uploadfile"]["name"];
     $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
     $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
     if (!in_array($extension, $allowed_extensions)) {
         header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
-    } else {
-        //rename the image file
-        $imgnewfile = md5($imgfile) . $extension;
+    } else 
+{        $imgnewfile = md5($imgfile) . $extension;
         move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "photo/" . $imgnewfile);
     }
->>>>>>> 4f7559f1d49518e29ff31547feb13683e2d3627b
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';
