@@ -5,25 +5,32 @@ $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die(
 
 if (isset($_POST['signup'])) {
     $fname = $_POST['fname'];
-    //    echo "<br>";
     $lname = $_POST['lname'];
-    //    echo "<br>";
     $username = $_POST['username'];
-    //    echo "<br>";
     $email = $_POST['email'];
-    //    echo "<br>"; 
     $RecEmail = $_POST['RecEmail'];
-    // echo "<br>";
     $password = $_POST['password'];
-    //    echo "<br>";
-    // $token=$_POST['verify_token'];
-    // $status=$_POST['status'];
     $passwordconfirm = $_POST['passwordconfirm'];
 
+<<<<<<< HEAD
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
     $folder = "http://hestalabs.com/tse/mymailman/pages/photo/" . $filename;
     move_uploaded_file($tempname, $folder);
+=======
+
+
+    $imgfile = $_FILES["uploadfile"]["name"];
+    $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
+    $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
+    if (!in_array($extension, $allowed_extensions)) {
+        header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+    } else {
+        //rename the image file
+        $imgnewfile = md5($imgfile) . $extension;
+        move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "photo/" . $imgnewfile);
+    }
+>>>>>>> 4f7559f1d49518e29ff31547feb13683e2d3627b
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';
