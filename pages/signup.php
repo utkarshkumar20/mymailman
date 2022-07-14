@@ -17,7 +17,7 @@
         <!-- ************************************************************************************************ -->
         <nav class="navbar navbar-success bg-success">
             <div class="container-fluid mx-5">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="signup.php">
                     <img src="../image/logo1.png" alt="" width="100%" height="50" class="d-inline-block align-text-top">
                 </a>
             </div>
