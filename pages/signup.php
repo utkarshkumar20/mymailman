@@ -58,10 +58,9 @@
                                 <div id="profile-container">
                                     <image for="imageupload" src="../image/profile.png">
                                 </div>
-                                <input type="file" name="uploadfile" id="imageupload" capture />
-                                <!-- <label for="imageUpload" class="profile text-success " required></label> -->
-                                <!-- <input id="imageUpload" type="file" name="uploadfile" placeholder="upload-picture"  capture /> -->
-                                <!-- <span id="photos" class="text-danger"></span> -->
+                                <input type="file" name="uploadfile" id="imageupload" required />
+
+                                <span id="photos" class="text-danger"><?php echo $_GET['image_err'];?></span>
                             </div>
                         </div>
                         <div class="form-group col-md-12">
