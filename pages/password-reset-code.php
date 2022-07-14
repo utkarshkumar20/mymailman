@@ -80,7 +80,11 @@ if (isset($_POST['password_update'])) {
       // var_dump($message);
       // die();
     } else {
-      echo '<script>alert("Password is not correct")</script>';
+      echo '<script type="text/javascript">';
+      echo 'alert("Password is not correct");';
+      echo 'window.location.href = "password-change.php";';
+      echo '</script>';
+      
     }
   }
 }
