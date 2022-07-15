@@ -1,9 +1,6 @@
 <?php
-// error_reporting(0);
-// ini_set('display_errors', '1');
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(0);
+ini_set('display_errors', '1');
 $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
 
 if (isset($_POST['signup'])) {
@@ -28,12 +25,9 @@ if (isset($_POST['signup'])) {
         if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)){
             echo " file uploaded";
             $user_image = $imgnewfile;
-            $msg = 'success';
         }else{
             echo "not uploaded";
-            $msg = 'fail';
         }
-        print_r($msg);die;
         // die(" jjjjj ");
         // move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile);
     }
