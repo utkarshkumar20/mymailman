@@ -25,9 +25,12 @@ if (isset($_POST['signup'])) {
         if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)){
             echo " file uploaded";
             $user_image = $imgnewfile;
+            $msg = 'success';
         }else{
             echo "not uploaded";
+            $msg = 'fail';
         }
+        print_r($msg);die;
         // die(" jjjjj ");
         // move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile);
     }
