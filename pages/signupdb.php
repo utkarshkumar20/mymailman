@@ -20,11 +20,10 @@ if (isset($_POST['signup'])) {
     $allowed_extensions = array("jpg", "jpeg", "png", "gif");
     if (!in_array($extension, $allowed_extensions)) {
         header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
-<<<<<<< HEAD
-    } else 
+   } else
 {        $imgnewfile = md5($imgfile) . $extension;
         move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "photo/" . $imgnewfile);
-=======
+
     } else {
         //rename the image file
         $imgnewfile = time() . "-" . $imgfile;
@@ -36,8 +35,7 @@ if (isset($_POST['signup'])) {
         }
         // die(" jjjjj ");
         // move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile);
->>>>>>> 711b6b33869ca555e7ec370fcffb967ab2d0cbd7
-    }
+ }
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';

@@ -289,9 +289,8 @@
 
         }
     </script>
-        
+
         <!-- *********************profile image************************************************* -->
-      
             <script>
                 $("#imageupload").click(function(e) {
                     $("#imageUpload").click();
