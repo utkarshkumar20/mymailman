@@ -1,4 +1,3 @@
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -18,7 +17,6 @@ if (isset($_POST['signup'])) {
     $RecEmail = $_POST['RecEmail'];
     $password = $_POST['password'];
     $passwordconfirm = $_POST['passwordconfirm'];
-
 
     $imgfile = $_FILES["uploadfile"]["name"];
     $extension = pathinfo($imgfile, PATHINFO_EXTENSION);

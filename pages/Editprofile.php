@@ -60,6 +60,7 @@ session_start();
                             </ul>
                         </li>
                         <a href="#"><img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
+
                     </form>
                 </div>
             </div>
@@ -116,8 +117,7 @@ session_start();
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">
-                                </div>
+                                    <img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">                                </div>
                             </div>
                             <br>
                             <input type="file" name="uploadfile" id="imageupload" capture />

@@ -75,9 +75,8 @@ session_start();
                     <div class="row d-flex">
                     <div>
                                 <h3 class="d-flex justify-content-center">Your profile</h3>
-                            </div>   
+                            </div>
                     <div class="col-md-8 order-2 order-md-1">
-                           
                             <div>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" value="<?php echo $_SESSION['fname']; ?>" disabled autocomplete="off">
                                 <span id="yourname" class="text-danger"></span>
@@ -104,9 +103,9 @@ session_start();
                                 <a href="password-change.php" type="button" class="form-control btn btn-primary">Change pasword</a>
                             </div>
                         </div>
-                        
                         <div class="col-md-4 order-1 order-md-2 ">
                            <img src="<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">
+
                         </div>
                     </div>
                 </form>
@@ -129,7 +128,7 @@ session_start();
 
 
     <!-- ******************************************************************************************************** -->
-   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

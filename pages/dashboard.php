@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
@@ -55,7 +54,7 @@ $query = "select * from signup_table ";
               <a class="form-control nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <?php
           //  print_r($_SESSION);
-           echo $_SESSION["username"] ;   
+           echo $_SESSION["username"] ;
           //  die("vjhghj");
             ?>
             </a>
@@ -64,8 +63,7 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
-            <a href="#"><img src="<?php echo $_SESSION["photo"]; ?>" alt="not found" width="50px" style="border-radius:50%"></a>
-
+	   <a href="#"><img src="<?php echo $_SESSION["photo"]; ?>" alt="not found" width="50px" style="border-radius:50%"></a>
           </form>
         </div>
       </div>
@@ -482,7 +480,6 @@ $query = "select * from signup_table ";
       } else {
         y.style.display = "none";
       }
-      
       var z = document.getElementById("trash");
       if (z.style.display === "none") {
         z.style.display = "none";
