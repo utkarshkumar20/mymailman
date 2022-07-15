@@ -50,12 +50,19 @@ if (isset($_POST['password_reset_link'])) {
     // $mail->AltBody = '';
 
     $mail->send();
-
-    echo '<script>alert("message has been sent to the users")</script>';
-    header("location:index.php");
+    echo '<script type="text/javascript">';
+    echo 'alert("message has been sent to the users!");';
+    echo 'window.location.href = "index.php";';
+    echo '</script>';
+    // echo '<script>alert("message has been sent to the users")</script>';
+    // header("location:index.php");
   } else {
-    echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
-    header("location:password-reset.php");
+    echo '<script type="text/javascript">';
+    echo 'alert("Message could not be sent to user wrong Email!");';
+    echo 'window.location.href = "password-reset.php";';
+    echo '</script>';
+    // echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
+    // header("location:password-reset.php");
   }
   // catch (Exception $e) {
 }
