@@ -1,9 +1,10 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(0);
+ini_set('display_errors', '1');
 $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
-
+echo "<pre>";
+print_r($_FILES);
+die(0);
 if (isset($_POST['signup'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
