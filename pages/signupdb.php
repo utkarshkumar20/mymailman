@@ -21,6 +21,9 @@ if (isset($_POST['signup'])) {
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+>>>>>>> 096cf366e85e8d3ef2f92beeae43d4b2c1dc8d1b
+=======
 >>>>>>> 096cf366e85e8d3ef2f92beeae43d4b2c1dc8d1b
     $imgfile = $_FILES["uploadfile"]["name"];
     $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
