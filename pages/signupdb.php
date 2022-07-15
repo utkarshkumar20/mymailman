@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
+$con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
 
 
 // echo "<pre>";
@@ -26,11 +26,11 @@ if (isset($_POST['signup'])) {
         header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
     } else {
         //rename the image file
-        $imgnewfile = time()."-".$imgfile;
-        if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
+        $imgnewfile = time() . "-" . $imgfile;
+        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
             echo " file uploaded";
-        }else{
+        } else {
             echo "not uploaded";
         }
         // die(" jjjjj ");
