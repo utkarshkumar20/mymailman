@@ -26,7 +26,7 @@ if (isset($_POST['signup'])) {
         $imgnewfile = time() . "-" . $imgfile;
         if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
-            echo " file uploaded";
+            echo "";
         } else {
             echo "not uploaded";
         }
