@@ -3,9 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
-echo "<pre>";
-print_r($_FILES);
-die(0);
+// echo "<pre>";
+// print_r($_FILES);
+// die(0);
 
 if (isset($_POST['signup'])) {
     $fname = $_POST['fname'];
@@ -30,8 +30,6 @@ if (isset($_POST['signup'])) {
         } else {
             echo "not uploaded";
         }
-        // die(" jjjjj ");
-        // move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile);
     }
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
