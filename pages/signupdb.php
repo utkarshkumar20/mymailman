@@ -1,11 +1,14 @@
 <?php
-error_reporting(0);
-ini_set('display_errors', '1');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
+
 
 // echo "<pre>";
 // print_r($_FILES);
 // die(0);
+
 if (isset($_POST['signup'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -16,7 +19,6 @@ if (isset($_POST['signup'])) {
     $passwordconfirm = $_POST['passwordconfirm'];
 
 
-
     $imgfile = $_FILES["uploadfile"]["name"];
     $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
     $allowed_extensions = array("jpg", "jpeg", "png", "gif");
@@ -24,11 +26,11 @@ if (isset($_POST['signup'])) {
         header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
     } else {
         //rename the image file
-        $imgnewfile = time() . "-" . $imgfile;
-        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
+        $imgnewfile = time()."-".$imgfile;
+        if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
             echo " file uploaded";
-        } else {
+        }else{
             echo "not uploaded";
         }
         // die(" jjjjj ");
