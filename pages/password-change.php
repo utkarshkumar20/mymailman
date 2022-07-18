@@ -62,7 +62,7 @@ if (isset($_GET["RecEmail"]))
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="hidden" name="RecEmail" value="<?php echo $email;?>"/>
+                    <input type="hidden" name="RecEmail" value="<?php echo json_decode($email);?>"/>
                     <input type="submit" onclick="return validation();" name="password_update" value="Reset Password" class="btn btn-primary">
                 </form>
             </div>
