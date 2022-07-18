@@ -85,10 +85,13 @@ if (isset($_GET["RecEmail"]))
 
             if (password != conpassword) {
                 document.getElementById('pass').innerHTML = " ** password not match"
+                return false;
             } else if ((password.length <= 5) || (password.length >= 20)) {
                 document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
+                return false;
             } else if (password == "") {
                 document.getElementById('pass').innerHTML = " **please fill the password field";
+                return false;
             } 
             // else {
             //     document.getElementById('pass').innerHTML = "";
