@@ -1,7 +1,9 @@
 <?php
 error_reporting(0);
 ini_set('display_errors', '1');
-$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
+include('../includes/config.php');
+
+// $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 // $id=$_GET['Id'];

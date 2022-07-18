@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-1 col-sm-1 col-xs-12"></div>
         </div>
-    </div> -->
+    </div> 
 
     <!-- *************************************************validation************************************************* -->
     <!-- validation for empty field    -->

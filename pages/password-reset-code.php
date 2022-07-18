@@ -5,7 +5,7 @@
 session_start();
 // $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
-include "./includes/config.php";
+include('../includes/config.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;

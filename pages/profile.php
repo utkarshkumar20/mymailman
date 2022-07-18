@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
+// $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 require('../includes/config.php');
 
 session_start();

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
+// $con= mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ','utkarsh') or die("connection failed");
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 include('../includes/config.php');
