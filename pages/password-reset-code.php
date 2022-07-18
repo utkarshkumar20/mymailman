@@ -79,7 +79,7 @@ if (isset($_POST['password_update'])) {
     $result = mysqli_query($con, "SELECT * FROM signup_table WHERE Username = $username ");
     $row = mysqli_fetch_array($result);
     if ($_POST["password"] == $_POST["conpassword"]) {
-      echo "UPDATE signup_table SET password = $password  WHERE Username = $username "; die(" query ");
+      // echo "UPDATE signup_table SET password = $password  WHERE Username = $username "; die(" query ");
       mysqli_query($con, "UPDATE signup_table SET password = $password  WHERE Username = $username ");
       echo '<script type="text/javascript">';
       echo 'alert("password successfully changed");';
