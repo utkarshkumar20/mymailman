@@ -3,8 +3,7 @@
     include('../includes/config.php');
 
     if (isset($_POST['password_update'])) {
-        if (isset($_POST['submit'])) {
-            print_r($_POST);
+                print_r($_POST);
             echo $password = $_POST['password'];
             // echo "<br>";
             echo $conpassword = $_POST['conpassword'];
@@ -32,7 +31,7 @@
                 }
             }
         }
-    }
+    
 
     //     $password = mysqli_real_escape_string($con, $_POST['password']);
     //     $conpassword = mysqli_real_escape_string($con, $_POST['conpassword']);
