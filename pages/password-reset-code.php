@@ -46,7 +46,7 @@ if (isset($_POST['password_reset_link'])) {
 
     $mail->isHTML(true);
     $mail->Subject = 'password verification code' . time();
-    $mail->Body    = '<b> hello utkarsh welcome, please click on this message</b><a href="http://hestalabs.com/tse/mymailman/pages/password-change.php">reset password</a>';
+    $mail->Body    = '<h1> hello <?php echo $_SESSION["username"] ;?> welcome</h1> <br> <h3>please click on this message</h3><a href="http://hestalabs.com/tse/mymailman/pages/password-change.php">  reset password</a>';
     // $mail->AltBody = '';
 
     $mail->send();
@@ -58,7 +58,7 @@ if (isset($_POST['password_reset_link'])) {
     // header("location:index.php");
   } else {
     echo '<script type="text/javascript">';
-    echo 'alert("Message could not be sent to user wrong Email!");';
+    echo 'alert("Not Found This Email!");';
     echo 'window.location.href = "password-reset.php";';
     echo '</script>';
     // echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';

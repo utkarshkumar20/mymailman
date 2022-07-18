@@ -39,6 +39,7 @@ session_start();
                         <h4 class="d-flex justify-content">Enter your register E-mail/username</h4>
                     </div>
                     <div class="col-md-12">
+                        <input type="hidden" name="" value="<?php echo $_SESSION["username"]; ?>">
                         <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail">
                         <span id="Emailid" class="text-danger"></span>
                     </div>
@@ -47,7 +48,7 @@ session_start();
                     <div>
                         <a href="index.php" style="text-decoration:none;">Back to Login</a>
                         <span>
-                            <input type="submit" name="password_reset_link" class="btn btn-success float-end" style="text-decoration:none" value="submit">
+                            <input type="submit" name="password_reset_link" onclick="return validation();" class="btn btn-success float-end" style="text-decoration:none" value="submit">
                         </span>
                     </div>
                 </form>
@@ -60,7 +61,7 @@ session_start();
 
     <!-- ******************************************************************************************************************** -->
     <!-- validation for empty field    -->
-                
+
 
     <script>
         function validation() {
@@ -70,13 +71,17 @@ session_start();
 
             if (email == "") {
                 document.getElementById('Emailid').innerHTML = " **please fill the Email field";
-                return false;
+                // return false;
             } else if (email.indexOf('@') <= 0) {
                 document.getElementById('Emailid').innerHTML = " **@ invalid email name";
-                return false;
+                // return false;
             } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
                 document.getElementById('Emailid').innerHTML = " **please fill the Email field";
-                return false;
+                // return false;
+            }
+            else{
+                document.getElementById('Emailid').innerHTML = " ";
+
             }
 
         }
