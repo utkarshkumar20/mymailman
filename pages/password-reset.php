@@ -34,7 +34,7 @@ session_start();
         <div class="row" id="box">
             <div class="col-md-1 col-sm-1 col-xs-12"></div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="form-box-1">
-                <form action="password-reset-code.php" method="post" autocomplete="off">
+                <form action="password-reset-code.php" method="post" name="reset" autocomplete="off">
                     <div>
                         <h4 class="d-flex justify-content">Enter your register E-mail/username</h4>
                     </div>
@@ -48,7 +48,7 @@ session_start();
                     <div>
                         <a href="index.php" style="text-decoration:none;">Back to Login</a>
                         <span>
-                            <input type="submit" name="password_reset_link" onclick="return validation();" class="btn btn-success float-end" style="text-decoration:none" value="submit">
+                            <input type="submit" name="password_reset_link" onclick="return validation();" class="btn btn-success float-end" style="text-decoration:none" value="Reset Password" />
                         </span>
                     </div>
                 </form>
