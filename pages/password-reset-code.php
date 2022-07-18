@@ -70,15 +70,16 @@ if (isset($_POST['password_reset_link'])) {
 
 // die(" ffffffffffff");
 // *****************************************password-change*****************************************************
+$password = mysqli_real_escape_string($con, $_POST['password']);
+$conpassword = mysqli_real_escape_string($con, $_POST['conpassword']);
+$username = $_SESSION["Username"];/* userid of the user */
 if (isset($_POST['password_update'])) {
-  $password = mysqli_real_escape_string($con, $_POST['password']);
-  $conpassword = mysqli_real_escape_string($con, $_POST['conpassword']);
-  $username = $_SESSION["Username"];/* userid of the user */
+
   if (count($_POST) > 0) {
-    $result = mysqli_query($con, "SELECT * from signup_table WHERE Username = $username ");
+    $result = mysqli_query($con, "SELECT * FROM signup_table WHERE Username = $username ");
     $row = mysqli_fetch_array($result);
     if ($_POST["password"] == $_POST["conpassword"]) {
-      mysqli_query($con, "UPDATE signup_table set password = $password  WHERE Username = $username ");
+      mysqli_query($con, "UPDATE signup_table SET password = $password  WHERE Username = $username ");
       echo '<script type="text/javascript">';
       echo 'alert("password successfully changed");';
       echo 'window.location.href = "index.php";';
@@ -91,11 +92,6 @@ if (isset($_POST['password_update'])) {
       echo 'alert("Password is not correct");';
       echo 'window.location.href = "password-change.php";';
       echo '</script>';
-      
     }
   }
 }
-
-
-
-?>

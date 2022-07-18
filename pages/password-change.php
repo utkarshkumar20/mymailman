@@ -32,7 +32,7 @@
             <div class="col-md-5 col-sm-5 col-xs-12" id="form-box-1">
                 <form action="password-reset-code.php" method="POST" autocomplete="off">
                     <!-- <input type="hidden" name="password_code"> -->
-           
+
 
                     <h3 class="d-flex justify-content">Change password</h3>
 
@@ -49,7 +49,7 @@
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="submit" name="password_update" value="Change" class="btn btn-primary">
+                    <input type="submit" onclick="return validation();" name="password_update" value="Change" class="btn btn-primary">
                 </form>
             </div>
             <div class="col-md-5 col-sm-5 col-xs-12">
@@ -71,13 +71,14 @@
 
             if (password != conpassword) {
                 document.getElementById('pass').innerHTML = " ** password not match"
-                return false;
-            } else if (password == "") {
-                document.getElementById('pass').innerHTML = " **please fill the password field";
-                return false;
             } else if ((password.length <= 5) || (password.length >= 20)) {
                 document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
+            } else if (password == "") {
+                document.getElementById('pass').innerHTML = " **please fill the password field";
+            } else {
+                document.getElementById('pass').innerHTML = "";
                 return false;
+
             }
 
         }
