@@ -89,11 +89,12 @@ if (isset($_GET["RecEmail"]))
                 document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
             } else if (password == "") {
                 document.getElementById('pass').innerHTML = " **please fill the password field";
-            } else {
-                document.getElementById('pass').innerHTML = "";
-                return false;
+            } 
+            // else {
+            //     document.getElementById('pass').innerHTML = "";
+            //     return false;
 
-            }
+            // }
 
         }
     </script>
