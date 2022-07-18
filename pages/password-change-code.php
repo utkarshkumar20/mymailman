@@ -1,6 +1,11 @@
  <?php
+ session_start();
+ // $con = mysqli_connect('Localhost', 'tse', 'bPmtHasjyTJ2SgZJ', 'utkarsh') or die("connection failed");
+ // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
+ include('../includes/config.php');
+ 
     if (isset($_POST['password_update'])) {
-        // print_r($_POST);   
+        print_r($_POST);   
         if (isset($_POST['submit'])) {
             echo $password = $_POST['password'];
             // echo "<br>";
@@ -15,7 +20,7 @@
             exit(0);
 
             if ($_POST["password"] == $_POST["conpassword"]) {
-                $query = "UPDATE Signup_table  SET password = $password  WHERE Sec_email = '$recemail' code='$code' LIMIT 1";
+                $query = "UPDATE Signup_table  SET password = $password  WHERE Sec_email = '$recemail',code='$code' LIMIT 1";
                 $data = mysqli_query($con, $query);
                 if ($data) {
                     echo '<script type="text/javascript">';
