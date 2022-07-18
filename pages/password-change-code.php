@@ -3,8 +3,8 @@
     include('../includes/config.php');
 
     if (isset($_POST['password_update'])) {
-        print_r($_POST);
         if (isset($_POST['submit'])) {
+            print_r($_POST);
             echo $password = $_POST['password'];
             // echo "<br>";
             echo $conpassword = $_POST['conpassword'];
