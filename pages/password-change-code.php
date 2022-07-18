@@ -3,8 +3,8 @@
     include('../includes/config.php');
 
     if (isset($_POST['password_update'])) {
-        echo "<pre>";
-                print_r($_POST);
+        // echo "<pre>";
+        //         print_r($_POST);
             echo $password = $_POST['password'];
             // echo "<br>";
             echo $conpassword = $_POST['conpassword'];
@@ -15,7 +15,7 @@
             
             if ($_POST["password"] == $_POST["conpassword"]) {
                 echo $query = "UPDATE Signup_table  SET password = $password  WHERE Sec_email = '$recemail',code='$code' LIMIT 1";
-                die("end here");
+                // die("end here");
                 $data = mysqli_query($con, $query);
                 if ($data) {
                     echo '<script type="text/javascript">';
