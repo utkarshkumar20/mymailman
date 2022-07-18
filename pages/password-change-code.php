@@ -14,8 +14,8 @@
              $code = md5(rand());
             
             if ($_POST["password"] == $_POST["conpassword"]) {
-                 echo $query = "UPDATE Signup_table  SET password = $password  WHERE sec_email = '$recemail' LIMIT 1";
-                die("end here");
+                 $query = "UPDATE Signup_table  SET password = $password  WHERE sec_email = '$recemail'";
+                // die("end here");
                 $data = mysqli_query($con, $query);
                 if ($data) {
                     echo '<script type="text/javascript">';
