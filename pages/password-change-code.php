@@ -5,16 +5,16 @@
     if (isset($_POST['password_update'])) {
         // echo "<pre>";
         //         print_r($_POST);
-            echo $password = $_POST['password'];
+             $password = $_POST['password'];
             // echo "<br>";
-            echo $conpassword = $_POST['conpassword'];
+             $conpassword = $_POST['conpassword'];
             // echo "<br>";
-            echo $recemail = $_POST['RecEmail'];
+             $recemail = $_POST['RecEmail'];
             // echo "<br>";
-            echo $code = md5(rand());
+             $code = md5(rand());
             
             if ($_POST["password"] == $_POST["conpassword"]) {
-                 $query = "UPDATE Signup_table  SET password = $password  WHERE Sec_email = '$recemail',code='$code' LIMIT 1";
+                 $query = "UPDATE Signup_table  SET password = $password  WHERE sec_email = '$recemail',code='$code' LIMIT 1";
                 // die("end here");
                 $data = mysqli_query($con, $query);
                 if ($data) {
