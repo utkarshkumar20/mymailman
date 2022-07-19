@@ -81,13 +81,7 @@ if (isset($_GET["id"])) {
             <div class="col-md-2 col-sm-4 col-xs-12"></div>
             <div class="col-md-8 col-sm-4 col-xs-12" id="profile">
                 <form action="editprofiledb.php" method="post" enctype="multipart/form-data">
-                    <?php
-
-                    // $sql = "SELECT * FROM users WHERE id='{$_SESSION["user_id"]}'";
-                    // $result = mysqli_query($conn, $sql);
-                    // if (mysqli_num_rows($result) > 0) {
-                    //     while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
+                  
 
                     <div class="row">
                         <div class="col-md-8 order-2 order-md-1">
