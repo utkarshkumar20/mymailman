@@ -10,12 +10,12 @@
             $query = "UPDATE Signup_table  SET password = '$password'  WHERE Username = '$recemail' ";
             $data = mysqli_query($con, $query);
             if ($data) {
-                // echo '<script type="text/javasczript">';
+                echo '<script type="text/javascript">';
                 echo 'alert("password successfully changed");';
-                die("end here"); 
-                // echo 'window.location.href = "index.php";';
-                // echo '</script>';
+                echo 'window.location.href = "index.php";';
+                echo '</script>';
             } else {
+                // die("end here"); 
                 echo '<script type="text/javascript">';
                 echo 'alert("Password is wrong");';
                 echo 'window.location.href = "password-change.php";';
