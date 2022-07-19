@@ -3,9 +3,11 @@
 require('../includes/config.php');
 
 session_start();
-$user_id=$_SESSION['id'];
 print_r($_SESSION);
-// echo $query = "SELECT * FROM signup_table where id = '$userid'";
+
+$user_id=$_SESSION['id'];
+echo $query = "SELECT * FROM signup_table where id = '$userid'";
+$result=mysqli_query($con,$query);
 die("this example");
 ?>
 <!doctype html>
