@@ -129,7 +129,7 @@ if (mysqli_num_rows($result) > 0) {
 
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link link-dark" href="dashboard.php" onclick="return inboxfun()"  >
+            <a class="nav-link link-dark" href="dashboard.php" onclick="return inboxfun()">
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>
@@ -139,12 +139,12 @@ if (mysqli_num_rows($result) > 0) {
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardsent.php" >
+            <a class="nav-link link-dark" href="dashboardsent.php">
               <i class="fa-solid fa-paper-plane"></i>&nbsp;Sent
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardtrash.php" >
+            <a class="nav-link link-dark" href="dashboardtrash.php">
               <i class="fa-solid fa-trash-can"></i> &nbsp;Trash
             </a>
           </li>
@@ -239,7 +239,7 @@ if (mysqli_num_rows($result) > 0) {
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                <a class="page-link" href="#" tabindex="1">Previous</a>
               </li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
