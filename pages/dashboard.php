@@ -27,7 +27,7 @@ $query = "select * from signup_table ";
   <!-- ******************************************************************************************************** -->
   <!-- header -->
   <!-- d-flex d-grid gap-2 d-md-flex justify-content-center navbar-form navbar-right -->
-  <nav class="navbar navbar-expand-sm fixed-top bg-success justify-content-around">
+  <nav class="navbar navbar-expand-sm fixed-top bg-primary justify-content-around">
     <div class="container-fluid ">
       <div class="col-md-1 ">
         <a class="navbar-brand" href="#"><img src="../image/logo1.png" alt="" width="100%" height="50"></a>
@@ -35,7 +35,7 @@ $query = "select * from signup_table ";
       <div class="col-md-2 "></div>
       <div class="col-md-6">
         <form class="form-outline d-flex gap-1 d-md-flex">
-          <input class="form-control border border-primary rounded-pill" role="search" id="form1" type="search" placeholder="Search" aria-label="Search" />
+          <input class="form-control border border-dark rounded-pill" role="search" id="form1" type="search" placeholder="Search" aria-label="Search" />
           <span class="input-group-text border-0 rounded-pill" id="search-addon">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
@@ -73,11 +73,11 @@ $query = "select * from signup_table ";
 
   <div class="row">
     <div class="col">
-      <div class="sidenav flex-column p-1 bg-success" style="width: 160px;">
+      <div class="sidenav flex-column p-1 bg-primary" style="width: 160px;">
         <ul class="nav nav-pills flex-column mb-auto my-5 py-5">
           <li class="nav-item">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Compose mail
             </button>
 
@@ -121,7 +121,7 @@ $query = "select * from signup_table ";
 
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link" onclick="return inboxfun()" data-bs-toggle="tab" href="#tab-1">>
+            <a class="nav-link link-dark" onclick="return inboxfun()" data-bs-toggle="tab" href="#tab-1">>
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>

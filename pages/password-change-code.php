@@ -11,7 +11,7 @@
             // die("end here");
             $data = mysqli_query($con, $query);
             if ($data) {
-                echo '<script type="text/javascript">';
+                echo '<script type="text/javasczript">';
                 echo 'alert("password successfully changed");';
                 echo 'window.location.href = "index.php";';
                 echo '</script>';
