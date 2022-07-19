@@ -96,7 +96,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <h3 class="d-flex justify-content">profile</h3>
                             </div>
                             <div>
-                                <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php $user_data['First_name']; ?>" autocomplete="off">
+                                <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php echo $user_data['First_name']; ?>" autocomplete="off">
                                 <span id="yourname" class="text-danger"></span>
                             </div>
                             <br>
