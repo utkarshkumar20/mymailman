@@ -29,10 +29,11 @@ if (isset($_POST['password_reset_link'])) {
   if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     $email = $row['sec_email'];
+    $username = $row['Username'];
     $output = '<p>Dear user,</p>';
     $output .= '<p>Please click on the following link to reset your password.</p>';
     $output .= '<p>-------------------------------------------------------------</p>';
-    $output .= '<p><a href="http://hestalabs.com/tse/mymailman/pages/password-change.php?RecEmail=' . base64_encode($email) . '&action=reset "target="_blank">Reset Link</a></p>';
+    $output .= '<p><a href="http://hestalabs.com/tse/mymailman/pages/password-change.php?RecEmail=' . base64_encode($username) . '&action=reset "target="_blank">Reset Link</a></p>';
     $output .= '<p>-------------------------------------------------------------</p>';
     $output .= '<p>Please be sure to copy the entire link into your browser.The link will expire after 1 day for security reason.</p>';
     $output .= '<p>If you did not request this forgotten password email, no action is needed, your password will not be reset. However, you may want to log into your account and change your security password as someone may have guessed it.</p>';
