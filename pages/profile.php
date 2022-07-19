@@ -3,7 +3,7 @@
 require('../includes/config.php');
 
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 
 $user_id = $_SESSION['id'];
 echo $query = "SELECT * FROM signup_table where id = '$userid'";
