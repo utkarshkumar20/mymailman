@@ -15,8 +15,8 @@ if (isset($_POST['submit'])) {
     $recemail = $_POST['sec_email'];
     $username = $_POST['username'];
     $id = $_SESSION['id'];
-
-  echo $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+    echo $con;
+    echo $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
     die(00);
     $data = mysqli_query($con, $query);
     if ($data) {
