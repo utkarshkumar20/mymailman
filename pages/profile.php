@@ -11,11 +11,11 @@ $result = mysqli_query($con, $query);
 // var_dump($result);
 if (mysqli_num_rows($result) > 0) {
     $user_data = $result->fetch_assoc();
-echo "<pre>";
-print_r(($user_data));
-die(" hh ");
+// echo "<pre>";
+// print_r(($user_data));
+// die(" hh ");
 }
-die("this example");
+// die("this example");
 
 ?>
 <!doctype html>
@@ -91,22 +91,22 @@ die("this example");
                         </div>
                         <div class="col-md-8 order-2 order-md-1">
                             <div>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" value="<?php echo $_SESSION['fname']; ?>" disabled autocomplete="off">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" value="<?php echo $user_data['First_name']; ?>" disabled autocomplete="off">
                                 <span id="yourname" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email(primary)" value="<?php echo $_SESSION['email']; ?>" disabled autocomplete="off">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email(primary)" value="<?php echo $user_data['Email']; ?>" disabled autocomplete="off">
                                 <span id="emailid" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="email" class="form-control" name="sec_email" id="sec_email" placeholder="Email(secondary)" value="<?php echo $_SESSION['secemail']; ?>" disabled autocomplete="off">
+                                <input type="email" class="form-control" name="sec_email" id="sec_email" placeholder="Email(secondary)" value="<?php echo $user_data['sec_email']; ?>" disabled autocomplete="off">
                                 <span id="sec_emailid" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $_SESSION['username']; ?>" disabled autocomplete="off">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $user_data['Username']; ?>" disabled autocomplete="off">
                                 <span id="usernames" class="text-danger"></span>
                             </div>
                             <br>
@@ -117,7 +117,7 @@ die("this example");
                             </div>
                         </div>
                         <div class="col-md-4 order-1 order-md-2 ">
-                            <img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
+                            <img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
 
                         </div>
                     </div>
