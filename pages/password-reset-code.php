@@ -72,7 +72,7 @@ if (isset($_POST['password_reset_link'])) {
     // header("location:index.php");
   } else {
     echo '<script type="text/javascript">';
-    echo 'alert("Not Found This Email!");';
+    echo 'alert("Email Not Found! please try again");';
     echo 'window.location.href = "password-reset.php";';
     echo '</script>';
     // echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
