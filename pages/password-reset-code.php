@@ -24,11 +24,12 @@ if (isset($_POST['password_reset_link'])) {
   $username=$_POST['username'];
   $mail = new PHPMailer(true);
 
-  $sql = "SELECT * FROM Signup_table WHERE sec_email = '$email'";
+  $sql = "SELECT * FROM Signup_table WHERE Username  = '$email' OR Email = '$email'";
   $result = mysqli_query($con, $sql);
   if (mysqli_num_rows($result) > 0) {
-
-
+    $row = mysqli_fetch_assoc($result);
+    print_r($row);
+    die;
     $output = '<p>Dear user,</p>';
     $output .= '<p>Please click on the following link to reset your password.</p>';
     $output .= '<p>-------------------------------------------------------------</p>';
