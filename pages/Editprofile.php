@@ -4,15 +4,13 @@ session_start();
 include('../includes/config.php');
 
 // if (isset($_GET["RecEmail"]) && isset($_GET["action"]) && ($_GET["action"]=="reset") && !isset($_POST["action"]))
-if (isset($_GET["id"]))
-{
-  $id = base64_decode($_GET["id"]);
-  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE Id='".$id."';" );
-  
-} 
+if (isset($_GET["id"])) {
+    $id = base64_decode($_GET["id"]);
+    $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
+}
 // print_r($_GET);
 // die("dddd");
- ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -83,7 +81,7 @@ if (isset($_GET["id"]))
         <div class="row" id="box">
             <div class="col-md-2 col-sm-2 col-xs-12"></div>
             <div class="col-md-8 col-sm-5 col-xs-12" id="profile">
-                <form action="editprofiledb.php"  method="post" enctype="multipart/form-data">
+                <form action="editprofiledb.php" method="post" enctype="multipart/form-data">
                     <?php
 
                     // $sql = "SELECT * FROM users WHERE id='{$_SESSION["user_id"]}'";
@@ -117,7 +115,7 @@ if (isset($_GET["id"]))
                                 <span id="usernames" class="text-danger"></span>
                             </div>
                             <br>
-                            <input type="hidden" name="id" value="<?php echo $id;?>"/>
+                            <input type="hidden" name="id" value="<?php echo $id; ?>" />
                             <div class="col-4 d-flex">
                                 <input type="submit" name="submit" onclick="return validation();" class="btn btn-success" value="edit-profile">
 
@@ -127,7 +125,8 @@ if (isset($_GET["id"]))
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="./photo/<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">                                </div>
+                                    <img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
+                                </div>
                             </div>
                             <br>
                             <input type="file" name="uploadfile" id="imageupload" capture />
@@ -139,7 +138,114 @@ if (isset($_GET["id"]))
         </div>
     </div>
 
+    <!-- *************************************************validation************************************************* -->
+    <script>
+        function validation() {
+            // alert("uuuuu");
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var sec_email = document.getElementById('sec_email').value;
+            var username = document.getElementById('username').value;
+
+            first_name = '';
+            user_name = '';
+            user_email = '';
+            r_email = '';
+            name_pattern = /^([a-zA-Z' ]+)$/
+
+            if (name == "") {
+                document.getElementById('yourname').innerHTML = " **please fill the Firstname field";
+                first_name = false;
+            } else if ((name.length <= 2) || (name.length >= 20)) {
+                document.getElementById('yourname').innerHTML = " **firstname must be between 2 to 20";
+                first_name = false;
+
+            } else if (!name_pattern.test(name)) {
+                document.getElementById('yourname').innerHTML = " **invalid First name Given";
+                first_name = false;
+            } else {
+                document.getElementById('yourname').innerHTML = "";
+                first_name = true;
+            }
+
+            // ***********************************************************************
+            if (username == "") {
+                document.getElementById('usernames').innerHTML = " **please fill the username field";
+                user_name = false;
+            } else if ((username.length <= 2) || (username.length >= 20)) {
+                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
+                user_name = false;
+            } else if (!name_pattern.test(username)) {
+                document.getElementById('usernames').innerHTML = " **invalid user-name Given";
+                user_name = false;
+
+            } else {
+                document.getElementById('usernames').innerHTML = "";
+                user_name = true;
+            }
+
+            // ******************************************************************
+            if (email == "") {
+                document.getElementById('emailid').innerHTML = " **please fill the Email field";
+                user_email = false;
+
+                // return false;
+            } else if ((email.length <= 2) || (email.length >= 40)) {
+                document.getElementById('emailid').innerHTML = " **username must be between 2 to 40";
+                user_email = false;
+
+                // return false;
+            } else if (email.indexOf('@') <= 0) {
+                document.getElementById('emailid').innerHTML = " **@ invalid email id";
+                user_email = false;
+
+                // return false;
+            } else {
+                document.getElementById('emailid').innerHTML = "";
+                user_email = true;
+            }
+            // if ((Email.charAt(Email.length - 4) != '.') && (Email.charAt(Email.length - 3) != '.')) {
+            //     document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
+            //     // return false;
+            // }
+            // else {
+            //     document.getElementById('EmailAdd').innerHTML = "";
+
+            // }
+
+            // ************************************************************************
+            if (sec_email == "") {
+                document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
+                r_email = false;
+            }
+            else if (sec_email.indexOf('@') <= 0) {
+                document.getElementById('secemail').innerHTML = " **@ invalid postion";
+                r_email = false;
+
+                // return false;
+            } else if ((sec_email.charAt(sec_email.length - 4) != '.') && (sec_email.charAt(sec_email.length - 3) != '.')) {
+                document.getElementById('secemail').innerHTML = " **please fill the Email field";
+                r_email = false;
+
+                // return false;
+            } else {
+                document.getElementById('secemail').innerHTML = "";
+                r_email = true;
+            }
+
+
+
+            if (first_name != true ||  user_name != true || user_email != true || r_email != true) {
+                // alert("some error occur! please retry!");
+                return false;
+            }
+
+
+        }
+    </script>
+
     <!-- ************************************************validation******************************************* -->
+
     <script>
         function validation() {
 
