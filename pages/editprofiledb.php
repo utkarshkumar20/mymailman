@@ -10,13 +10,14 @@ include('../includes/config.php');
 // $id=$_GET['Id'];
 
 if (isset($_POST['submit'])) {
-    $fname = $_POST['fname'];
-    $email = $_POST['email'];
-    $recemail = $_POST['sec_email'];
-    $username = $_POST['username'];
-    $id=$_POST['id'];
-
-    $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+    print_r($_POST);
+    echo $fname = $_POST['fname'];
+    echo $email = $_POST['email'];
+    echo $recemail = $_POST['sec_email'];
+    echo $username = $_POST['username'];
+    echo $id=$_POST['id'];
+    die();
+    echo $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
     $data = mysqli_query($con, $query);
     if ($data) {
         echo '<script type="text/javascript">';
