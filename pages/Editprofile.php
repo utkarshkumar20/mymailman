@@ -66,14 +66,14 @@ if (mysqli_num_rows($result) > 0) {
                     <form class="d-flex d-grid gap-1 d-md-flex ">
                         <li type="button" class="nav-item dropdown btn btn-sm  ">
                             <a class="form-control nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $_SESSION['username']; ?>
+                                <?php echo $user_data['Username']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <!-- <li><a class="dropdown-item" href="Editprofile.php">Edit profile</a></li> -->
                                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
                             </ul>
                         </li>
-                        <a href="#"><img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
+                        <a href="#"><img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
 
                     </form>
                 </div>

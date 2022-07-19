@@ -4,7 +4,15 @@ session_start();
 
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("connection failed");
 include('../includes/config.php');
-$query = "select * from signup_table ";
+// $query = "select * from signup_table ";
+
+$user_id = $_SESSION['id'];
+$query = "SELECT * FROM Signup_table where id = '$user_id'";
+$result = mysqli_query($con, $query);
+// var_dump($result);
+if (mysqli_num_rows($result) > 0) {
+    $user_data = $result->fetch_assoc();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,7 +62,7 @@ $query = "select * from signup_table ";
               <a class="form-control nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <?php
           //  print_r($_SESSION);
-           echo $_SESSION["username"] ;
+           echo $user_data['Username'];
           //  die("vjhghj");
             ?>
             </a>
@@ -63,7 +71,7 @@ $query = "select * from signup_table ";
                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
               </ul>
             </li>
-	   <a href="#"><img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="not found" width="50px" style="border-radius:50%"></a>
+	   <a href="#"><img src="./photo/<?php echo $user_data['image']; ?>" alt="not found" width="50px" style="border-radius:50%"></a>
           </form>
         </div>
       </div>
