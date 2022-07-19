@@ -60,11 +60,7 @@ if (mysqli_num_rows($result) > 0) {
           <form class="d-flex d-grid gap-1 d-md-flex ">
             <li type="button" class="nav-item dropdown btn btn-sm">
               <a class="form-control nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php
-                //  print_r($_SESSION);
-                echo $user_data['Username'];
-                //  die("vjhghj");
-                ?>
+                <?php echo $user_data['Username']; ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="profile.php">Edit profile</a></li>
@@ -134,17 +130,17 @@ if (mysqli_num_rows($result) > 0) {
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboarddraft.php" onclick="return draftfun()" >
+            <a class="nav-link link-dark" href="dashboarddraft.php" onclick="return draftfun()">
               <i class="fa-solid fa-square-envelope"></i>&nbsp;draft
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardsent.php" >
+            <a class="nav-link link-dark" href="dashboardsent.php">
               <i class="fa-solid fa-paper-plane"></i>&nbsp;Sent
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardtrash.php" >
+            <a class="nav-link link-dark" href="dashboardtrash.php">
               <i class="fa-solid fa-trash-can"></i> &nbsp;Trash
             </a>
           </li>
@@ -264,29 +260,6 @@ if (mysqli_num_rows($result) > 0) {
 
   <!-- ******************************************************************************************************************* -->
   <script>
-    function inboxfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
-
-    }
-
     function draftfun() {
       var x = document.getElementById("read");
       if (x.style.display === "none") {
@@ -308,52 +281,6 @@ if (mysqli_num_rows($result) > 0) {
         z.style.display = "none";
       }
 
-    }
-
-    function sentfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
-
-    }
-
-
-    function trashfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "none";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "block";
-      } else {
-        z.style.display = "";
-      }
     }
   </script>
   <!-- *********************************************************************************************** -->

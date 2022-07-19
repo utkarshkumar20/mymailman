@@ -163,7 +163,7 @@ if (mysqli_num_rows($result) > 0) {
         </div>
         <br>
         <!-- ******************************************************************************************* -->
-        <div class="tab-pane active show" id="tab-1">
+        <div class="tab-pane active show">
 
 
           <div class="border border-dark ">
@@ -286,74 +286,74 @@ if (mysqli_num_rows($result) > 0) {
 
     }
 
-    function draftfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+    // function draftfun() {
+    //   var x = document.getElementById("read");
+    //   if (x.style.display === "none") {
+    //     x.style.display = "block";
+    //   } else {
+    //     x.style.display = "none";
+    //   }
 
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
+    //   var y = document.getElementById("unread");
+    //   if (y.style.display === "none") {
+    //     y.style.display = "block";
+    //   } else {
+    //     y.style.display = "none";
+    //   }
+    //   var z = document.getElementById("trash");
+    //   if (z.style.display === "none") {
+    //     z.style.display = "none";
+    //   } else {
+    //     z.style.display = "none";
+    //   }
 
-    }
+    // }
 
-    function sentfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+    // function sentfun() {
+    //   var x = document.getElementById("read");
+    //   if (x.style.display === "none") {
+    //     x.style.display = "block";
+    //   } else {
+    //     x.style.display = "none";
+    //   }
 
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
+    //   var y = document.getElementById("unread");
+    //   if (y.style.display === "none") {
+    //     y.style.display = "block";
+    //   } else {
+    //     y.style.display = "none";
+    //   }
+    //   var z = document.getElementById("trash");
+    //   if (z.style.display === "none") {
+    //     z.style.display = "none";
+    //   } else {
+    //     z.style.display = "none";
+    //   }
 
-    }
+    // }
 
 
-    function trashfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "none";
-      }
+    // function trashfun() {
+    //   var x = document.getElementById("read");
+    //   if (x.style.display === "none") {
+    //     x.style.display = "none";
+    //   } else {
+    //     x.style.display = "none";
+    //   }
 
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "none";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "block";
-      } else {
-        z.style.display = "";
-      }
-    }
+    //   var y = document.getElementById("unread");
+    //   if (y.style.display === "none") {
+    //     y.style.display = "none";
+    //   } else {
+    //     y.style.display = "none";
+    //   }
+    //   var z = document.getElementById("trash");
+    //   if (z.style.display === "none") {
+    //     z.style.display = "block";
+    //   } else {
+    //     z.style.display = "";
+    //   }
+    // }
   </script>
   <!-- *********************************************************************************************** -->
   <script>

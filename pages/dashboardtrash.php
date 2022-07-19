@@ -157,15 +157,13 @@ if (mysqli_num_rows($result) > 0) {
       <div class="main-1">
         <div class="d-flex gap-2">
           <span>&nbsp; &nbsp;<i class="far fa-square-full"></i></span>
-          <button type="button" class="btn btn-secondary" id="read">Read</button>
-          <button type="button" class="btn btn-secondary" id="unread">unread</button>
+          <!-- <button type="button" class="btn btn-secondary" id="read">Read</button> -->
+          <!-- <button type="button" class="btn btn-secondary" id="unread">unread</button> -->
           <button type="button" class="btn btn-secondary" id="trash">Trash</button>
         </div>
         <br>
         <!-- ******************************************************************************************* -->
-        <div class="tab-pane active show" id="tab-1">
-
-
+        <div class="tab-pane active show">
           <div class="border border-dark ">
             <h5>Trash</h5>
             <table class="table">
@@ -264,76 +262,7 @@ if (mysqli_num_rows($result) > 0) {
 
   <!-- ******************************************************************************************************************* -->
   <script>
-    function inboxfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
-
-    }
-
-    function draftfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
-
-    }
-
-    function sentfun() {
-      var x = document.getElementById("read");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-
-      var y = document.getElementById("unread");
-      if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
-      var z = document.getElementById("trash");
-      if (z.style.display === "none") {
-        z.style.display = "none";
-      } else {
-        z.style.display = "none";
-      }
-
-    }
-
-
+  
     function trashfun() {
       var x = document.getElementById("read");
       if (x.style.display === "none") {
