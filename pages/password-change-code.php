@@ -12,9 +12,9 @@
             if ($data) {
                 echo '<script type="text/javasczript">';
                 echo 'alert("password successfully changed");';
+                die("end here"); 
                 // echo 'window.location.href = "index.php";';
                 echo '</script>';
-                die("end here"); 
             } else {
                 echo '<script type="text/javascript">';
                 echo 'alert("Password is wrong");';
