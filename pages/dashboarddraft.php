@@ -129,12 +129,12 @@ if (mysqli_num_rows($result) > 0) {
 
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link link-dark" href="dashboard.php" onclick="return inboxfun()" data-bs-toggle="tab" href="#tab-1">
+            <a class="nav-link link-dark" href="dashboard.php" data-bs-toggle="tab" href="#tab-1">
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboarddraft.php" data-bs-toggle="tab" href="#tab-2">
+            <a class="nav-link link-dark" href="dashboarddraft.php" onclick="return draftfun()" data-bs-toggle="tab" href="#tab-2">
               <i class="fa-solid fa-square-envelope"></i>&nbsp;draft
             </a>
           </li>
@@ -167,7 +167,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
           <div class="border border-dark ">
-            <h5>Inbox</h5>
+            <h5>Draft</h5>
             <table class="table">
               <tbody>
                 <tr>
@@ -234,6 +234,7 @@ if (mysqli_num_rows($result) > 0) {
             </table>
           </div>
         </div>
+
         <!-- *****************************************paggination************************************************************** -->
         <div class="float-center">
           <nav aria-label="Page navigation example">

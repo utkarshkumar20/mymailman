@@ -129,7 +129,7 @@ if (mysqli_num_rows($result) > 0) {
 
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link link-dark" href="dashboard.php" onclick="return inboxfun()" data-bs-toggle="tab" href="#tab-1">
+            <a class="nav-link link-dark" href="dashboard.php" data-bs-toggle="tab" href="#tab-1">
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>
@@ -139,7 +139,7 @@ if (mysqli_num_rows($result) > 0) {
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardsent.php" data-bs-toggle="tab" href="#tab-3">
+            <a class="nav-link link-dark" href="dashboardsent.php" onclick="return sentfun()" data-bs-toggle="tab" href="#tab-3">
               <i class="fa-solid fa-paper-plane"></i>&nbsp;Sent
             </a>
           </li>
@@ -167,7 +167,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
           <div class="border border-dark ">
-            <h5>Inbox</h5>
+            <h5>Sent</h5>
             <table class="table">
               <tbody>
                 <tr>
