@@ -8,9 +8,9 @@
         $recemail = $_POST['RecEmail'];
         if ($_POST["password"] == $_POST["conpassword"]) {
             $query = "UPDATE Signup_table  SET password = '$password'  WHERE Username = '$recemail' ";
-            // die("end here");
             $data = mysqli_query($con, $query);
             if ($data) {
+                die("end here"); 
                 echo '<script type="text/javasczript">';
                 echo 'alert("password successfully changed");';
                 echo 'window.location.href = "index.php";';
