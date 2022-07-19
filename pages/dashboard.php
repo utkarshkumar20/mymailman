@@ -164,8 +164,6 @@ if (mysqli_num_rows($result) > 0) {
         <br>
         <!-- ******************************************************************************************* -->
         <div class="tab-pane active show">
-
-
           <div class="border border-dark ">
             <h5>Inbox</h5>
             <table class="table">
@@ -233,22 +231,22 @@ if (mysqli_num_rows($result) > 0) {
               </tbody>
             </table>
           </div>
-        </div>
-        <!-- *****************************************paggination************************************************************** -->
-        <div class="float-center">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
+          <!-- *****************************************paggination************************************************************** -->
+          <div class="float-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
