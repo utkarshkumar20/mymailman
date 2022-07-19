@@ -12,8 +12,8 @@ if (mysqli_num_rows($result) > 0) {
     $user_id = $result->fetch_assoc();
 // echo "<pre>";
 // print_r(($user_id));
-die("this example");
 }
+die("this example");
 
 ?>
 <!doctype html>
