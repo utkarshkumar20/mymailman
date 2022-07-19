@@ -11,7 +11,7 @@ include('../includes/config.php');
 
 if (isset($_POST['submit'])) {
     echo '<pre>';
-    print_r($_SERVER);
+    print_r($_SESSION);
     $fname = $_POST['fname'];
     $email = $_POST['email'];
     $recemail = $_POST['sec_email'];
