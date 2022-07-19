@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $id = $_SESSION['id'];
 
-    $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
-    // die(00);
+  echo $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+    die(00);
     $data = mysqli_query($con, $query);
     if ($data) {
         echo '<script type="text/javascript">';
