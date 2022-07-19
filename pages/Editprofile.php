@@ -115,7 +115,7 @@ if (isset($_GET["id"])) {
                                 <span id="usernames" class="text-danger"></span>
                             </div>
                             <br>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                            <!-- <input type="hidden" name="id" value="<?php echo $id; ?>" /> -->
                             <div class="col-4 d-flex">
                                 <input type="submit" name="submit" onclick="return validation();" class="btn btn-success" value="edit-profile">
 
