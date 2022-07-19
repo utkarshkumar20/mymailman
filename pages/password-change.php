@@ -93,11 +93,7 @@ if (isset($_GET["RecEmail"]))
                 document.getElementById('pass').innerHTML = " **please fill the password field";
                 return false;
             } 
-            // else {
-            //     document.getElementById('pass').innerHTML = "";
-            //     return false;
-
-            // }
+         
 
         }
     </script>
