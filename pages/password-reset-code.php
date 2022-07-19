@@ -21,9 +21,10 @@ require 'PHPMailer/src/SMTP.php';
 if (isset($_POST['password_reset_link'])) {
 
   $email = $_POST['RecEmail'];
+  $username=$_POST['username'];
   $mail = new PHPMailer(true);
 
-  $sql = "SELECT * FROM Signup_table WHERE sec_email = '$email'";
+  $sql = "SELECT * FROM Signup_table WHERE sec_email = '$email',Username='$username'";
   $result = mysqli_query($con, $sql);
   if (mysqli_num_rows($result) > 0) {
 
