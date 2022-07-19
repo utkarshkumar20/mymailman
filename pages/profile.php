@@ -6,12 +6,13 @@ session_start();
 // print_r($_SESSION);
 
 $user_id = $_SESSION['id'];
-echo $query = "SELECT * FROM signup_table where id = '$user_id'";
+ $query = "SELECT * FROM signup_table where id = '$user_id'";
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
     $user_data = $result->fetch_assoc();
 echo "<pre>";
 print_r(($user_data));
+die(" hh ");
 }
 die("this example");
 
