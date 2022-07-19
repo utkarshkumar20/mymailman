@@ -38,7 +38,7 @@ if (mysqli_num_rows($result) > 0) {
   <nav class="navbar navbar-expand-sm fixed-top bg-primary justify-content-around">
     <div class="container-fluid ">
       <div class="col-md-1 ">
-        <a class="navbar-brand" href="#"><img src="../image/logo1.png" alt="" width="100%" height="50"></a>
+        <a class="navbar-brand" href="dashboard.php"><img src="../image/logo1.png" alt="" width="100%" height="50"></a>
       </div>
       <div class="col-md-2 "></div>
       <div class="col-md-6">
