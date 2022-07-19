@@ -8,7 +8,7 @@ session_start();
 $user_id = $_SESSION['id'];
  $query = "SELECT * FROM signup_table where id = '$user_id'";
 $result = mysqli_query($con, $query);
-var_dump(mysqli_num_rows($result));
+var_dump($result);
 if (mysqli_num_rows($result) > 0) {
     $user_data = $result->fetch_assoc();
 echo "<pre>";
