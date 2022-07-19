@@ -5,10 +5,16 @@ require('../includes/config.php');
 session_start();
 print_r($_SESSION);
 
-$user_id=$_SESSION['id'];
+$user_id = $_SESSION['id'];
 echo $query = "SELECT * FROM signup_table where id = '$userid'";
-$result=mysqli_query($con,$query);
+$result = mysqli_query($con, $query);
+if (mysqli_num_rows($result) > 0) {
+    $user_id = $result->fetch_assoc();
+echo "<pre>";
+print_r(($user_id));
 die("this example");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,7 +71,7 @@ die("this example");
                                 <li><a class="dropdown-item" href="logout.php">logout</a></li>
                             </ul>
                         </li>
-                        <a href="#"><img src="./photo/<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
+                        <a href="#"><img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
                     </form>
                 </div>
             </div>
@@ -78,10 +84,10 @@ die("this example");
             <div class="col-md-6 col-sm-5 col-xs-12" id="profile">
                 <form action="#" onsubmit="" method="post" enctype="multipart/form-data">
                     <div class="row d-flex">
-                    <div>
-                                <h3 class="d-flex justify-content-center">Your profile</h3>
-                            </div>
-                    <div class="col-md-8 order-2 order-md-1">
+                        <div>
+                            <h3 class="d-flex justify-content-center">Your profile</h3>
+                        </div>
+                        <div class="col-md-8 order-2 order-md-1">
                             <div>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" value="<?php echo $_SESSION['fname']; ?>" disabled autocomplete="off">
                                 <span id="yourname" class="text-danger"></span>
@@ -109,7 +115,7 @@ die("this example");
                             </div>
                         </div>
                         <div class="col-md-4 order-1 order-md-2 ">
-                           <img src="./photo/<?php echo $_SESSION["photo"];?>" alt="profile_photo" width="100%" style="border-radius:50%">
+                            <img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
 
                         </div>
                     </div>
