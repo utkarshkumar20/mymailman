@@ -40,7 +40,7 @@ session_start();
                     </div>
                     <div class="col-md-12">
                         <input type="hidden" name="username" value="<?php echo $_SESSION["username"]; ?>">
-                        <input type="email" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail">
+                        <input type="text" class="form-control" placeholder="abc@xyz.com" id="RecEmail" name="RecEmail">
                         <span id="Emailid" class="text-danger"></span>
                     </div>
                     <br>
