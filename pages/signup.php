@@ -97,7 +97,7 @@
                             </label>
                         </div>
                         <div class="col-12">
-                            <input type="submit" onclick="return validation()" class="btn btn-success" name="signup" value="signup">
+                            <input type="submit" onclick="return validation();" class="btn btn-success" name="signup" value="signup">
 
                             <button type="button" class="btn btn-primary">
                                 <a href="index.php" style="text-decoration:none; color:whitesmoke;">Sign-in Instead</a></button>
