@@ -79,8 +79,8 @@ if (isset($_GET["id"])) {
     <!-- ******************************************************************************************************** -->
     <div class="container">
         <div class="row" id="box">
-            <div class="col-md-2 col-sm-2 col-xs-12"></div>
-            <div class="col-md-8 col-sm-5 col-xs-12" id="profile">
+            <div class="col-md-2 col-sm-4 col-xs-12"></div>
+            <div class="col-md-8 col-sm-4 col-xs-12" id="profile">
                 <form action="editprofiledb.php" method="post" enctype="multipart/form-data">
                     <?php
 
@@ -134,7 +134,7 @@ if (isset($_GET["id"])) {
                     </div>
                 </form>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-12"></div>
+            <div class="col-md-2 col-sm-4 col-xs-12"></div>
         </div>
     </div>
 
