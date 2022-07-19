@@ -129,22 +129,22 @@ if (mysqli_num_rows($result) > 0) {
 
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link link-dark" href="dashboard.php" data-bs-toggle="tab" href="#tab-1">
+            <a class="nav-link link-dark" href="dashboard.php" data-bs-toggle="tab" >
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboarddraft.php" onclick="return draftfun()" data-bs-toggle="tab" href="#tab-2">
+            <a class="nav-link link-dark" href="dashboarddraft.php" onclick="return draftfun()" data-bs-toggle="tab" >
               <i class="fa-solid fa-square-envelope"></i>&nbsp;draft
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardsent.php" data-bs-toggle="tab" href="#tab-3">
+            <a class="nav-link link-dark" href="dashboardsent.php" data-bs-toggle="tab" >
               <i class="fa-solid fa-paper-plane"></i>&nbsp;Sent
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardtrash.php" data-bs-toggle="tab" href="#tab-4">
+            <a class="nav-link link-dark" href="dashboardtrash.php" data-bs-toggle="tab" >
               <i class="fa-solid fa-trash-can"></i> &nbsp;Trash
             </a>
           </li>
