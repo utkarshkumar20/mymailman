@@ -3,12 +3,19 @@ session_start();
 
 include('../includes/config.php');
 
-if (isset($_GET["id"])) {
-    $id = base64_decode($_GET["id"]);
-    $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
+// if (isset($_GET["id"])) {
+//     $id = base64_decode($_GET["id"]);
+//     $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
+// }
+
+$user_id = $_SESSION['id'];
+$query = "SELECT * FROM Signup_table where id = '$user_id'";
+$result = mysqli_query($con, $query);
+// var_dump($result);
+if (mysqli_num_rows($result) > 0) {
+    $user_data = $result->fetch_assoc();
 }
-// print_r($_GET);
-// die("dddd");
+
 ?>
 
 <!doctype html>
@@ -89,22 +96,22 @@ if (isset($_GET["id"])) {
                                 <h3 class="d-flex justify-content">profile</h3>
                             </div>
                             <div>
-                                <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php echo $_SESSION['fname']; ?>" autocomplete="off">
+                                <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php $user_data['First_name']; ?>" autocomplete="off">
                                 <span id="yourname" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email(primary)" value="<?php echo $_SESSION['email']; ?>" autocomplete="off">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email(primary)" value="<?php echo $user_data['Email']; ?>" autocomplete="off">
                                 <span id="emailid" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="email" class="form-control" name="sec_email" id="sec_email" placeholder="Email(secondary)" value="<?php echo $_SESSION['secemail']; ?>" autocomplete="off">
+                                <input type="email" class="form-control" name="sec_email" id="sec_email" placeholder="Email(secondary)" value="<?php echo $user_data['sec_email']; ?>" autocomplete="off">
                                 <span id="sec_emailid" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $_SESSION['username']; ?>" autocomplete="off">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $user_data['Username']; ?>" autocomplete="off">
                                 <span id="usernames" class="text-danger"></span>
                             </div>
                             <br>
@@ -118,7 +125,7 @@ if (isset($_GET["id"])) {
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="./photo/<?php echo $_SESSION["photo"]; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
+                                    <img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
                             <br>

@@ -17,7 +17,23 @@ if (isset($_POST['submit'])) {
     $recemail = $_POST['sec_email'];
     $username = $_POST['username'];
     $id = $_SESSION['id'];
-    $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+    
+    $imgfile = $_FILES["uploadfile"]["name"];
+    $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
+    $allowed_extensions = array("jpg", "jpeg", "png", "gif");
+    if (!in_array($extension, $allowed_extensions)) {
+        header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+    } else {
+        //rename the image file
+        $imgnewfile = time() . "-" . $imgfile;
+        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
+            $user_image = $imgnewfile;
+            echo "";
+        } else {
+            echo "not uploaded";
+        }
+    }
+    $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' ,image='$user_image' where Id = '$id' ";
     // die(00);
     $data = mysqli_query($con, $query);
     if ($data) {
