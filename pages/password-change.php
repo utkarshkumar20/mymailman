@@ -50,7 +50,7 @@ if (isset($_GET["RecEmail"]))
                     <h3 class="d-flex justify-content">Change password</h3>
 
                     <div class="col-md-11 d-flex">
-                        <input type="text" class="form-control" name="password" id="password" placeholder="Enter the new password" autocomplete="off" required />
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter the new password" autocomplete="off" required />
                         <span>
                             <!-- <i class="far fa-question-circle offset-11"></i></span> -->
                     </div>
@@ -58,7 +58,7 @@ if (isset($_GET["RecEmail"]))
                     <br>
                     <div class="col-md-11">
 
-                        <input type="text" class="form-control" name="conpassword" id="conpassword" placeholder="Confirm-Password" autocomplete="off" required />
+                        <input type="password" class="form-control" name="conpassword" id="conpassword" placeholder="Confirm-Password" autocomplete="off" required />
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
