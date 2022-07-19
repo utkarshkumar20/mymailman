@@ -1,11 +1,11 @@
 <?php
 include('../includes/config.php');
-
+session_start();
 // if (isset($_GET["RecEmail"]) && isset($_GET["action"]) && ($_GET["action"]=="reset") && !isset($_POST["action"]))
 if (isset($_GET["RecEmail"]))
 {
   $recemail = base64_decode($_GET["RecEmail"]);
-  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE sec_email='".$recemail."';" );
+  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE sec_email= '.$recemail.' ");
   
 } 
 // print_r($_GET);
