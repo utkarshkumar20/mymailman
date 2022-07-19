@@ -4,8 +4,8 @@ include('../includes/config.php');
 // if (isset($_GET["RecEmail"]) && isset($_GET["action"]) && ($_GET["action"]=="reset") && !isset($_POST["action"]))
 if (isset($_GET["RecEmail"]))
 {
-  $email = base64_decode($_GET["RecEmail"]);
-  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE sec_email='".$email."';" );
+  $recemail = base64_decode($_GET["RecEmail"]);
+  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE sec_email='".$recemail."';" );
   
 } 
 // print_r($_GET);
@@ -62,7 +62,7 @@ if (isset($_GET["RecEmail"]))
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="hidden" name="RecEmail" value="<?php echo $email;?>"/>
+                    <input type="hidden" name="RecEmail" value="<?php echo $recemail;?>"/>
                     <input type="submit" onclick="return validation();" name="password_update" value="Reset Password" class="btn btn-primary">
                 </form>
             </div>

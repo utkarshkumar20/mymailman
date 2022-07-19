@@ -11,7 +11,7 @@
             // echo "<br>";
              $recemail = $_POST['RecEmail'];
             // echo "<br>";
-             $code = md5(rand());
+            //  $code = md5(rand());
             
             if ($_POST["password"] == $_POST["conpassword"]) {
                  $query = "UPDATE Signup_table  SET password = $password  WHERE sec_email = '$recemail'";
