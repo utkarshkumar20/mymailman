@@ -3,7 +3,6 @@ session_start();
 
 include('../includes/config.php');
 
-// if (isset($_GET["RecEmail"]) && isset($_GET["action"]) && ($_GET["action"]=="reset") && !isset($_POST["action"]))
 if (isset($_GET["id"])) {
     $id = base64_decode($_GET["id"]);
     $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
@@ -115,7 +114,7 @@ if (isset($_GET["id"])) {
                                 <span id="usernames" class="text-danger"></span>
                             </div>
                             <br>
-                            <!-- <input type="hidden" name="id" value="<?php echo $id; ?>" /> -->
+                            <!-- <input type="hidden" name="id" value="<?php ?>" /> -->
                             <div class="col-4 d-flex">
                                 <input type="submit" name="submit" onclick="return validation();" class="btn btn-success" value="edit-profile">
 
