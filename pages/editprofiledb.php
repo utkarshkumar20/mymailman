@@ -9,16 +9,16 @@ include('../includes/config.php');
 // $con = new mysqli("localhost", "root", "hestabit", "mailman") or die("cnnection failed");
 // $id=$_GET['Id'];
 
-echo " password ----".$dbPassword;
-die(" ttttttttttttttttttttttttt ");
+// echo " password ----".$dbPassword;
+// die(" ttttttttttttttttttttttttt ");
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
     $email = $_POST['email'];
     $recemail = $_POST['sec_email'];
     $username = $_POST['username'];
     $id = $_SESSION['id'];
-    echo $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
-    die(00);
+    $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+    // die(00);
     $data = mysqli_query($con, $query);
     if ($data) {
         echo '<script type="text/javascript">';
