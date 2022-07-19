@@ -10,6 +10,7 @@ include('../includes/config.php');
 // $id=$_GET['Id'];
 
 if (isset($_POST['submit'])) {
+    echo '<pre>';
     print_r($_POST);
     echo $fname = $_POST['fname'];
     echo $email = $_POST['email'];
