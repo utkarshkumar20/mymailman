@@ -28,8 +28,7 @@ if (isset($_POST['password_reset_link'])) {
   $result = mysqli_query($con, $sql);
   if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
-    print_r($row);
-    die;
+    $email = $row['sec_email'];
     $output = '<p>Dear user,</p>';
     $output .= '<p>Please click on the following link to reset your password.</p>';
     $output .= '<p>-------------------------------------------------------------</p>';
