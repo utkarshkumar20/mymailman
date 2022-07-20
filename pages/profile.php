@@ -113,7 +113,7 @@ if (mysqli_num_rows($result) > 0) {
 
                             <div class="col-12 gap-2 d-flex">
                                 <a href="Editprofile.php" type="button" class="form-control btn btn-success">Edit profile</a>
-                                <a href="password-change.php" type="button" class="form-control btn btn-primary">Change pasword</a>
+                                <a href="editpassword.php" type="button" class="form-control btn btn-primary">Change pasword</a>
                             </div>
                         </div>
                         <div class="col-md-4 order-1 order-md-2 ">
