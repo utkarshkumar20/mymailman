@@ -107,10 +107,12 @@
     width: auto !important;
    
 }
-    
+fieldset {
+    padding: -1px !important;
+    }  
 #fsbox{
     border: 1px solid black !important;
-    padding: -1px !important;
+    
 }
  /* ***************************************************profilephoto******************************** */
  #imageUpload {
