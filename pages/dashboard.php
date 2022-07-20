@@ -168,72 +168,72 @@ if (mysqli_num_rows($result) > 0) {
             Inbox
           </legend>
           <!-- <div class="border border-dark "> -->
-          <!-- <h5></h5> -->
-          <table class="table">
-            <tbody>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- </div> -->
+           
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="far fa-square-full"></i></th>
+                  <td>sender@manmail.com</td>
+                  <td>mailing subject</td>
+                  <td>DD/MM/YYYY</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- </div> -->
         </fieldset>
 
         <div class="float-center">

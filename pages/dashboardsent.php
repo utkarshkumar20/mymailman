@@ -163,11 +163,11 @@ if (mysqli_num_rows($result) > 0) {
         </div>
         <br>
         <!-- ******************************************************************************************* -->
-        <div class="tab-pane active show" id="tab-1">
-
-
-          <div class="border border-dark ">
-            <h5>Sent</h5>
+        <fieldset id="fsbox">
+          <legend>
+          Sent
+          </legend>
+          <!-- <div class="border border-dark "> -->
             <table class="table">
               <tbody>
                 <tr>
@@ -232,8 +232,7 @@ if (mysqli_num_rows($result) > 0) {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
+        </fieldset>
         <!-- *****************************************paggination************************************************************** -->
         <div class="float-center">
           <nav aria-label="Page navigation example">
