@@ -168,7 +168,7 @@ if (mysqli_num_rows($result) > 0) {
             <legend>
               <h5>Inbox</h5>
             </legend>
-            <div class="border border-dark ">
+            <!-- <div class="border border-dark "> -->
               <!-- <h5></h5> -->
               <table class="table">
                 <tbody>
@@ -234,7 +234,7 @@ if (mysqli_num_rows($result) > 0) {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            <!-- </div> -->
           </fieldset>
         </div>
         <div class="float-center">
