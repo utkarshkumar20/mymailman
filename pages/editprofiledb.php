@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
     $allowed_extensions = array("jpg", "jpeg", "png", "gif");
     if (!in_array($extension, $allowed_extensions)) {
-        header('location:editprofile.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+        header('location:Editprofile.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
     } else {
         //rename the image file
         $imgnewfile = time() . "-" . $imgfile;
