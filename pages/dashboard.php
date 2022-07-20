@@ -254,8 +254,11 @@ if (mysqli_num_rows($result) > 0) {
         </div>
         <div class="modal-footer d-flex">
           <!-- <input type="file" placeholder="Attachment" value="<i class='fal fa-plus'></i>Attachment"> -->
-          <input type="file" name="uploadfile" id="imageupload" required />
-          <span id="upload_file" class="text-danger"></span>
+          <label for="Upload" class="profile text-success">Attachment</label>
+          <input id="Upload" type="file" name="profile_photo" placeholder="Attachment" required="" capture>
+          <!-- <image for="imageupload"> -->
+          <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
+          <!-- <span id="upload_file" class="text-danger"></span> -->
           <input class="btn btn-primary" type="submit" name="send" value="Send" />
           <!-- <button type="button" class="btn btn-secondary">Send</button> -->
           <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
