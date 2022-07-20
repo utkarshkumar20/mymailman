@@ -238,6 +238,9 @@ if (mysqli_num_rows($result) > 0) {
           </div>
 
           <div class="col">
+            <input class="form-control form-control-lg" type="email" name="Subject" id="subject" placeholder="SUBJECT">
+          </div>
+          <div class="col">
             <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
           </div>
 
