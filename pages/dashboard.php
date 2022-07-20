@@ -31,7 +31,12 @@ if (mysqli_num_rows($result) > 0) {
 
   <title>Mailman!</title>
 </head>
-
+<style>
+  #imageUpload
+{
+    display: none;
+}
+</style>
 <body>
   <!-- ******************************************************************************************************** -->
   <!-- header -->
@@ -254,8 +259,8 @@ if (mysqli_num_rows($result) > 0) {
         </div>
         <div class="modal-footer d-flex">
           <!-- <input type="file" placeholder="Attachment" value="<i class='fal fa-plus'></i>Attachment"> -->
-          <label for="Upload" class="profile text-success">Attachment</label>
-          <input id="Upload" type="file" name="profile_photo" placeholder="Attachment" required="" capture>
+          <label for="imageUpload" class="profile text-success">Attachment</label>
+          <input id="imageUpload" type="file" name="profile_photo" placeholder="Attachment" required="" capture>
           <!-- <image for="imageupload"> -->
           <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
           <!-- <span id="upload_file" class="text-danger"></span> -->
