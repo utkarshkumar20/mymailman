@@ -108,8 +108,8 @@
    
 }
 fieldset{
-     padding: -1px !important;
-     border: 1px !important;
+     /* padding: -1px !important;
+     border: 1px !important; */
      border-color: black !important;
 }
  /* ***************************************************profilephoto******************************** */
