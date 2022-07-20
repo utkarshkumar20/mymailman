@@ -102,29 +102,16 @@
      background: linear-gradient(150deg, rgb(224, 195, 252), rgb(142, 197, 252));
  }
  /* *********************************************************************************** */
- /* legend {
-    font: 15pt/0 'Averia Serif Libre';
-    margin: auto;
-    padding: 0 4px;
+ legend {
     float: unset !important;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 0.5rem;
-    font-size: calc(1.275rem + .3vw);
-    line-height: inherit;
+    width: auto !important;
+   
 }
 fieldset{
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    border: 10px solid #10101000;
-    border-color: black !important;
-    box-sizing: border-box;
-    grid-area: 1 / 1;
-    padding: 20px;
-    width: inherit;
-} */
+     padding: -1px !important;
+     border: 1px !important;
+     border-color: black !important;
+}
  /* ***************************************************profilephoto******************************** */
  #imageUpload {
      display: none;
