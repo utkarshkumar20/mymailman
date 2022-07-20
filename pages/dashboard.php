@@ -222,8 +222,8 @@ if (mysqli_num_rows($result) > 0) {
   </div>
 
   <!-- Modal -->
-
-  <div class="modal fade text-primary" action="compose.php" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<form action="compose.php">
+  <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -252,9 +252,9 @@ if (mysqli_num_rows($result) > 0) {
           </div>
 
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer d-flex">
           <button type="file"><i class="fal fa-plus"></i>Attachment</button>
-          <input class="form-control bg bg-primary" type="submit" name="send" value="Send" />
+          <input class="form-control bg bg-primary w-100" type="submit" name="send" value="Send" />
           <!-- <button type="button" class="btn btn-secondary">Send</button> -->
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
@@ -262,7 +262,7 @@ if (mysqli_num_rows($result) > 0) {
       </div>
     </div>
   </div>
-
+  </form>
   <!-- *****************************************paggination************************************************************** -->
 
 
