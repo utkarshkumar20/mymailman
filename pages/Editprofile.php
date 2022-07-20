@@ -74,7 +74,7 @@ if (mysqli_num_rows($result) > 0) {
                             </ul>
                         </li>
                         <a href="#"><img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="50px" style="border-radius:50%"></a>
-
+                        <span id="photos" class="text-danger"><?php echo $_GET['image_err']; ?></span>
                     </form>
                 </div>
             </div>
