@@ -102,7 +102,7 @@
      background: linear-gradient(150deg, rgb(224, 195, 252), rgb(142, 197, 252));
  }
  /* *********************************************************************************** */
- legend {
+ /* legend {
     font: 15pt/0 'Averia Serif Libre';
     margin: auto;
     padding: 0 4px;
@@ -124,7 +124,7 @@ fieldset{
     grid-area: 1 / 1;
     padding: 20px;
     width: inherit;
-}
+} */
  /* ***************************************************profilephoto******************************** */
  #imageUpload {
      display: none;
