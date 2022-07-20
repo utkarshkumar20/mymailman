@@ -28,9 +28,9 @@ if (isset($_POST['submit'])) {
         $imgnewfile = time() . "-" . $imgfile;
         if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
-            echo "";
-        } else {
-            echo "not uploaded";
+        //     echo "uploaded successfull";
+        // } else {
+        //     echo "not uploaded";
         }
     }
     $query = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' ,image='$user_image' where Id = '$id' ";

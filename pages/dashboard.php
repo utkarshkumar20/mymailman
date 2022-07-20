@@ -165,7 +165,8 @@ if (mysqli_num_rows($result) > 0) {
         <!-- ******************************************************************************************* -->
         <div class="tab-pane active show">
           <div class="border border-dark ">
-            <h5>Inbox</h5>
+            <!-- <h5></h5> -->
+            <fieldset><legend><h5>Inbox</h5></legend></fieldset>
             <table class="table">
               <tbody>
                 <tr>
