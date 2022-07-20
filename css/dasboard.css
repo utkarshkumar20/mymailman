@@ -107,7 +107,7 @@
     width: auto !important;
    
 }
-fieldset .fsbox{
+.fsbox{
      /* padding: -1px !important;
      border: 1px !important; */
     border-color: black !important;
