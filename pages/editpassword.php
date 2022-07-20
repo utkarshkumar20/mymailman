@@ -1,13 +1,21 @@
 <?php
-include('../includes/config.php');
 session_start();
 
-if (isset($_GET["RecEmail"])) {
-    $recemail = base64_decode($_GET["RecEmail"]);
-    $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE sec_email= '.$recemail.' ");
+include('../includes/config.php');
+
+// if (isset($_GET["id"])) {
+//     $id = base64_decode($_GET["id"]);
+//     $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
+// }
+
+$user_id = $_SESSION['id'];
+$query = "SELECT * FROM Signup_table where id = '$user_id'";
+$result = mysqli_query($con, $query);
+// var_dump($result);
+if (mysqli_num_rows($result) > 0) {
+    $user_data = $result->fetch_assoc();
 }
-// print_r($_GET);
-// die("dddd");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,7 +49,7 @@ if (isset($_GET["RecEmail"])) {
         <div class="row" id="box">
             <div class="col-md-1 col-sm-1 col-xs-12"></div>
             <div class="col-md-5 col-sm-5 col-xs-12" id="form-box-1">
-                <form action="" method="POST" autocomplete="off">
+                <form action="editpassworddb.php" method="POST" autocomplete="off">
                     <!-- <input type="hidden" name="password_code"> -->
                     <!-- <input type="hidden" name="action" value="update" /> -->
 
@@ -60,7 +68,7 @@ if (isset($_GET["RecEmail"])) {
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="hidden" name="RecEmail" value="<?php echo $recemail; ?>" />
+                    <input type="hidden" name="username" value="<?php echo $user_data['Username'];  ?>" />
                     <input type="submit" onclick="return validation();" name="password_update" value="Reset Password" class="btn btn-primary">
                 </form>
             </div>
