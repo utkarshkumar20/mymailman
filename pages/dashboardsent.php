@@ -219,44 +219,48 @@ if (mysqli_num_rows($result) > 0) {
   </div>
 
   <!-- Modal -->
-  <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="col">
-            <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
+  <form action="compose.php">
+    <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
+            <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <div class="modal-body">
+            <div class="col">
+              <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
+            </div>
 
-          <div class="col">
-            <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
+            <div class="col">
+              <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
+            </div>
+
+            <div class="col">
+              <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
+            </div>
+
+            <div class="col">
+              <input class="form-control form-control-lg" type="text" name="Subject" id="subject" placeholder="SUBJECT">
+            </div>
+
+            <div class="col">
+              <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
+            </div>
+
           </div>
+          <div class="modal-footer d-flex">
 
-          <div class="col">
-            <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
+            <label for="imageUpload" class="profile text-success"><i class='fal fa-plus'></i>Attachment</label>
+            <input id="imageUpload" type="file" name="profile_photo" placeholder="Attachment" required="" capture>
+            <input class="btn btn-primary" type="submit" name="send" value="Send" />
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
           </div>
-
-          <div class="col">
-            <input class="form-control form-control-lg" type="email" name="Subject" id="subject" placeholder="SUBJECT">
-          </div>
-          <div class="col">
-            <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button><i class="fal fa-plus"></i>Attachment</button>
-          <button type="button" class="btn btn-secondary">Send</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
         </div>
       </div>
     </div>
-  </div>
-
+  </form>
   <!-- if (doWork() === true) {
   console.log('✅ function returns true');
 } -->
