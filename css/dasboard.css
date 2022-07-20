@@ -109,15 +109,15 @@
 }
 
 fieldset {
-    min-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
+    /* min-width: 0 !important; */
+    /* padding: 0 !important; */
+    /* margin: 0 !important; */
+    /* border: 0 !important; */
      border-color: black ;
 }
 #fsbox{
-    border: 1px solid black;
-    padding: -1px;
+    border: 1px solid black !important;
+    padding: -1px !important;
 }
  /* ***************************************************profilephoto******************************** */
  #imageUpload {
