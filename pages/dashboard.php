@@ -164,94 +164,99 @@ if (mysqli_num_rows($result) > 0) {
         <br>
         <!-- ******************************************************************************************* -->
         <div class="tab-pane active show">
-          <div class="border border-dark ">
-            <!-- <h5></h5> -->
-            <fieldset><legend><h5>Inbox</h5></legend></fieldset>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="float-center">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="1">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-
+          <fieldset>
+            <legend>
+              <h5>Inbox</h5>
+            </legend>
+            <div class="border border-dark ">
+              <!-- <h5></h5> -->
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-square-full"></i></th>
+                    <td>sender@manmail.com</td>
+                    <td>mailing subject</td>
+                    <td>DD/MM/YYYY</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </fieldset>
         </div>
+        <div class="float-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+
       </div>
     </div>
+  </div>
   </div>
 
   <!-- *****************************************paggination************************************************************** -->
