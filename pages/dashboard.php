@@ -201,7 +201,7 @@ if (mysqli_num_rows($result) > 0) {
 
         <div class="float-center">
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
+            <ul class="pagination justify-content-center">
               <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="1">Previous</a>
               </li>

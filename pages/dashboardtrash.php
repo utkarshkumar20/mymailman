@@ -88,58 +88,20 @@ if (mysqli_num_rows($result) > 0) {
             <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Compose mail
             </button>
-
-            <!-- Modal -->
-            <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
-                    </div>
-
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
-                    </div>
-
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
-                    </div>
-
-                    <div class="col">
-                      <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="10" placeholder="Message"></textarea>
-                    </div>
-
-                  </div>
-                  <div class="modal-footer">
-                    <button><i class="fal fa-plus"></i>Attachment</button>
-                    <button type="button" class="btn btn-secondary">Send</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            </a>
           </li>
-
           <!--**********************************************************  -->
           <li>
-            <a class="nav-link link-dark" href="dashboard.php" >
+            <a class="nav-link link-dark" href="dashboard.php">
               <i class="fa-solid fa-inbox"></i>&nbsp;Inbox
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboarddraft.php" >
+            <a class="nav-link link-dark" href="dashboarddraft.php">
               <i class="fa-solid fa-square-envelope"></i>&nbsp;draft
             </a>
           </li>
           <li>
-            <a class="nav-link link-dark" href="dashboardsent.php" >
+            <a class="nav-link link-dark" href="dashboardsent.php">
               <i class="fa-solid fa-paper-plane"></i>&nbsp;Sent
             </a>
           </li>
@@ -168,76 +130,76 @@ if (mysqli_num_rows($result) > 0) {
             Trash
           </legend>
           <!-- <div class="border border-dark "> -->
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-                <tr>
-                  <th scope="row"><i class="far fa-square-full"></i></th>
-                  <td>sender@manmail.com</td>
-                  <td>mailing subject</td>
-                  <td>DD/MM/YYYY</td>
-                </tr>
-              </tbody>
-            </table>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="far fa-square-full"></i></th>
+                <td>sender@manmail.com</td>
+                <td>mailing subject</td>
+                <td>DD/MM/YYYY</td>
+              </tr>
+            </tbody>
+          </table>
         </fieldset>
 
         <!-- *****************************************paggination************************************************************** -->
         <div class="float-center">
           <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
+            <ul class="pagination justify-content-center">
               <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Previous</a>
               </li>
@@ -254,7 +216,41 @@ if (mysqli_num_rows($result) > 0) {
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
+          </div>
 
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
+          </div>
+
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
+          </div>
+
+          <div class="col">
+            <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button><i class="fal fa-plus"></i>Attachment</button>
+          <button type="button" class="btn btn-secondary">Send</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- if (doWork() === true) {
   console.log('✅ function returns true');
@@ -263,7 +259,6 @@ if (mysqli_num_rows($result) > 0) {
 
   <!-- ******************************************************************************************************************* -->
   <script>
-  
     function trashfun() {
       var x = document.getElementById("read");
       if (x.style.display === "none") {
