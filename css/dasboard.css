@@ -58,7 +58,10 @@
      top: 80px !important;
  }
 
- .modal-backdrop {
+ .modal-content {
+ background-color: #d6d5d2ee!important ;
+  } 
+  .modal-backdrop {
      position: fixed !important;
     top: 100% !important;
  }

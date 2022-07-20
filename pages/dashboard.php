@@ -111,7 +111,7 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
 
                     <div class="col">
-                      <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="10" placeholder="Message"></textarea>
+                      <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
                     </div>
 
                   </div>
@@ -230,28 +230,29 @@ if (mysqli_num_rows($result) > 0) {
                 </tr>
               </tbody>
             </table>
-            <div class="float-center">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-left">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="1">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
           </div>
-          
+          <div class="float-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- *****************************************paggination************************************************************** -->
 
 
