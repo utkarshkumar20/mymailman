@@ -253,10 +253,10 @@ if (mysqli_num_rows($result) > 0) {
 
         </div>
         <div class="modal-footer d-flex">
-          <input type="file" value="<i class='fal fa-plus'></i>Attachment">
-          <input class="btn btn-secondary" type="submit" name="send" value="Send" />
+          <input type="file" placeholder="Attachment" value="<i class='fal fa-plus'></i>Attachment">
+          <input class="btn btn-primary" type="submit" name="send" value="Send" />
           <!-- <button type="button" class="btn btn-secondary">Send</button> -->
-          <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
 
         </div>
       </div>
