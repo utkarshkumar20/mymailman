@@ -104,26 +104,26 @@
  /* *********************************************************************************** */
  legend {
     font: 15pt/0 'Averia Serif Libre';
-    /* margin: auto; */
+    margin: auto;
     padding: 0 4px;
     float: unset !important;
-    /* width: 100%; */
+    width: 100%;
     padding: 0;
     margin-bottom: 0.5rem;
     font-size: calc(1.275rem + .3vw);
     line-height: inherit;
 }
 fieldset{
-    /* min-width: 0; */
-    /* padding: 0; */
-    /* margin: 0; */
-    /* border: 0; */
-    /* border: 10px solid #10101000; */
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: 10px solid #10101000;
     border-color: black !important;
-    /* box-sizing: border-box; */
-    /* grid-area: 1 / 1; */
-    /* padding: 20px; */
-    /* width: inherit; */
+    box-sizing: border-box;
+    grid-area: 1 / 1;
+    padding: 20px;
+    width: inherit;
 }
  /* ***************************************************profilephoto******************************** */
  #imageUpload {
