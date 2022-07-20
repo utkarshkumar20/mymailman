@@ -13,6 +13,7 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
   $user_data = $result->fetch_assoc();
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -219,46 +220,48 @@ if (mysqli_num_rows($result) > 0) {
       </div>
     </div>
   </div>
-  
+
   <!-- Modal -->
-  <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
-                    </div>
 
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
-                    </div>
+  <div class="modal fade text-primary" action="compose.php" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
+          </div>
 
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
-                    </div>
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
+          </div>
 
-                    <div class="col">
-                      <input class="form-control form-control-lg" type="email" name="Subject" id="subject" placeholder="SUBJECT">
-                    </div>
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
+          </div>
 
-                    <div class="col">
-                      <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
-                    </div>
+          <div class="col">
+            <input class="form-control form-control-lg" type="email" name="Subject" id="subject" placeholder="SUBJECT">
+          </div>
 
-                  </div>
-                  <div class="modal-footer">
-                    <button><i class="fal fa-plus"></i>Attachment</button>
-                    <button type="button" class="btn btn-secondary">Send</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <div class="col">
+            <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
+          </div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="file"><i class="fal fa-plus"></i>Attachment</button>
+          <input class="form-control bg bg-primary" type="submit" name="send" value="Send" />
+          <!-- <button type="button" class="btn btn-secondary">Send</button> -->
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- *****************************************paggination************************************************************** -->
 
