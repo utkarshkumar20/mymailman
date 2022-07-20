@@ -108,9 +108,9 @@
     width: auto !important;
    
 }
-/* fieldset { */
-    /* padding: -1px 0 0 0 !important; */
-    /* }   */
+fieldset {
+    padding: -1px !important;
+    }  
 #fsbox{
     border: 1px solid black !important;
     
