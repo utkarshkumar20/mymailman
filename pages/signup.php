@@ -151,7 +151,6 @@ include('../includes/config.php');
                 first_name = false;
             } else {
                 document.getElementById('firstname').innerHTML = "";
-                first_name = true;
             }
 
             // ***********************************************************************
