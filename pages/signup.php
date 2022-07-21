@@ -65,7 +65,7 @@ include('../includes/config.php');
                             <div id="profile-container">
                                 <image for="uploadfile" src="../image/profile.png">
                             </div>
-                            <input type="file" name="uploadfile" id="imageupload" required />
+                            <input type="file" name="uploadfile" id="imageupload" onchange="return ValidateFileUpload()" required />
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
                             <!-- <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required /> -->
                             <span id="photos" class="text-danger"></span>
@@ -266,7 +266,7 @@ include('../includes/config.php');
         }
     </script>
     <SCRIPT type="text/javascript">
-        function Validation() {
+        function ValidateFileUpload() {
             var FileUploadPath = document.getElementById('imageupload');
 
             //To check if user upload any file
