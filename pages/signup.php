@@ -66,7 +66,7 @@ include('../includes/config.php');
                                 <image for="dataFile" src="../image/profile.png">
                             </div>
                             <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
-                            <Label for="filechoser" class="btn btn-primary" >Upload picture</Label>
+                            <Label for="filechooser" class="btn btn-primary" >Upload picture</Label>
                             <input type="file" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" />
                             <span id="photos" class="text-danger"></span>
                         </div>
