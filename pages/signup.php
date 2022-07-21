@@ -291,7 +291,7 @@ include('../includes/config.php');
             //To check if user upload any file
             if (FileUploadPath == '') {
                 document.getElementById('photos').innerHTML = " **Please upload an image";
-                
+
             } else {
                 var Extension = FileUploadPath.substring(
                     FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
@@ -310,15 +310,14 @@ include('../includes/config.php');
                         }
 
                         reader.readAsDataURL(fuData.files[0]);
+                        document.getElementById('photos').innerHTML = "";
                     }
-
                 }
 
                 //The file upload is NOT an image
                 else {
-                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ";                    
-                    return false;
-            }
+                    document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
+                }
             }
         }
     </SCRIPT>
