@@ -317,7 +317,8 @@ include('../includes/config.php');
                 //The file upload is NOT an image
                 else {
                 document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ";                    
-                }
+                    return false;
+            }
             }
         }
     </SCRIPT>
