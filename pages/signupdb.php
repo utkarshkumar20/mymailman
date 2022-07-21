@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -42,7 +43,9 @@ if (isset($_POST['signup'])) {
         $run = mysqli_query($con, $query);
         $data = mysqli_fetch_array($run);
         if (mysqli_num_rows($run) > 0) {
-            echo '<script>swal("Good job!", "You are Already Registerd!", "success");</script>';
+            ?>
+            <script>swal("Good job!", "You are Already Registerd!", "success");</script>';
+            <?php
             // echo '<script>alert("You are Already Registerd");</script>';
         } else {
             $code = rand(999999, 111111);
@@ -51,18 +54,24 @@ if (isset($_POST['signup'])) {
             $run = mysqli_query($con, $query);
             if ($run) {
                 if ($run) {
+                    ?>
+                    <script>swal("Good job!", "user_registered_successfully!", "success");</script>';
+                    <?php
 
-                    echo '<script>swal("Good job!", "user_registered_successfully!", "success");</script>';
+                    // echo '<script>swal("Good job!", "user_registered_successfully!", "success");</script>';
                     // echo '<script type="text/javascript">';
                     // echo 'alert("user_registered_successfully!");';
                     // echo 'window.location.href = "index.php";';
                     // echo '</script>';
                 } else {
-                    echo '<script type="text/javascript">';
-                    echo 'swal("Good job!", "some error occur please signup again!", "error");';
-                    // echo 'alert("some error occur please signup sagain!");';
-                    echo 'window.location.href = "signup.php";';
-                    echo '</script>';
+                    ?>
+                    <script>swal("Good job!", "some error occur please signup again!", "success");</script>';
+                    <?php
+                    // echo '<script type="text/javascript">';
+                    // echo 'swal("Good job!", "some error occur please signup again!", "error");';
+                    // // echo 'alert("some error occur please signup again!");';
+                    // echo 'window.location.href = "signup.php";';
+                    // echo '</script>';
                 }
             }
         }
