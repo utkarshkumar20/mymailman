@@ -57,7 +57,7 @@ if (isset($_POST['signup'])) {
                 if ($run) {
                     $_SESSION['status']="user_registered_successfully";
                     $_SESSION['status_code']="success";
-                    header('Location:index.php');
+                    header('Location:footer.php');
                     // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "user_registered_successfully!!", "success")</script>';
 
 
@@ -69,7 +69,7 @@ if (isset($_POST['signup'])) {
                 } else {
                     $_SESSION['status']="some error occur please signup again!";
                     $_SESSION['status_code']="error";
-                    header('Location:signup.php');
+                    header('Location:index.php');
             // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "some error occur please signup again!!", "error")</script>';
 
                    
