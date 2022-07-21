@@ -30,10 +30,13 @@ if (isset($_POST['sublogin'])) {
         // $_SESSION["Email"] = $email;
         header("Location:dashboard.php");
     } else {
-        echo '<script type="text/javascript">';
-        echo 'alert("failed to login,please check Email and Password! ");';
-	echo 'window.location.href = "index.php";';
-	echo '</script>';
+        $_SESSION['status'] = "failed to login,please check Email and Password!";
+        $_SESSION['status_code'] = "error";
+        header('Location:index.php');
+    //     echo '<script type="text/javascript">';
+    //     echo 'alert("failed to login,please check Email and Password! ");';
+	// echo 'window.location.href = "index.php";';
+	// echo '</script>';
     }
 }
 ?>
