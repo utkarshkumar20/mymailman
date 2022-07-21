@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -60,12 +61,12 @@
             </div>
             <div class="col-md-1 col-sm-1 col-xs-12"></div>
         </div>
-    </div> 
+    </div>
 
     <!-- *************************************************validation************************************************* -->
     <!-- validation for empty field    -->
     <script>
-            function validation() {
+        function validation() {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
             // if (email.length == "" && password.length == "") {
@@ -92,13 +93,26 @@
 
 
         }
-    
     </script>
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../js/sweetalert.js"></script>
+    <?php
+    if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+    ?>
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                // text: "!",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                button: "ok.done",
+            });
+        </script>
+    <?php  }
+    unset($_SESSION['status']);
+    ?>
+
 </body>
 
 </html>

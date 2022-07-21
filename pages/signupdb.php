@@ -37,57 +37,54 @@ if (isset($_POST['signup'])) {
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';
-
     } else {
         $query = "SELECT * FROM Signup_table WHERE Email='$email' || Username='$username'";
         $run = mysqli_query($con, $query);
         $data = mysqli_fetch_array($run);
         if (mysqli_num_rows($run) > 0) {
-            $_SESSION['status']="You are Already Registerd";
-                    $_SESSION['status_code']="error";
-                    header('Location:signup.php');
+            $_SESSION['status'] = "You are Already Registerd";
+            $_SESSION['status_code'] = "error";
+            header('Location:signup.php');
             //   echo '<script>alert("You are Already Registerd");</script>';
-        
+
         } else {
             $code = rand(999999, 111111);
             $query = "INSERT INTO Signup_table (First_name,Last_name,Username,image,Email,sec_email,password,status,role,code)";
             $query .= " VALUES ('$fname','$lname','$username','$user_image','$email','$RecEmail','$password','NULL','signup_table','$code')";
             $run = mysqli_query($con, $query);
             if ($run) {
-                if ($run) {
-                    $_SESSION['status']="user_registered_successfully";
-                    $_SESSION['status_code']="success";
-                    header('Location:signup.php');
-                    $_SESSION['status_location']="okk.done";
-                    header('Location:index.php');
-
-                    // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "user_registered_successfully!!", "success")</script>';
+                $_SESSION['status'] = "user_registered_successfully";
+                $_SESSION['status_code'] = "success";
+                header('Location:index.php');
 
 
-                    // echo '<script>swal("Good job!", "user_registered_successfully!", "success");</script>';
-                    // echo '<script type="text/javascript">';
-                    // echo 'alert("user_registered_successfully!");';
-                    // echo 'window.location.href = "index.php";';
-                    // echo '</script>';
-                } else {
-                    $_SESSION['status']="some error occur please signup again!";
-                    $_SESSION['status_code']="error";
-                    header('Location:signup.php');
-                    $_SESSION['status_location']="okk.done";
-                    // header('Location:index.php');
-            // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "some error occur please signup again!!", "error")</script>';
+                // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "user_registered_successfully!!", "success")</script>';
 
-                   
-                    // echo '<script type="text/javascript">';
-                    // echo 'swal("Good job!", "some error occur please signup again!", "error");';
-                    // // echo 'alert("some error occur please signup again!");';
-                    // echo 'window.location.href = "signup.php";';
-                    // echo '</script>';
-                }
+
+                // echo '<script>swal("Good job!", "user_registered_successfully!", "success");</script>';
+                // echo '<script type="text/javascript">';
+                // echo 'alert("user_registered_successfully!");';
+                // echo 'window.location.href = "index.php";';
+                // echo '</script>';
+            } else {
+                $_SESSION['status'] = "some error occur please signup again!";
+                $_SESSION['status_code'] = "error";
+                header('Location:signup.php');
+
+                // header('Location:index.php');
+                // echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">swal("Good job!", "some error occur please signup again!!", "error")</script>';
+
+
+                // echo '<script type="text/javascript">';
+                // echo 'swal("Good job!", "some error occur please signup again!", "error");';
+                // // echo 'alert("some error occur please signup again!");';
+                // echo 'window.location.href = "signup.php";';
+                // echo '</script>';
             }
         }
     }
 }
+
 
                     // echo '<script type="text/javascript">
                     // $(document).ready(function(){
