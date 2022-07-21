@@ -19,8 +19,8 @@ if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $passwordconfirm = $_POST['passwordconfirm'];
 
-    $filename = $_FILES["dataFile"]["name"];
-    $tempname = $_FILES["dataFile"]["tmp_name"];
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $_FILES["uploadfile"]["tmp_name"];
     $user_image = "./photo/" . $filename;
     move_uploaded_file($tempname, $user_image);
 

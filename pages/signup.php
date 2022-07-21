@@ -63,11 +63,11 @@ include('../includes/config.php');
                         </div>
                         <div class="col-md-4 order-1 order-md-2">
                             <div id="profile-container">
-                                <image for="dataFile" src="../image/profile.png">
+                                <image for="uploadfile" src="../image/profile.png">
                             </div>
                             <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
-                            <input type="file" placeholder="Upload picture" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" required />
+                            <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required />
                             <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
@@ -303,22 +303,23 @@ include('../includes/config.php');
                     Extension == "jpeg" || Extension == "jpg") {
 
                     // To Display
-                    if (fuData.files && fuData.files[0]) {
-                        var reader = new FileReader();
+                    // if (fuData.files && fuData.files[0]) {
+                    //     var reader = new FileReader();
 
-                        reader.onload = function(e) {
-                            $user_image.attr('./photo/', e.target.result);
-                        }
+                    //     reader.onload = function(e) {
+                    //         $user_image.attr('./photo/', e.target.result);
+                    //     }
 
-                        reader.readAsDataURL(fuData.files[0]);
-                        document.getElementById('photos').innerHTML = "";
-                    }
+                    reader.readAsDataURL(fuData.files[0]);
+                    document.getElementById('photos').innerHTML = "";
                 }
+
 
                 //The file upload is NOT an image
                 else {
                     document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
                 }
+
             }
         }
     </SCRIPT>
