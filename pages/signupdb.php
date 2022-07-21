@@ -51,12 +51,14 @@ if (isset($_POST['signup'])) {
             if ($run) {
                 if ($run) {
                     echo '<script type="text/javascript">';
-                    echo 'alert("user_registered_successfully!");';
+                    echo 'swal("Good job!", "user_registered_successfully!", "success");';
+                    // echo 'alert("user_registered_successfully!");';
                     echo 'window.location.href = "index.php";';
                     echo '</script>';
                 } else {
                     echo '<script type="text/javascript">';
-                    echo 'alert("some error occur please signup again!");';
+                    echo 'swal("Good job!", "some error occur please signup again!", "error");';
+                    // echo 'alert("some error occur please signup sagain!");';
                     echo 'window.location.href = "signup.php";';
                     echo '</script>';
                 }
