@@ -67,7 +67,7 @@ include('../includes/config.php');
                             </div>
                             <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
-                            <input type="file"class="primary" placeholder="Upload picture" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" required />
+                            <input type="file" placeholder="Upload picture" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" required />
                             <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
@@ -307,7 +307,7 @@ include('../includes/config.php');
                         var reader = new FileReader();
 
                         reader.onload = function(e) {
-                            $('#blah').attr('src', e.target.result);
+                            $user_image.attr('./photo/', e.target.result);
                         }
 
                         reader.readAsDataURL(fuData.files[0]);
