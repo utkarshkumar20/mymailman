@@ -128,8 +128,10 @@ if (mysqli_num_rows($result) > 0) {
                                     <img src="./photo/<?php echo $user_data['image']; ?>" alt="please attach the profile photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
-                            <br>
-                            <input type="file" name="uploadfile" id="imageupload" capture />
+                            <br> 
+                            <label for="imageupload" class="btn btn-danger border offset-1">&nbsp;Upload picture&nbsp;</label>
+                            <input type="file" name="uploadfile" id="imageupload" required />
+                            <!-- <input type="file" name="uploadfile" id="imageupload" capture /> -->
                         </div>
                     </div>
                 </form>
