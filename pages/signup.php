@@ -68,7 +68,7 @@ include('../includes/config.php');
                             <input type="file" name="uploadfile" id="imageupload" required />
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
                             <!-- <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required /> -->
-                            <span id="photos" class="text-danger"><?php echo $_GET['image_err']; ?></span>
+                            <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
@@ -265,7 +265,22 @@ include('../includes/config.php');
 
         }
     </script>
+    <SCRIPT type="text/javascript">
+        function Validation() {
+            var FileUploadPath = document.getElementById('imageupload');
 
+            //To check if user upload any file
+            if (FileUploadPath == '') {
+                document.getElementById('photos').innerHTML = " **Please upload an image";
+
+            } else if (Extension == "gif" || Extension == "png" || Extension == "bmp" ||
+                Extension == "jpeg" || Extension == "jpg") {
+                document.getElementById('photos').innerHTML = "";
+            } else {
+                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
+            }
+        }
+    </SCRIPT>
     <!-- *********************profile image************************************************* -->
     <!-- <script>
         $("#imageupload").click(function(e) {
@@ -284,5 +299,5 @@ include('../includes/config.php');
         });
     </script> -->
     <!-- ********************************************************************************************************** -->
-  
+
     <?php include('footer.php') ?>
