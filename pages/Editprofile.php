@@ -125,7 +125,7 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
+                                    <img src="./photo/<?php echo $user_data['image']; ?>" alt="please attach the profile photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
                             <br>

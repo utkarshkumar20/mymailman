@@ -40,20 +40,11 @@ if (isset($_POST['submit'])) {
         $_SESSION['status'] = "Record has been updated";
         $_SESSION['status_code'] = "success";
         header('Location:profile.php');
-        // echo '<script type="text/javascript">';
-        // echo 'alert("Record update");';
-        // echo 'window.location.href = "profile.php";';
-        // echo '</script>';
-        // die(000);
-        // exit(0);
+       
     } else {
         $_SESSION['status'] = "Record update failed";
         $_SESSION['status_code'] = "error";
         header('Location:Editprofile.php');
-        // echo '<script type="text/javascript">';
-        // echo 'alert("Record update failed");';
-        // echo 'window.location.href = "Editprofile.php";';
-        // echo '</script>';
-        // echo "failed";
+      
     }
 }
