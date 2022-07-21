@@ -65,20 +65,23 @@ if (isset($_POST['password_reset_link'])) {
     // $mail->AltBody = '';
 
     $mail->send();
-
-    echo '<script type="text/javascript">';
-    echo 'alert("message has been sent to the users!");';
-    echo 'window.location.href = "index.php";';
-    echo '</script>';
-    // echo '<script>alert("message has been sent to the users")</script>';
-    // header("location:index.php");
+    $_SESSION['status'] = "Message has been sent to the users!";
+    $_SESSION['status_code'] = "Success";
+    header('Location:index.php');
+    // echo '<script type="text/javascript">';
+    // echo 'alert("");';
+    // echo 'window.location.href = "index.php";';
+    // echo '</script>';
+  
   } else {
-    echo '<script type="text/javascript">';
-    echo 'alert("Email Not Found! please try again");';
-    echo 'window.location.href = "password-reset.php";';
-    echo '</script>';
-    // echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
-    // header("location:password-reset.php");
+    $_SESSION['status'] = "Email Not Found! please try again";
+    $_SESSION['status_code'] = "error";
+    header('Location:password-reset.php');
+    // echo '<script type="text/javascript">';
+    // echo 'alert("Email Not Found! please try again");';
+    // echo 'window.location.href = "password-reset.php";';
+    // echo '</script>';
+    
   }
   // catch (Exception $e) {
 }

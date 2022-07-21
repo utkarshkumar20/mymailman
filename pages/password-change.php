@@ -2,15 +2,13 @@
 include('../includes/config.php');
 session_start();
 // if (isset($_GET["RecEmail"]) && isset($_GET["action"]) && ($_GET["action"]=="reset") && !isset($_POST["action"]))
-if (isset($_GET["RecEmail"]))
-{
-  $recemail = base64_decode($_GET["RecEmail"]);
-  $query = mysqli_query($con,"SELECT * FROM Signup_table WHERE sec_email= '.$recemail.' ");
-  
-} 
+if (isset($_GET["RecEmail"])) {
+    $recemail = base64_decode($_GET["RecEmail"]);
+    $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE sec_email= '.$recemail.' ");
+}
 // print_r($_GET);
 // die("dddd");
- ?>
+?>
 <!doctype html>
 <html lang="en">
 
@@ -46,7 +44,7 @@ if (isset($_GET["RecEmail"]))
                 <form action="password-change-code.php" method="POST" autocomplete="off">
                     <!-- <input type="hidden" name="password_code"> -->
                     <!-- <input type="hidden" name="action" value="update" /> -->
-  
+
                     <h3 class="d-flex justify-content">Change password</h3>
 
                     <div class="col-md-11 d-flex">
@@ -62,7 +60,7 @@ if (isset($_GET["RecEmail"]))
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="hidden" name="RecEmail" value="<?php echo $recemail;?>"/>
+                    <input type="hidden" name="RecEmail" value="<?php echo $recemail; ?>" />
                     <input type="submit" onclick="return validation();" name="password_update" value="Reset Password" class="btn btn-primary">
                 </form>
             </div>
@@ -92,15 +90,30 @@ if (isset($_GET["RecEmail"]))
             } else if (password == "") {
                 document.getElementById('pass').innerHTML = " **please fill the password field";
                 return false;
-            } 
-         
+            }
+
 
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-   
-   
+    <script src="../js/sweetalert.js"></script>
+
+    <?php
+    if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+    ?>
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                button: "ok",
+            });
+        </script>
+    <?php  }
+    unset($_SESSION['status']);
+    ?>
+
+
 </body>
 
 </html>

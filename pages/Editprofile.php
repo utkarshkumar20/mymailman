@@ -88,7 +88,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="col-md-2 col-sm-4 col-xs-12"></div>
             <div class="col-md-8 col-sm-4 col-xs-12" id="profile">
                 <form action="editprofiledb.php" method="post" enctype="multipart/form-data">
-                  
+
 
                     <div class="row">
                         <div class="col-md-8 order-2 order-md-1">
@@ -217,8 +217,7 @@ if (mysqli_num_rows($result) > 0) {
             if (sec_email == "") {
                 document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
                 r_email = false;
-            }
-            else if (sec_email.indexOf('@') <= 0) {
+            } else if (sec_email.indexOf('@') <= 0) {
                 document.getElementById('secemail').innerHTML = " **@ invalid postion";
                 r_email = false;
 
@@ -235,7 +234,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-            if (first_name != true ||  user_name != true || user_email != true || r_email != true) {
+            if (first_name != true || user_name != true || user_email != true || r_email != true) {
                 // alert("some error occur! please retry!");
                 return false;
             }
@@ -245,7 +244,7 @@ if (mysqli_num_rows($result) > 0) {
     </script>
 
     <!-- ************************************************validation******************************************* -->
-<!-- 
+    <!-- 
     <script>
         function validation() {
 
@@ -319,6 +318,21 @@ if (mysqli_num_rows($result) > 0) {
     <!-- ******************************************************************************************************** -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../js/sweetalert.js"></script>
+
+    <?php
+    if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+    ?>
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                button: "ok",
+            });
+        </script>
+    <?php  }
+    unset($_SESSION['status']);
+    ?>
 
 </body>
 

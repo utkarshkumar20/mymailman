@@ -10,16 +10,22 @@
             $query = "UPDATE Signup_table  SET password = '$password'  WHERE Username = '$recemail' ";
             $data = mysqli_query($con, $query);
             if ($data) {
-                echo '<script type="text/javascript">';
-                echo 'alert("password successfully changed");';
-                echo 'window.location.href = "index.php";';
-                echo '</script>';
+                $_SESSION['status'] = "password successfully changed";
+                $_SESSION['status_code'] = "success";
+                header('Location:index.php');
+                // echo '<script type="text/javascript">';
+                // echo 'alert("password successfully changed");';
+                // echo 'window.location.href = "index.php";';
+                // echo '</script>';
             } else {
+                $_SESSION['status'] = "Password is wrong or not matched";
+                $_SESSION['status_code'] = "error";
+                header('Location:password-change.php');
                 // die("end here"); 
-                echo '<script type="text/javascript">';
-                echo 'alert("Password is wrong");';
-                echo 'window.location.href = "password-change.php";';
-                echo '</script>';
+                // echo '<script type="text/javascript">';
+                // echo 'alert("Password is wrong");';
+                // echo 'window.location.href = "password-change.php";';
+                // echo '</script>';
             }
         }
     }
