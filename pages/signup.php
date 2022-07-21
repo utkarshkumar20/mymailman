@@ -65,10 +65,10 @@ include('../includes/config.php');
                             <div id="profile-container">
                                 <image for="uploadfile" src="../image/profile.png">
                             </div>
-                            <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
+                            <input type="file" name="uploadfile" id="imageupload" required />
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
-                            <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required />
-                            <span id="photos" class="text-danger"></span>
+                            <!-- <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required /> -->
+                            <span id="photos" class="text-danger"><?php echo $_GET['image_err']; ?></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
@@ -284,43 +284,5 @@ include('../includes/config.php');
         });
     </script> -->
     <!-- ********************************************************************************************************** -->
-    <SCRIPT type="text/javascript">
-        function ValidateFileUpload() {
-            var fuData = document.getElementById('fileChooser');
-            var FileUploadPath = fuData.value;
-
-            //To check if user upload any file
-            if (FileUploadPath == '') {
-                document.getElementById('photos').innerHTML = " **Please upload an image";
-
-            } else {
-                var Extension = FileUploadPath.substring(
-                    FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
-
-                //The file uploaded is an image
-
-                if (Extension == "gif" || Extension == "png" || Extension == "bmp" ||
-                    Extension == "jpeg" || Extension == "jpg") {
-
-                    // To Display
-                    // if (fuData.files && fuData.files[0]) {
-                    //     var reader = new FileReader();
-
-                    //     reader.onload = function(e) {
-                    //         $user_image.attr('./photo/', e.target.result);
-                    //     }
-
-                    reader.readAsDataURL(fuData.files[0]);
-                    document.getElementById('photos').innerHTML = "";
-                }
-
-
-                //The file upload is NOT an image
-                else {
-                    document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
-                }
-
-            }
-        }
-    </SCRIPT>
+  
     <?php include('footer.php') ?>

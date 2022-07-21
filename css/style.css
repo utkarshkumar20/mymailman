@@ -18,7 +18,7 @@ a{
 }
 
 .pt-0 {
-margin: 10vh auto;
+    margin: 10vh auto;
 border-radius: 20px;
 border: 2px solid rgb(0, 0, 0);
 
@@ -68,8 +68,11 @@ border: 2px solid rgb(0, 0, 0);
 }
 
 /* ***************************************************profilephoto******************************** */
-#fileChooser {
-    /* display: none; */
+#imageUpload {
+    display: none;
+}
+
+#profileImage {
     cursor: pointer;
 }
 
