@@ -20,12 +20,12 @@ if (isset($_POST['signup'])) {
     $passwordconfirm = $_POST['passwordconfirm'];
 
     $imgfile = $_FILES["uploadfile"]["name"];
-    // $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
-    // $allowed_extensions = array("jpg", "jpeg", "png", "gif");
-    // if (!in_array($extension, $allowed_extensions)) {
-    //     header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
-    // } else {
-    //     //rename the image file
+    $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
+    $allowed_extensions = array("jpg", "jpeg", "png", "gif"); 
+    if (!in_array($extension, $allowed_extensions)) {
+        header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+    } else {
+        //rename the image file
         $imgnewfile = time() . "-" . $imgfile;
         if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
@@ -33,7 +33,7 @@ if (isset($_POST['signup'])) {
         } else {
             echo "not uploaded";
         }
-    // }
+    }
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';

@@ -30,10 +30,6 @@ include('../includes/config.php');
         </div>
     </nav>
     <!-- ******************************************************************************************************** -->
-
-
-    <!-- ******************************************************************************************************** -->
-
     <div class="container">
         <div class="row" id="box">
             <div class="col-md-3 col-sm-3 col-xs-12"></div>
@@ -63,11 +59,10 @@ include('../includes/config.php');
                         </div>
                         <div class="col-md-4 order-1 order-md-2">
                             <div id="profile-container">
-                                <image for="uploadfile" src="../image/profile.png">
+                                <image id="profileImage" src="../image/profile.png">
                             </div>
-                            <input type="file" name="uploadfile" id="imageupload"  required />
-                            <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
-                            <!-- <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required /> -->
+                            <label for="imageupload" class="btn-primary border offset-1">&nbsp;Upload picture&nbsp;</label>
+                            <input type="file" name="uploadfile" id="imageupload" required />
                             <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
@@ -126,17 +121,27 @@ include('../includes/config.php');
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var username = document.getElementById('username').value;
-            var FileUploadPath = document.getElementById('imageupload');
+            var FileUploadPath = document.getElementById('imageupload').value;
             var Email = document.getElementById('email').value;
             var RecEmail = document.getElementById('RecEmail').value;
             var password = document.getElementById('password').value;
             var confirmpassword = document.getElementById('passwordconfirm').value;
+            var allowed_ext = ["png", "jpg"];
+
+            Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+
+            // console.log(" hh -- " + FileUploadPath);
+            // console.log(" sdddd -- " + Extension);
+            // if ("png" == Extension) {
+            //     console.log(" true ")
+            // }
+            // // alert("5555 ");
 
             first_name = '';
             last_name = '';
             user_name = '';
             user_email = '';
-            user_photo= '';
+            user_photo = '';
             r_email = '';
             user_pass = '';
             user_cpass = '';
@@ -190,15 +195,17 @@ include('../includes/config.php');
 
             if (FileUploadPath == "") {
                 document.getElementById('photos').innerHTML = " **Please upload an image";
-                user_photo=false;
-            } else if (Extension != "gif" || Extension != "png" || Extension != "bmp" ||
-                Extension != "jpeg" || Extension != "jpg") {
-                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG ";
-                user_photo =false;
+                user_photo = false;
             } else {
-                document.getElementById('photos').innerHTML = " ";
-                user_photo=true;
+                if (allowed_ext.indexOf(Extension) !== -1) {
+                    document.getElementById('photos').innerHTML = "";
+                    user_photo = true;
+                    // alert('match');
+                } else {
+                    document.getElementById('photos').innerHTML = " **photo only allows file types of PNG, JPG ";
+                }
             }
+
 
 
             // ******************************************************************
@@ -273,7 +280,7 @@ include('../includes/config.php');
 
             }
 
-            if (first_name != true || last_name != true || user_name != true || user_email != true || user_photo!= true || r_email != true || user_pass != true || user_cpass != true) {
+            if (first_name != true || last_name != true || user_name != true || user_photo != true || user_email != true || r_email != true || user_pass != true || user_cpass != true) {
                 // alert("some error occur! please retry!");
                 return false;
             }
@@ -281,39 +288,22 @@ include('../includes/config.php');
 
         }
     </script>
-    <!-- <SCRIPT type="text/javascript">
-        function ValidateFileUpload() {
-            var FileUploadPath = document.getElementById('imageupload');
-
-            //To check if user upload any file
-            if (FileUploadPath == '') {
-                document.getElementById('photos').innerHTML = " **Please upload an image";
-
-            } else if (Extension == "gif" || Extension == "png" || Extension == "bmp" ||
-                Extension == "jpeg" || Extension == "jpg") {
-                document.getElementById('photos').innerHTML = "";
-            } else {
-                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
-            }
-        }
-    </SCRIPT> -->
     <!-- *********************profile image************************************************* -->
-    <!-- <script>
-        $("#imageupload").click(function(e) {
-            $("#imageUpload").click();
+    <script>
+        $("#profileImage").click(function(e) {
+            $("#imageupload").click();
         });
 
         function fasterPreview(uploader) {
             if (uploader.files && uploader.files[0]) {
-                $('#imageupload').attr('src',
+                $('#profileImage').attr('src',
                     window.URL.createObjectURL(uploader.files[0]));
             }
         }
-
-        $("#imageUpload").change(function() {
+        $("#imageupload").change(function() {
             fasterPreview(this);
         });
-    </script> -->
+    </script>
     <!-- ********************************************************************************************************** -->
 
     <?php include('footer.php') ?>

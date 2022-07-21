@@ -68,12 +68,13 @@ border: 2px solid rgb(0, 0, 0);
 }
 
 /* ***************************************************profilephoto******************************** */
-#imageUpload {
+#imageupload{
     display: none;
 }
 
 #profileImage {
     cursor: pointer;
+    
 }
 
 #profile-container {
