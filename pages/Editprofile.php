@@ -129,7 +129,7 @@ if (mysqli_num_rows($result) > 0) {
                                 </div>
                             </div>
                             <br> 
-                            <label for="imageupload" class="btn btn-danger border offset-1">&nbsp;Upload picture&nbsp;</label>
+                            <label for="imageupload" class="btn btn-danger border ">change picture</label>
                             <input type="file" name="uploadfile" id="imageupload" required />
                             <!-- <input type="file" name="uploadfile" id="imageupload" capture /> -->
                         </div>
