@@ -65,7 +65,7 @@ include('../includes/config.php');
                             <div id="profile-container">
                                 <image for="uploadfile" src="../image/profile.png">
                             </div>
-                            <input type="file" name="uploadfile" id="imageupload" onchange="return ValidateFileUpload()" required />
+                            <input type="file" name="uploadfile" id="imageupload"  required />
                             <!-- <Label for="filechooser" class="btn btn-primary" >Upload picture</Label> -->
                             <!-- <input type="file" placeholder="Upload picture" name="uploadfile" id="fileChooser" onchange="return ValidateFileUpload()" required /> -->
                             <span id="photos" class="text-danger"></span>
@@ -126,6 +126,7 @@ include('../includes/config.php');
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var username = document.getElementById('username').value;
+            var FileUploadPath = document.getElementById('imageupload');
             var Email = document.getElementById('email').value;
             var RecEmail = document.getElementById('RecEmail').value;
             var password = document.getElementById('password').value;
@@ -135,6 +136,7 @@ include('../includes/config.php');
             last_name = '';
             user_name = '';
             user_email = '';
+            user_photo= '';
             r_email = '';
             user_pass = '';
             user_cpass = '';
@@ -184,6 +186,20 @@ include('../includes/config.php');
                 document.getElementById('usernames').innerHTML = "";
                 user_name = true;
             }
+            // ***********************************************************************
+
+            if (FileUploadPath == "") {
+                document.getElementById('photos').innerHTML = " **Please upload an image";
+                user_photo=false;
+            } else if (Extension != "gif" || Extension != "png" || Extension != "bmp" ||
+                Extension != "jpeg" || Extension != "jpg") {
+                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG ";
+                user_photo =false;
+            } else {
+                document.getElementById('photos').innerHTML = " ";
+                user_photo=true;
+            }
+
 
             // ******************************************************************
             if (Email == "") {
@@ -257,7 +273,7 @@ include('../includes/config.php');
 
             }
 
-            if (first_name != true || last_name != true || user_name != true || user_email != true || r_email != true || user_pass != true || user_cpass != true) {
+            if (first_name != true || last_name != true || user_name != true || user_email != true || user_photo!= true || r_email != true || user_pass != true || user_cpass != true) {
                 // alert("some error occur! please retry!");
                 return false;
             }
@@ -265,7 +281,7 @@ include('../includes/config.php');
 
         }
     </script>
-    <SCRIPT type="text/javascript">
+    <!-- <SCRIPT type="text/javascript">
         function ValidateFileUpload() {
             var FileUploadPath = document.getElementById('imageupload');
 
@@ -280,7 +296,7 @@ include('../includes/config.php');
                 document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG  ";
             }
         }
-    </SCRIPT>
+    </SCRIPT> -->
     <!-- *********************profile image************************************************* -->
     <!-- <script>
         $("#imageupload").click(function(e) {
