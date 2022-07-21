@@ -19,21 +19,26 @@ if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $passwordconfirm = $_POST['passwordconfirm'];
 
-    $imgfile = $_FILES["uploadfile"]["name"];
-    $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
-    $allowed_extensions = array("jpg", "jpeg", "png", "gif");
-    if (!in_array($extension, $allowed_extensions)) {
-        header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
-    } else {
-        //rename the image file
-        $imgnewfile = time() . "-" . $imgfile;
-        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
-            $user_image = $imgnewfile;
-            echo "";
-        } else {
-            echo "not uploaded";
-        }
-    }
+    $filename = $_FILES["dataFile"]["name"];
+    $tempname = $_FILES["dataFile"]["tmp_name"];
+    $user_image = "./photo/" . $filename;
+    move_uploaded_file($tempname, $user_image);
+
+    // $imgfile = $_FILES["uploadfile"]["name"];
+    // $extension = pathinfo($imgfile, PATHINFO_EXTENSION);
+    // $allowed_extensions = array("jpg", "jpeg", "png", "gif");
+    // if (!in_array($extension, $allowed_extensions)) {
+    //     header('location:signup.php?image_err=Invalid format. Only jpg / jpeg/ png /gif format allowed');
+    // } else {
+    //     //rename the image file
+    //     $imgnewfile = time() . "-" . $imgfile;
+    //     if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
+    //         $user_image = $imgnewfile;
+    //         echo "";
+    //     } else {
+    //         echo "not uploaded";
+    //     }
+    // }
 
     if ($email == '' || $fname == '' || $lname == '' || $RecEmail == '' || $password == '') {
         echo '<script>alert("please fill all field");</script>';

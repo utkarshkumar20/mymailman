@@ -63,11 +63,11 @@ include('../includes/config.php');
                         </div>
                         <div class="col-md-4 order-1 order-md-2">
                             <div id="profile-container">
-                                <image for="imageupload" src="../image/profile.png">
+                                <image for="dataFile" src="../image/profile.png">
                             </div>
-                            <input type="file" name="uploadfile" id="imageupload" required />
-
-                            <span id="photos" class="text-danger"><?php echo $_GET['image_err']; ?></span>
+                            <!-- <input type="file" name="uploadfile" id="imageupload" required /> -->
+                            <input type="file" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" />
+                            <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
@@ -125,7 +125,6 @@ include('../includes/config.php');
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var username = document.getElementById('username').value;
-            // var Uploadfile = document.getElementById('uploadfile').value;
             var Email = document.getElementById('email').value;
             var RecEmail = document.getElementById('RecEmail').value;
             var password = document.getElementById('password').value;
@@ -134,7 +133,6 @@ include('../includes/config.php');
             first_name = '';
             last_name = '';
             user_name = '';
-            // photo = "";
             user_email = '';
             r_email = '';
             user_pass = '';
@@ -181,24 +179,11 @@ include('../includes/config.php');
                 document.getElementById('usernames').innerHTML = " **invalid user-name Given";
                 user_name = false;
 
-            }
-            // if (!preg_match('#^[a-zA-Z][a-zA-Z0-9@.+-_]{2,100}$#', username)) {
-            //     document.getElementById('usernames').innerHTML = " **invalid  username Given";
-            //     // return false;
-            // }
-            else {
+            } else {
                 document.getElementById('usernames').innerHTML = "";
                 user_name = true;
             }
 
-            // if (uploadfile == "") {
-            //     document.getElementById('upload_file').innerHTML = " **please attach photo";
-            //     photo = false;
-            //     // return false;
-            // } else {
-            //     document.getElementById('upload_file').innerHTML = "";
-            //     photo = true;
-            // }
             // ******************************************************************
             if (Email == "") {
                 document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
@@ -219,29 +204,13 @@ include('../includes/config.php');
                 document.getElementById('EmailAdd').innerHTML = "";
                 user_email = true;
             }
-            // if ((Email.charAt(Email.length - 4) != '.') && (Email.charAt(Email.length - 3) != '.')) {
-            //     document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
-            //     // return false;
-            // }
-            // else {
-            //     document.getElementById('EmailAdd').innerHTML = "";
-
-            // }
-
             // ************************************************************************
             if (RecEmail == "") {
                 document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
                 r_email = false;
 
                 // return false;
-            }
-            // else if ((RecEmail.length <= 2) || (RecEmail.length >= 20)) {
-            // document.getElementById('secemail').innerHTML = " **Email must be between 2 to 20";
-            // r_email = false;
-
-            // return false;
-            // }
-            else if (RecEmail.indexOf('@') <= 0) {
+            } else if (RecEmail.indexOf('@') <= 0) {
                 document.getElementById('secemail').innerHTML = " **@ invalid postion";
                 r_email = false;
 
@@ -297,7 +266,7 @@ include('../includes/config.php');
     </script>
 
     <!-- *********************profile image************************************************* -->
-    <script>
+    <!-- <script>
         $("#imageupload").click(function(e) {
             $("#imageUpload").click();
         });
@@ -312,8 +281,44 @@ include('../includes/config.php');
         $("#imageUpload").change(function() {
             fasterPreview(this);
         });
-    </script>
+    </script> -->
     <!-- ********************************************************************************************************** -->
+    <SCRIPT type="text/javascript">
+        function ValidateFileUpload() {
+            var fuData = document.getElementById('fileChooser');
+            var FileUploadPath = fuData.value;
 
+            //To check if user upload any file
+            if (FileUploadPath == '') {
+                document.getElementById('photos').innerHTML = " **Please upload an image";
+                
+            } else {
+                var Extension = FileUploadPath.substring(
+                    FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+
+                //The file uploaded is an image
+
+                if (Extension == "gif" || Extension == "png" || Extension == "bmp" ||
+                    Extension == "jpeg" || Extension == "jpg") {
+
+                    // To Display
+                    if (fuData.files && fuData.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            $('#blah').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(fuData.files[0]);
+                    }
+
+                }
+
+                //The file upload is NOT an image
+                else {
+                document.getElementById('photos').innerHTML = "**Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ";                    
+                }
+            }
+        }
+    </SCRIPT>
     <?php include('footer.php') ?>
-    
