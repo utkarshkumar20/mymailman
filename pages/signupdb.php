@@ -50,11 +50,24 @@ if (isset($_POST['signup'])) {
             $run = mysqli_query($con, $query);
             if ($run) {
                 if ($run) {
-                    echo '<script type="text/javascript">';
+
+                    echo '<script type="text/javascript">
+                    $(document).ready(function(){
+                      swal({
+                        position: "top-end",
+                        type: "success",
+                        title: "user_registered_successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                    });
+                    
+                    </script> ';
+                    // echo '<script type="text/javascript">';
                     // echo 'swal("Good job!", "user_registered_successfully!", "success");';
-                    echo 'alert("user_registered_successfully!");';
-                    echo 'window.location.href = "index.php";';
-                    echo '</script>';
+                    // echo 'alert("user_registered_successfully!");';
+                    // echo 'window.location.href = "index.php";';
+                    // echo '</script>';
                 } else {
                     echo '<script type="text/javascript">';
                     // echo 'swal("Good job!", "some error occur please signup again!", "error");';
