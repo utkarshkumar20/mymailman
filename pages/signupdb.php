@@ -44,7 +44,7 @@ if (isset($_POST['signup'])) {
         $data = mysqli_fetch_array($run);
         if (mysqli_num_rows($run) > 0) {
             ?>
-            <script>swal("Good job!", "You are Already Registerd!", "success");</script>';
+            <script>swal("Good job!", "You are Already Registerd!", "success");</script>
             <?php
             // echo '<script>alert("You are Already Registerd");</script>';
         } else {
@@ -55,7 +55,7 @@ if (isset($_POST['signup'])) {
             if ($run) {
                 if ($run) {
                     ?>
-                    <script>swal("Good job!", "user_registered_successfully!", "success");</script>';
+                    <script>swal("Good job!", "user_registered_successfully!", "success");</script>
                     <?php
 
                     // echo '<script>swal("Good job!", "user_registered_successfully!", "success");</script>';
@@ -65,7 +65,7 @@ if (isset($_POST['signup'])) {
                     // echo '</script>';
                 } else {
                     ?>
-                    <script>swal("Good job!", "some error occur please signup again!", "success");</script>';
+                    <script>swal("Good job!", "some error occur please signup again!", "success");</script>
                     <?php
                     // echo '<script type="text/javascript">';
                     // echo 'swal("Good job!", "some error occur please signup again!", "error");';
