@@ -9,7 +9,7 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
             title: "<?php echo $_SESSION['status'];?>",
             // text: "!",
             icon: "<?php echo $_SESSION['status_code'];?>",
-            button: "ok.done",
+            button: "<?php echo $_SESSION['status_location'];?>",
         });
     </script>
 <?php  }
