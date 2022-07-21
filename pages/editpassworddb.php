@@ -13,7 +13,7 @@
             if ($data) {
                 $_SESSION['status'] = "password successfully changed";
                 $_SESSION['status_code'] = "success";
-                header('Location:index.php');
+                header('Location:profile.php');
                 // echo '<script type="text/javascript">';
                 // echo 'alert("password successfully changed");';
                 // echo 'window.location.href = "profile.php";';
@@ -21,7 +21,7 @@
             } else {
                 $_SESSION['status'] = "Password is wrong or not matched";
                 $_SESSION['status_code'] = "error";
-                header('Location:password-change.php');
+                header('Location:editpassword.php');
                 // die("end here"); 
                 // echo '<script type="text/javascript">';
                 // echo 'alert("Password is wrong");';
