@@ -15,6 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+ <script>swal("Good job!", "user_registered_successfully!", "success");</script>';
+
     <!-- ******************************************************************************************************** -->
     <nav class="navbar navbar-success bg-primary">
         <div class="container-fluid mx-5">
