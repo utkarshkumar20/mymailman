@@ -61,7 +61,7 @@ include('../includes/config.php');
                                 <small id="username" class="text-dark float-end">Availability<span style="color:red;"></span> </small>
                             </div>
                         </div>
-                        <div class="col-md-4 order-1 order-md-2">
+                        <div class="col-md-2 order-1 order-md-2">
                             <div id="profile-container">
                                 <image for="dataFile" src="../image/profile.png">
                             </div>
