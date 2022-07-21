@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
                             <br>
                             <div>
                                 <input type="email" class="form-control" name="sec_email" id="sec_email" placeholder="Email(secondary)" value="<?php echo $user_data['sec_email']; ?>" autocomplete="off">
-                                <span id="sec_emailid" class="text-danger"></span>
+                                <span id="secemail" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
@@ -142,7 +142,7 @@ if (mysqli_num_rows($result) > 0) {
     <script>
         function validation() {
             // alert("uuuuu");
-            var name = document.getElementById('name').value;
+            var name = document.getElementById('fname').value;
             var email = document.getElementById('email').value;
             var sec_email = document.getElementById('sec_email').value;
             var username = document.getElementById('username').value;
@@ -204,15 +204,6 @@ if (mysqli_num_rows($result) > 0) {
                 document.getElementById('emailid').innerHTML = "";
                 user_email = true;
             }
-            // if ((Email.charAt(Email.length - 4) != '.') && (Email.charAt(Email.length - 3) != '.')) {
-            //     document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
-            //     // return false;
-            // }
-            // else {
-            //     document.getElementById('EmailAdd').innerHTML = "";
-
-            // }
-
             // ************************************************************************
             if (sec_email == "") {
                 document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
