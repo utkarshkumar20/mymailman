@@ -42,7 +42,8 @@ if (isset($_POST['signup'])) {
         $run = mysqli_query($con, $query);
         $data = mysqli_fetch_array($run);
         if (mysqli_num_rows($run) > 0) {
-            echo '<script>alert("You are Already Registerd");</script>';
+            echo 'swal("Good job!", "You are Already Registerd!", "success");';
+            // echo '<script>alert("You are Already Registerd");</script>';
         } else {
             $code = rand(999999, 111111);
             $query = "INSERT INTO Signup_table (First_name,Last_name,Username,image,Email,sec_email,password,status,role,code)";
