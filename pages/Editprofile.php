@@ -3,6 +3,11 @@ session_start();
 
 include('../includes/config.php');
 
+// if (isset($_GET["id"])) {
+//     $id = base64_decode($_GET["id"]);
+//     $query = mysqli_query($con, "SELECT * FROM Signup_table WHERE Id='" . $id . "';");
+// }
+
 $user_id = $_SESSION['id'];
 $query = "SELECT * FROM Signup_table where id = '$user_id'";
 $result = mysqli_query($con, $query);
@@ -88,7 +93,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="row">
                         <div class="col-md-8 order-2 order-md-1">
                             <div>
-                                <h3 class="d-flex justify-content">profile</h3>
+                                <h3 class="d-flex justify-content">Profile</h3>
                             </div>
                             <div>
                                 <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php echo $user_data['First_name']; ?>" autocomplete="off">
@@ -120,12 +125,12 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="col-md-2 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
-                                    <img src="./photo/<?php echo $user_data['image']; ?>" alt="please attach the profile photo" width="100%" style="border-radius:50%">
+                                    <img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
                             <br>
-                            <label for="imageupload" class="btn btn-danger border ">Change picture</label>
-                            <input type="file" name="uploadfile" id="imageupload" required />
+                            <label for="imageupload" class="btn btn-danger offset-4">Change picture</label> 
+                            <input type="file" name="uploadfile" id="imageupload" capture />
                         </div>
                     </div>
                 </form>
