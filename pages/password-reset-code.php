@@ -66,7 +66,7 @@ if (isset($_POST['password_reset_link'])) {
 
     $mail->send();
     $_SESSION['status'] = "Message has been sent to the users!";
-    $_SESSION['status_code'] = "Success";
+    $_SESSION['status_code'] = "success";
     header('Location:index.php');
     // echo '<script type="text/javascript">';
     // echo 'alert("");';
