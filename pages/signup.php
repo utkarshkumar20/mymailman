@@ -1,5 +1,7 @@
 <?php
 include('../includes/config.php');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@ include('../includes/config.php');
     <script src="jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -40,18 +43,18 @@ include('../includes/config.php');
                     <div class="row">
                         <div class="col-md-8 order-2 order-md-1">
                             <div>
-                                <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" autocomplete="off" required />
+                                <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" data-toggle="tooltip" title="Please Fill firstname" autocomplete="off" required />
                                 <span id="firstname" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" autocomplete="off" required />
+                                <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" data-toggle="tooltip" title="Please Fill Lastname" autocomplete="off" required />
                                 <span id="lastname" class="text-danger"></span>
 
                             </div>
                             <br>
                             <div>
-                                <input type="text" name="username" class="form-control" id="username" placeholder="Select Username" autocomplete="off" required />
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Select Username" data-toggle="tooltip" title="Please Fill Username" autocomplete="off" required />
                                 <span id="usernames" class="text-danger"></span>
 
                                 <small id="username" class="text-dark float-end">Availability<span style="color:red;"></span> </small>
@@ -61,34 +64,34 @@ include('../includes/config.php');
                             <div id="profile-container">
                                 <image id="profileImage" src="../image/profile.png">
                             </div>
-                            <label for="imageupload" class="btn-primary border offset-1">&nbsp;Upload picture&nbsp;</label>
+                            <label for="imageupload" class="btn-primary border offset-1" data-toggle="tooltip" title="select only png & jpg file">&nbsp;Upload picture&nbsp;</label>
                             <input type="file" name="uploadfile" id="imageupload" required />
                             <span id="photos" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class=" input-group col-md-2">
-                            <input type="email" class="form-control" name="email" placeholder="Enter your Email" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" autocomplete="off" required />
+                            <input type="email" class="form-control" name="email" placeholder="Enter your Email" aria-label="Recipient's username" data-toggle="tooltip" title="Example@mailman.com" aria-describedby="basic-addon2" id="email" autocomplete="off" required />
                             <span class="input-group-text" id="basic-addon2">@Mailman.com</span>
                         </div>
                         <span id="EmailAdd" class="text-danger"></span>
                     </div>
                     <br>
                     <div class="form-group col-md-12">
-                        <input type="email" class="form-control" name="RecEmail" id="RecEmail" placeholder="Enter your Recovery-email" autocomplete="off" required />
+                        <input type="email" class="form-control" name="RecEmail" id="RecEmail" placeholder="Enter your Recovery-email" data-toggle="tooltip" title="Example@gmail.com" autocomplete="off" required />
                         <span id="secemail" class="text-danger"></span>
                     </div>
                     <br>
                     <div class="form-group col-md-12">
                         <div class="d-flex">
-                            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelpInline" placeholder="Enter the new password" autocomplete="new-password" required />
+                            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelpInline" data-toggle="tooltip" title="Please Fill Password" placeholder="Enter the new password" autocomplete="new-password" required />
                             <!-- <span><a href="#"><i class="far fa-question-circle offset-12"></i></a> </span>  -->
                         </div>
                         <span id="pass" class="text-danger"></span>
                     </div>
                     <br>
                     <div class="form-group col-md-12">
-                        <input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm" aria-describedby="passwordHelpInline" placeholder="Confirm-Password" autocomplete="off" required />
+                        <input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm" aria-describedby="passwordHelpInline" data-toggle="tooltip" title="Please Fill Password" placeholder="Confirm-Password" autocomplete="off" required />
                         <span id="conpass" class="text-danger"></span>
                     </div>
                     <br>
@@ -146,7 +149,7 @@ include('../includes/config.php');
             user_pass = '';
             user_cpass = '';
             name_pattern = /^([a-zA-Z' ]+)$/
-
+            email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
             if (fname == "") {
                 document.getElementById('firstname').innerHTML = " **please fill the Firstname field";
                 first_name = false;
@@ -196,16 +199,31 @@ include('../includes/config.php');
             if (FileUploadPath == "") {
                 document.getElementById('photos').innerHTML = " **Please upload an image";
                 user_photo = false;
-            } else {
+            // } 
+            // else if (FileUploadPath.files[0].size > 2097152) {
+            //     document.getElementById('photos').innerHTML = "Please select image size less than 2 MB";
+            //     user_photo = false;
+            }
+            else {
                 if (allowed_ext.indexOf(Extension) !== -1) {
                     document.getElementById('photos').innerHTML = "";
-                    user_photo = true;
+                    user_photo = true;  
                     // alert('match');
                 } else {
                     document.getElementById('photos').innerHTML = " **photo only allows file types of PNG, JPG ";
                 }
             }
+            // if (typeof(FileUploadPath.files) != "undefined") {
 
+            //     var size = parseFloat(FileUploadPath.files[0].size / (1024 * 1024)).toFixed(2);
+
+            //     if (size > 2) {
+            //         document.getElementById('photos').innerHTML = "Please select image size less than 2 MB";
+            //     }
+            // } else {
+            //     document.getElementById('photos').innerHTML = "This browser does not support HTML5.";
+
+            // }
 
 
             // ******************************************************************
@@ -219,10 +237,12 @@ include('../includes/config.php');
                 user_email = false;
 
                 // return false;
-            } else if (Email.indexOf("@mailman.com", email.length - "@mailman.com".length) !== -1)  {
-                document.getElementById('EmailAdd').innerHTML = " **please use @mailman.com domain ";
+            } else if (Email.indexOf('@') <= 0) {
+                document.getElementById('EmailAdd').innerHTML = " **@ invalid email id";
                 user_email = false;
-
+            } else if (!email_pattern.test(Email)) {
+                document.getElementById('EmailAdd').innerHTML = "**please use @mailman.com domain";
+                user_email = false;
                 // return false;
             } else {
                 document.getElementById('EmailAdd').innerHTML = "";
@@ -305,5 +325,9 @@ include('../includes/config.php');
         });
     </script>
     <!-- ********************************************************************************************************** -->
-
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
     <?php include('footer.php') ?>
