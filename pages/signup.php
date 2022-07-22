@@ -149,7 +149,9 @@ include('../includes/config.php');
             user_pass = '';
             user_cpass = '';
             name_pattern = /^([a-zA-Z' ]+)$/
-            email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
+            // email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
+            email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
+
 
             if (fname == "") {
                 document.getElementById('firstname').innerHTML = " **please fill the Firstname field";
@@ -229,7 +231,7 @@ include('../includes/config.php');
             } else if (Email.indexOf('@') <= 0) {
                 document.getElementById('EmailAdd').innerHTML = " **@ invalid email id";
                 user_email = false;
-            } else if (!email_pattern.test(Email)) {
+            } else if (email_pattern.test(Email)) {
                 document.getElementById('EmailAdd').innerHTML = "**please use @mailman.com domain";
                 user_email = false;
                 // return false;
