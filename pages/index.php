@@ -39,7 +39,7 @@ include('../includes/config.php');
                     </div>
                     <div class="mb-3">
                         <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-                        <input autocomplete="off" type="email" class="form-control" id="email" name="email" placeholder="Email/Username" required />
+                        <input autocomplete="off" type="text" class="form-control" id="email" name="email" placeholder="Email/Username" required />
                         <span id="Emailid" class="text-danger"></span>
                         <!-- <div id="emailHelp" class="text-dark">We'll never share your email with anyone else.</div> -->
                     </div>
@@ -72,23 +72,27 @@ include('../includes/config.php');
         function validation() {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
+            name_pattern = /^([a-zA-Z' ]+)$/
             // if (email.length == "" && password.length == "") {
             //     alert("User Name and Password fields are empty");
             //     // return false;
             // } else {
             if (email == "") {
-                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
-            } else if (email.indexOf('@') <= 0) {
-                document.getElementById('Emailid').innerHTML = " **@ invalid email name";
+                document.getElementById('Emailid').innerHTML = " **please fill the Username or Email field";
+            } else if ((email.length <= 2) || (email.length >= 20)) {
+                document.getElementById('Emailid').innerHTML = " **username must be between 2 to 20";
+            // } else if (email.indexOf('@') <= 0) {
+            //     document.getElementById('Emailid').innerHTML = "*";
             } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
-                document.getElementById('Emailid').innerHTML = " **please fill the Email field";
+                document.getElementById('Emailid').innerHTML = " **please fill the **@ right place field ";
+            } else if (!name_pattern.test(email)) {
+                document.getElementById('Emailid').innerHTML = " **invalid user-name Given";
             } else {
                 document.getElementById('Emailid').innerHTML = "";
             }
-            // ********************************************************88               
+            // *****************************************************************************************************           
             if (password == "") {
                 document.getElementById('pass').innerHTML = " **please fill the password field";
-
             } else {
                 document.getElementById('pass').innerHTML = "";
 

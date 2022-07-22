@@ -8,9 +8,11 @@ $email = $_POST['email'];
 $username=$_POST['username'];
 $password = $_POST['password'];
 
+
+
 if (isset($_POST['sublogin'])) {
     // echo "okkk";
-     $sql = "SELECT * FROM Signup_table WHERE Email = '$email'  AND password ='$password' ";
+     $sql = "SELECT * FROM Signup_table WHERE Username  = '$email' OR Email = '$email' AND password ='$password' ";
     $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -33,10 +35,6 @@ if (isset($_POST['sublogin'])) {
         $_SESSION['status'] = "failed to login,please check Email and Password!";
         $_SESSION['status_code'] = "error";
         header('Location:index.php');
-    //     echo '<script type="text/javascript">';
-    //     echo 'alert("failed to login,please check Email and Password! ");';
-	// echo 'window.location.href = "index.php";';
-	// echo '</script>';
+   
     }
 }
-?>
