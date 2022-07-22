@@ -150,6 +150,7 @@ include('../includes/config.php');
             user_cpass = '';
             name_pattern = /^([a-zA-Z' ]+)$/
             email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
+
             if (fname == "") {
                 document.getElementById('firstname').innerHTML = " **please fill the Firstname field";
                 first_name = false;
@@ -199,31 +200,19 @@ include('../includes/config.php');
             if (FileUploadPath == "") {
                 document.getElementById('photos').innerHTML = " **Please upload an image";
                 user_photo = false;
-            // } 
-            // else if (FileUploadPath.files[0].size > 2097152) {
-            //     document.getElementById('photos').innerHTML = "Please select image size less than 2 MB";
-            //     user_photo = false;
-            }
-            else {
+                // } 
+                // else if (FileUploadPath.files[0].size > 2097152) {
+                //     document.getElementById('photos').innerHTML = "Please select image size less than 2 MB";
+                //     user_photo = false;
+            } else {
                 if (allowed_ext.indexOf(Extension) !== -1) {
                     document.getElementById('photos').innerHTML = "";
-                    user_photo = true;  
+                    user_photo = true;
                     // alert('match');
                 } else {
                     document.getElementById('photos').innerHTML = " **photo only allows file types of PNG, JPG ";
                 }
             }
-            // if (typeof(FileUploadPath.files) != "undefined") {
-
-            //     var size = parseFloat(FileUploadPath.files[0].size / (1024 * 1024)).toFixed(2);
-
-            //     if (size > 2) {
-            //         document.getElementById('photos').innerHTML = "Please select image size less than 2 MB";
-            //     }
-            // } else {
-            //     document.getElementById('photos').innerHTML = "This browser does not support HTML5.";
-
-            // }
 
 
             // ******************************************************************
