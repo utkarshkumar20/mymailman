@@ -68,20 +68,12 @@ if (isset($_POST['password_reset_link'])) {
     $_SESSION['status'] = "Message has been sent to the users!";
     $_SESSION['status_code'] = "success";
     header('Location:index.php');
-    // echo '<script type="text/javascript">';
-    // echo 'alert("");';
-    // echo 'window.location.href = "index.php";';
-    // echo '</script>';
   
   } else {
     $_SESSION['status'] = "Email Not Found! please try again";
     $_SESSION['status_code'] = "error";
     header('Location:password-reset.php');
-    // echo '<script type="text/javascript">';
-    // echo 'alert("Email Not Found! please try again");';
-    // echo 'window.location.href = "password-reset.php";';
-    // echo '</script>';
-    
+      
   }
   // catch (Exception $e) {
 }

@@ -219,8 +219,8 @@ include('../includes/config.php');
                 user_email = false;
 
                 // return false;
-            } else if (Email.indexOf('@') <= 0) {
-                document.getElementById('EmailAdd').innerHTML = " **@ invalid email id";
+            } else if (Email.indexOf("@mailman.com", email.length - "@mailman.com".length) !== -1)  {
+                document.getElementById('EmailAdd').innerHTML = " **please use @mailman.com domain ";
                 user_email = false;
 
                 // return false;
