@@ -265,7 +265,7 @@ include('../includes/config.php');
                 document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
                 user_pass = false;
             } else if (!pass_pattern.test(password)) {
-                document.getElementById('pass').innerHTML = " **invalid password Given Space not allowed! ";
+                document.getElementById('pass').innerHTML = " **invalid password please use 1 character,1 special character or 1 numric value";
                 user_pass = false;
 
                 // return false;
