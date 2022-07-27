@@ -27,7 +27,16 @@ if (mysqli_num_rows($result) > 0) {
   <!-- <link href="navbar-top-fixed.css" rel="stylesheet"> -->
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  <script>
+    $(document).ready(function() {
+      $("#form1").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
   <title>Mailman!</title>
 </head>
 
@@ -85,8 +94,7 @@ if (mysqli_num_rows($result) > 0) {
         <ul class="nav nav-pills flex-column mb-auto my-5 py-5">
           <li class="nav-item">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Compose mail
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Compose mail
             </button>
 
 
@@ -121,10 +129,10 @@ if (mysqli_num_rows($result) > 0) {
     <div class="col-12">
       <div class="main-1">
         <div class="d-flex gap-2">
-          <span>&nbsp; &nbsp;<i class="far fa-square-full"></i></span>
-          <button type="button" class="btn btn-secondary" id="read">Read</button>
-          <button type="button" class="btn btn-secondary" id="unread">unread</button>
-          <button type="button" class="btn btn-secondary" id="trash">Trash</button>
+          &nbsp; &nbsp;<input type="checkbox" id="" name="" value="">
+          <!-- <button type="button" class="btn btn-secondary" id="read">Read</button>
+          <button type="button" class="btn btn-secondary" id="unread">unread</button> -->
+          <button type="button" class="btn btn-secondary" id="trash">Delete</button>
         </div>
         <br>
         <!-- ******************************************************************************************* -->
@@ -133,69 +141,15 @@ if (mysqli_num_rows($result) > 0) {
             Sent
           </legend>
           <!-- <div class="border border-dark "> -->
-          <table class="table">
-            <tbody>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="far fa-square-full"></i></th>
-                <td>sender@manmail.com</td>
-                <td>mailing subject</td>
-                <td>DD/MM/YYYY</td>
-              </tr>
-            </tbody>
+          <table class="table" id="myTable">
+            <?php
+            $id = $_SESSION['id'];
+
+            $sql = "SELECT * FROM usermail where sen_id='$id'";
+            $dd = mysqli_query($con, $sql);
+
+            echo '<tr><th><input type="checkbox" name="name1" ' . ($row['p_estado'] == 1 ? 'checked' : '') . ' value = 1 /> &nbsp; Check</th><th>Sender </th><th>Subject </th><th>Date</th></tr>';
+            ?>
           </table>
         </fieldset>
         <!-- *****************************************paggination************************************************************** -->
@@ -218,43 +172,47 @@ if (mysqli_num_rows($result) > 0) {
     </div>
   </div>
 
+
   <!-- Modal -->
-  <form action="compose.php">
+  <form action="compose.php" method="post" enctype="multipart/form-data">
     <div class="modal fade text-primary" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Compose Mail</h5>
+            <?php echo @$err; ?>
             <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <input type="hidden" name="usersender" value="<?php echo $user_data['Email']; ?>">
           </div>
           <div class="modal-body">
             <div class="col">
-              <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO">
+              <input class="form-control form-control-lg" type="email" name="TO" id="TO" placeholder="TO" required />
             </div>
 
             <div class="col">
-              <input class="form-control form-control-lg" type="email" name="cc" id="cc" placeholder="CC">
+              <input class="form-control form-control-lg" type="email" name="CC" id="CC" placeholder="CC" required />
             </div>
 
             <div class="col">
-              <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC">
+              <input class="form-control form-control-lg" type="email" name="BCC" id="BCC" placeholder="BCC" required />
             </div>
 
             <div class="col">
-              <input class="form-control form-control-lg" type="text" name="Subject" id="subject" placeholder="SUBJECT">
+              <input class="form-control form-control-lg" type="text" name="Subject" id="Subject" placeholder="SUBJECT" required />
             </div>
 
             <div class="col">
-              <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message"></textarea>
+              <textarea class="form-control form-control-lg" name="message" id="message" cols="10" rows="7" placeholder="Message" required></textarea>
             </div>
 
           </div>
           <div class="modal-footer d-flex">
 
-            <label for="imageUpload" class="profile text-success"><i class='fal fa-plus'></i>Attachment</label>
-            <input id="imageUpload" type="file" name="profile_photo" placeholder="Attachment" required="" capture>
-            <input class="btn btn-primary" type="submit" name="send" value="Send" />
-            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <label for="imageUpload" class="text-success"><i class='fal fa-plus'></i>Attachment</label>
+            <input id="imageUpload" type="file" name="profilephoto" placeholder="Attachment" capture />
+            <input class="btn btn-primary" type="submit" name="send" onclick="return validation()" value="Send" />
+            <input type="reset" name="close" class="btn btn-danger" data-bs-dismiss="modal" value="Close" />
+            <!-- <button type=" reset" name="close" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
 
           </div>
         </div>
@@ -271,35 +229,42 @@ if (mysqli_num_rows($result) > 0) {
     function sentfun() {
       var x = document.getElementById("read");
       if (x.style.display === "none") {
-        x.style.display = "block";
+        x.style.display = "none";
       } else {
         x.style.display = "none";
       }
 
       var y = document.getElementById("unread");
       if (y.style.display === "none") {
-        y.style.display = "block";
+        y.style.display = "none";
       } else {
         y.style.display = "none";
       }
       var z = document.getElementById("trash");
       if (z.style.display === "none") {
-        z.style.display = "none";
+        z.style.display = "block";
       } else {
         z.style.display = "none";
       }
 
     }
   </script>
-  <!-- *********************************************************************************************** -->
-  <script>
-    // $('body').on('hidden.bs.modal', '.modal', function () {
-    //       $(this).removeData('bs.modal');
-    //     });
-  </script>
+
   <!-- *************************************************************************************************** -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+  <?php
+  if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+  ?>
+    <script>
+      swal({
+        title: "<?php echo $_SESSION['status']; ?>",
+        icon: "<?php echo $_SESSION['status_code']; ?>",
+        button: "ok",
+      });
+    </script>
+  <?php  }
+  unset($_SESSION['status']);
+  ?>
 </body>
 
 </html>

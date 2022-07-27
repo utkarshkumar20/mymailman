@@ -1,7 +1,5 @@
 <?php
 include('../includes/config.php');
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,17 +11,15 @@ include('../includes/config.php');
     <title>Signup</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/2079f2e470.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 
 <body>
-    <!-- <script>swal("Good job!", "user_registered_successfully!", "success");</script>'; -->
-
     <!-- ******************************************************************************************************** -->
     <nav class="navbar navbar-success bg-primary">
         <div class="container-fluid mx-5">
@@ -99,7 +95,7 @@ include('../includes/config.php');
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck" name="agree">
                             <label class="form-check-label" for="gridCheck">
-                                I Agree of terms and condition of mailman
+                                I Agree of <a href="#">terms and condition</a> of mailman
                             </label>
                         </div>
                         <div class="col-12">
@@ -148,7 +144,8 @@ include('../includes/config.php');
             r_email = '';
             user_pass = '';
             user_cpass = '';
-            name_pattern = /^([a-zA-Z' ]+)$/
+            name_pattern = /^([a-zA-Z']+)$/
+            pass_pattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/
             // email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
             email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
 
@@ -161,7 +158,7 @@ include('../includes/config.php');
                 first_name = false;
 
             } else if (!name_pattern.test(fname)) {
-                document.getElementById('firstname').innerHTML = " **invalid First name Given";
+                document.getElementById('firstname').innerHTML = " **invalid First name Given Space not allowed!";
                 first_name = false;
             } else {
                 document.getElementById('firstname').innerHTML = "";
@@ -176,7 +173,7 @@ include('../includes/config.php');
                 document.getElementById('lastname').innerHTML = " **Lastname must be between 2 to 20";
                 last_name = false;
             } else if (!name_pattern.test(lname)) {
-                document.getElementById('lastname').innerHTML = " **invalid Last name Given";
+                document.getElementById('lastname').innerHTML = " **invalid Last name Given Space not allowed!";
                 last_name = false;
             } else {
                 document.getElementById('lastname').innerHTML = "";
@@ -190,7 +187,7 @@ include('../includes/config.php');
                 document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
                 user_name = false;
             } else if (!name_pattern.test(username)) {
-                document.getElementById('usernames').innerHTML = " **invalid user-name Given";
+                document.getElementById('usernames').innerHTML = " **invalid user-name Given Space not allowed!";
                 user_name = false;
 
             } else {
@@ -215,8 +212,6 @@ include('../includes/config.php');
                     document.getElementById('photos').innerHTML = " **photo only allows file types of PNG, JPG ";
                 }
             }
-
-
             // ******************************************************************
             if (Email == "") {
                 document.getElementById('EmailAdd').innerHTML = " **please fill the Email field";
@@ -269,6 +264,9 @@ include('../includes/config.php');
             } else if ((password.length <= 5) || (password.length >= 20)) {
                 document.getElementById('pass').innerHTML = " **password must be between 5 to 20";
                 user_pass = false;
+            } else if (!pass_pattern.test(password)) {
+                document.getElementById('pass').innerHTML = " **invalid password Given Space not allowed! ";
+                first_name = false;
 
                 // return false;
             } else if (password != confirmpassword) {
