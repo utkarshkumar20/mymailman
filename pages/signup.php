@@ -266,7 +266,7 @@ include('../includes/config.php');
                 user_pass = false;
             } else if (!pass_pattern.test(password)) {
                 document.getElementById('pass').innerHTML = " **invalid password Given Space not allowed! ";
-                first_name = false;
+                user_pass = false;
 
                 // return false;
             } else if (password != confirmpassword) {
