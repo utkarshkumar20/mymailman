@@ -72,7 +72,9 @@ include('../includes/config.php');
         function validation() {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
-            name_pattern = /^([a-zA-Z' ]+)$/
+            name_pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+            pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/
+
             // if (email.length == "" && password.length == "") {
             //     alert("User Name and Password fields are empty");
             //     // return false;
@@ -81,8 +83,8 @@ include('../includes/config.php');
                 document.getElementById('Emailid').innerHTML = " **please fill the Username or Email field";
             } else if ((email.length <= 2) || (email.length >= 20)) {
                 document.getElementById('Emailid').innerHTML = " **username must be between 2 to 20";
-            // } else if (email.indexOf('@') <= 0) {
-            //     document.getElementById('Emailid').innerHTML = "*";
+                // } else if (email.indexOf('@') <= 0) {
+                //     document.getElementById('Emailid').innerHTML = "*";
             } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
                 document.getElementById('Emailid').innerHTML = " **please fill the **@ right place field ";
             } else if (!name_pattern.test(email)) {
@@ -93,6 +95,8 @@ include('../includes/config.php');
             // *****************************************************************************************************           
             if (password == "") {
                 document.getElementById('pass').innerHTML = " **please fill the password field";
+            } else if (!pass_pattern.test(password)) {
+                document.getElementById('pass').innerHTML = " **invalid password not allowed! ";
             } else {
                 document.getElementById('pass').innerHTML = "";
 
