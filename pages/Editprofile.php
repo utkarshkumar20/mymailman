@@ -129,7 +129,7 @@ if (mysqli_num_rows($result) > 0) {
                                 </div>
                             </div>
                             <br>
-                            <label for="imageupload" class="btn btn-danger offset-4">Change picture</label> 
+                            <label for="imageupload" class="btn btn-danger offset-4">Change picture</label>
                             <input type="file" name="uploadfile" id="imageupload" capture />
                         </div>
                     </div>
@@ -153,6 +153,8 @@ if (mysqli_num_rows($result) > 0) {
             user_email = '';
             r_email = '';
             name_pattern = /^([a-zA-Z' ]+)$/
+            email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
+
 
             if (name == "") {
                 document.getElementById('yourname').innerHTML = " **please fill the Firstname field";
@@ -160,29 +162,12 @@ if (mysqli_num_rows($result) > 0) {
             } else if ((name.length <= 2) || (name.length >= 20)) {
                 document.getElementById('yourname').innerHTML = " **firstname must be between 2 to 20";
                 first_name = false;
-
             } else if (!name_pattern.test(name)) {
-                document.getElementById('yourname').innerHTML = " **invalid First name Given";
+                document.getElementById('yourname').innerHTML = " **invalid First name Given Space not allowed!";
                 first_name = false;
             } else {
                 document.getElementById('yourname').innerHTML = "";
                 first_name = true;
-            }
-
-            // ***********************************************************************
-            if (username == "") {
-                document.getElementById('usernames').innerHTML = " **please fill the username field";
-                user_name = false;
-            } else if ((username.length <= 2) || (username.length >= 20)) {
-                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
-                user_name = false;
-            } else if (!name_pattern.test(username)) {
-                document.getElementById('usernames').innerHTML = " **invalid user-name Given";
-                user_name = false;
-
-            } else {
-                document.getElementById('usernames').innerHTML = "";
-                user_name = true;
             }
 
             // ******************************************************************
@@ -194,7 +179,9 @@ if (mysqli_num_rows($result) > 0) {
             } else if ((email.length <= 2) || (email.length >= 40)) {
                 document.getElementById('emailid').innerHTML = " **username must be between 2 to 40";
                 user_email = false;
-
+            } else if (email_pattern.test(Email)) {
+                document.getElementById('emailid').innerHTML = "**please use @mailman.com domain";
+                user_email = false;
                 // return false;
             } else if (email.indexOf('@') <= 0) {
                 document.getElementById('emailid').innerHTML = " **@ invalid email id";
@@ -212,18 +199,29 @@ if (mysqli_num_rows($result) > 0) {
             } else if (sec_email.indexOf('@') <= 0) {
                 document.getElementById('secemail').innerHTML = " **@ invalid postion";
                 r_email = false;
-
                 // return false;
             } else if ((sec_email.charAt(sec_email.length - 4) != '.') && (sec_email.charAt(sec_email.length - 3) != '.')) {
                 document.getElementById('secemail').innerHTML = " **please fill the Email field";
                 r_email = false;
-
                 // return false;
             } else {
                 document.getElementById('secemail').innerHTML = "";
                 r_email = true;
             }
-
+            // ***********************************************************************
+            if (username == "") {
+                document.getElementById('usernames').innerHTML = " **please fill the username field";
+                user_name = false;
+            } else if ((username.length <= 2) || (username.length >= 20)) {
+                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
+                user_name = false;
+            } else if (!name_pattern.test(username)) {
+                document.getElementById('usernames').innerHTML = " **invalid First name Given Space not allowed!";
+                user_name = false;
+            } else {
+                document.getElementById('usernames').innerHTML = "";
+                user_name = true;
+            }
 
 
             if (first_name != true || user_name != true || user_email != true || r_email != true) {
