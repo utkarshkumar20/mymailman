@@ -144,7 +144,7 @@ include('../includes/config.php');
             r_email = '';
             user_pass = '';
             user_cpass = '';
-            name_pattern = /^([a-zA-Z']+)$/
+            name_pattern = /^([a-zA-Z]+)$/
             pass_pattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/
             // email_pattern = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!mailinator.com)([\w-]+\.)+[\w-]{2,4})?$/
             email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
