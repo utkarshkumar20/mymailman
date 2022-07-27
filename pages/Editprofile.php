@@ -152,7 +152,7 @@ if (mysqli_num_rows($result) > 0) {
             user_name = '';
             user_email = '';
             r_email = '';
-            name_pattern = /^([a-zA-Z' ]+)$/
+            name_pattern = /^([a-zA-Z']+)$/
             email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
 
 
