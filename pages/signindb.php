@@ -25,6 +25,7 @@ if (isset($_POST['sublogin'])) {
         $_SESSION["email"] = $user['Email'];
         $_SESSION["secemail"] = $user['sec_email'];
         $_SESSION["fname"] = $user['First_name'];
+        $_SESSION["lname"] = $user['Last_name'];
         $_SESSION["photo"]=$user['image'];
 
 

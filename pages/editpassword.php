@@ -15,7 +15,9 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
     $user_data = $result->fetch_assoc();
 }
-
+if (!isset($_SESSION['id'])) {
+    header("location:editpassword.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

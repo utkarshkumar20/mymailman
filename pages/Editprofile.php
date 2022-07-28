@@ -15,7 +15,9 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
     $user_data = $result->fetch_assoc();
 }
-
+if (!isset($_SESSION['id'])) {
+    header("location:index.php");
+}
 ?>
 
 <!doctype html>
@@ -96,13 +98,13 @@ if (mysqli_num_rows($result) > 0) {
                                 <h3 class="d-flex justify-content">Profile</h3>
                             </div>
                             <div>
-                                <input type="text" class="form-control" name="fname" id="fname" placeholder="Your Name" value="<?php echo $user_data['First_name']; ?>" autocomplete="off">
-                                <span id="yourname" class="text-danger"></span>
+                                <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" value="<?php echo $user_data['First_name']; ?>" autocomplete="off">
+                                <span id="namefirst" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email(primary)" value="<?php echo $user_data['Email']; ?>" autocomplete="off">
-                                <span id="emailid" class="text-danger"></span>
+                                <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" value="<?php echo $user_data['Last_name']; ?>" autocomplete="off">
+                                <span id="namelast" class="text-danger"></span>
                             </div>
                             <br>
                             <div>
@@ -110,26 +112,25 @@ if (mysqli_num_rows($result) > 0) {
                                 <span id="secemail" class="text-danger"></span>
                             </div>
                             <br>
-                            <div>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $user_data['Username']; ?>" autocomplete="off">
-                                <span id="usernames" class="text-danger"></span>
-                            </div>
-                            <br>
-                            <!-- <input type="hidden" name="id" value="<?php ?>" /> -->
+                            <!-- <div> -->
+                            <!-- <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $user_data['Username']; ?>" autocomplete="off"> -->
+                            <!-- <span id="usernames" class="text-danger"></span> -->
+                            <!-- </div> -->
+                            <!-- <br> -->
                             <div class="col-4 d-flex">
                                 <input type="submit" name="submit" onclick="return validation();" class="btn btn-success" value="Edit-Profile">
 
                             </div>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md-2 order-1 order-md-2 ">
+                        <div class="col-md-3 order-1 order-md-2 ">
                             <div id="profile-container">
                                 <div class="col-md-4 order-1 order-md-2 ">
                                     <img src="./photo/<?php echo $user_data['image']; ?>" alt="profile_photo" width="100%" style="border-radius:50%">
                                 </div>
                             </div>
                             <br>
-                            <label for="imageupload" class="btn btn-danger offset-4">Change picture</label>
+                            <label for="imageupload" class="btn btn-danger ms-2 ">Change picture</label>
                             <input type="file" name="uploadfile" id="imageupload" capture />
                         </div>
                     </div>
@@ -143,57 +144,76 @@ if (mysqli_num_rows($result) > 0) {
     <script>
         function validation() {
             // alert("uuuuu");
-            var name = document.getElementById('fname').value;
-            var email = document.getElementById('email').value;
+            var firstname = document.getElementById('fname').value;
+            var lastname = document.getElementById('lname').value;
             var sec_email = document.getElementById('sec_email').value;
-            var username = document.getElementById('username').value;
+            // var username = document.getElementById('username').value;
 
-            first_name = '';
-            user_name = '';
-            user_email = '';
-            r_email = '';
-            name_pattern = /^([a-zA-Z]+)$/
-            email_pattern = /^([\w-\.]+@(?!mailman.com)([\w-]+\.)+[\w-]{2,4})?$/
+            var first_name = '';
+            var last_name = '';
+            // var user_name = '';
+            // var user_email = '';
+            var r_email = '';
+            var name_pattern = /^([a-zA-Z]+)$/;
+            var email_pattern = /^([\w-\.]+@(?!mailman.com)(?!gmail.com)(?!yahoo.com)([\w-]+\.)+[\w-]{2,4})?$/;
 
 
-            if (name == "") {
-                document.getElementById('yourname').innerHTML = " **please fill the Firstname field";
+            if (firstname == "" || firstname == null) {
+                document.getElementById('namefirst').innerHTML = " **please fill the Firstname field";
                 first_name = false;
-            } else if ((name.length <= 2) || (name.length >= 20)) {
-                document.getElementById('yourname').innerHTML = " **firstname must be between 2 to 20";
+            } else if ((firstname.length <= 2) || (firstname.length >= 20)) {
+                document.getElementById('namefirst').innerHTML = " **firstname must be between 2 to 20";
                 first_name = false;
-            } else if (!name_pattern.test(name)) {
-                document.getElementById('yourname').innerHTML = " **invalid First name Given Space not allowed!";
+            } else if (!name_pattern.test(firstname)) {
+                document.getElementById('namefirst').innerHTML = " **invalid First name Given Space not allowed!";
                 first_name = false;
             } else {
-                document.getElementById('yourname').innerHTML = "";
+                document.getElementById('namefirst').innerHTML = "";
                 first_name = true;
+            }
+            // console.log(first_name);
+
+            // ******************************************************************
+
+
+            if (lastname == "" || lastname == null) {
+                document.getElementById('namelast').innerHTML = " **please fill the lastname field";
+                last_name = false;
+            } else if ((lastname.length <= 2) || (lastname.length >= 20)) {
+                document.getElementById('namelast').innerHTML = " **lastname must be between 2 to 20";
+                last_name = false;
+            } else if (!name_pattern.test(lastname)) {
+                document.getElementById('namelast').innerHTML = " **invalid last name Given Space not allowed!";
+                last_name = false;
+            } else {
+                document.getElementById('namelast').innerHTML = "";
+                last_name = true;
             }
 
             // ******************************************************************
-            if (email == "") {
-                document.getElementById('emailid').innerHTML = " **please fill the Email field";
-                user_email = false;
+            // if (email == "" || email == null) {
+            //     document.getElementById('emailid').innerHTML = " **please fill the Email field";
+            //     user_email = false;
 
-                // return false;
-            } else if ((email.length <= 2) || (email.length >= 40)) {
-                document.getElementById('emailid').innerHTML = " **username must be between 2 to 40";
-                user_email = false;
-            } else if (email_pattern.test(Email)) {
-                document.getElementById('emailid').innerHTML = "**please use @mailman.com domain";
-                user_email = false;
-                // return false;
-            } else if (email.indexOf('@') <= 0) {
-                document.getElementById('emailid').innerHTML = " **@ invalid email id";
-                user_email = false;
+            //     // return false;
+            // } else if ((email.length <= 2) || (email.length >= 40)) {
+            //     document.getElementById('emailid').innerHTML = " **username must be between 2 to 40";
+            //     user_email = false;
+            // } else if (email_pattern.test(Email)) {
+            //     document.getElementById('emailid').innerHTML = "**please use @mailman.com domain";
+            //     user_email = false;
+            //     // return false;
+            // } else if (email.indexOf('@') <= 0) {
+            //     document.getElementById('emailid').innerHTML = " **@ invalid email id";
+            //     user_email = false;
 
-                // return false;
-            } else {
-                document.getElementById('emailid').innerHTML = "";
-                user_email = true;
-            }
+            //     // return false;
+            // } else {
+            //     document.getElementById('emailid').innerHTML = "";
+            //     user_email = true;
+            // }
             // ************************************************************************
-            if (sec_email == "") {
+            if (sec_email == "" || sec_email == null) {
                 document.getElementById('secemail').innerHTML = " **please fill the secondary mail field";
                 r_email = false;
             } else if (sec_email.indexOf('@') <= 0) {
@@ -209,23 +229,22 @@ if (mysqli_num_rows($result) > 0) {
                 r_email = true;
             }
             // ***********************************************************************
-            if (username == "") {
-                document.getElementById('usernames').innerHTML = " **please fill the username field";
-                user_name = false;
-            } else if ((username.length <= 2) || (username.length >= 20)) {
-                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
-                user_name = false;
-            } else if (!name_pattern.test(username)) {
-                document.getElementById('usernames').innerHTML = " **invalid First name Given Space not allowed!";
-                user_name = false;
-            } else {
-                document.getElementById('usernames').innerHTML = "";
-                user_name = true;
-            }
+            // if (username == "" || username == null) {
+            //     document.getElementById('usernames').innerHTML = " **please fill the username field";
+            //     user_name = false;
+            // } else if ((username.length <= 2) || (username.length >= 20)) {
+            //     document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
+            //     user_name = false;
+            // } else if (!name_pattern.test(username)) {
+            //     document.getElementById('usernames').innerHTML = " **invalid First name Given Space not allowed!";
+            //     user_name = false;
+            // } else {
+            //     document.getElementById('usernames').innerHTML = "";
+            //     user_name = true;
+            // }
 
 
-            if (first_name != true || user_name != true || user_email != true || r_email != true) {
-                // alert("some error occur! please retry!");
+            if (first_name != true || last_name != true || r_email != true) {
                 return false;
             }
 
@@ -233,78 +252,8 @@ if (mysqli_num_rows($result) > 0) {
         }
     </script>
 
-    <!-- ************************************************validation******************************************* -->
-    <!-- 
-    <script>
-        function validation() {
-
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var sec_email = document.getElementById('sec_email').value;
-            var username = document.getElementById('username').value;
-
-            if (name == "") {
-                document.getElementById('yourname').innerHTML = " **please fill the name field";
-                return false;
-            } else if ((name.length <= 2) || (name.length >= 20)) {
-                document.getElementById('yourname').innerHTML = " **name must be between 2 to 20";
-                return false;
-            } else if (!isNaN(name)) {
-                document.getElementById('yourname').innerHTML = " **only character are allowed";
-                return false;
-            } else {
-                document.getElementById('yourname').innerHTML = "";
-            }
-            // ************************************************************
-            if (email == "") {
-                document.getElementById('emailid').innerHTML = " **please fill the Email field";
-                return false;
-            } else if ((email.length <= 2) || (email.length >= 20)) {
-                document.getElementById('emailid').innerHTML = " **username must be between 2 to 20";
-                return false;
-            } else if (email.indexOf('@') <= 0) {
-                document.getElementById('emailid').innerHTML = " **@ invalid email name";
-                return false;
-            } else if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
-                document.getElementById('emailid').innerHTML = " **please fill the Email field";
-                return false;
-            } else {
-                document.getElementById('emailid').innerHTML = "";
-
-            }
-            // ****************************************************************************************
-            if (sec_email == "") {
-                document.getElementById('sec_emailid').innerHTML = " **please fill the secondary Email field";
-                return false;
-            } else if ((sec_email.length <= 2) || (sec_email.length >= 20)) {
-                document.getElementById('sec_emailid').innerHTML = " **username must be between 2 to 20";
-                return false;
-            } else if (sec_email.indexOf('@') <= 0) {
-                document.getElementById('sec_emailid').innerHTML = " **@ invalid email name";
-                return false;
-            } else if ((sec_email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
-                document.getElementById('sec_emailid').innerHTML = " **please fill the Email field";
-                return false;
-            } else {
-                document.getElementById('sec_emailid').innerHTML = "";
-
-            }
-            // ****************************************************************************************
-            if (username == "") {
-                document.getElementById('usernames').innerHTML = " **please fill the username field";
-                return false;
-            } else if ((username.length <= 2) || (username.length >= 20)) {
-                document.getElementById('usernames').innerHTML = " **username must be between 2 to 20";
-                return false;
-            } else {
-                document.getElementById('usernames').innerHTML = "";
-
-            }
 
 
-
-        }
-    </script> -->
     <!-- ******************************************************************************************************** -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

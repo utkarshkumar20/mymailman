@@ -16,7 +16,9 @@ if (mysqli_num_rows($result) > 0) {
     // die(" hh ");
 }
 // die("this example");
-
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+  }
 ?>
 <!doctype html>
 <html lang="en">

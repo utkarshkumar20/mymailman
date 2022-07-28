@@ -8,9 +8,10 @@ include('../includes/config.php');
 // die(" ttttttttttttttttttttttttt ");
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
-    $email = $_POST['email'];
+    $lname =$_POST['lname'];
+    // $email = $_POST['email'];
     $recemail = $_POST['sec_email'];
-    $username = $_POST['username'];
+    // $username = $_POST['username'];
     $id = $_SESSION['id'];
 
     if (!empty($_FILES['uploadfile'])) { //User uploaded new image
@@ -19,9 +20,9 @@ if (isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./photo/" . $imgnewfile)) {
             $user_image = $imgnewfile;
 
-            $update_product = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' ,image='$user_image' where Id = '$id' ";
+            $update_product = "UPDATE Signup_table  SET First_name='$fname',Last_name='$lname',sec_email='$recemail',image='$user_image' where Id = '$id' ";
         } else { //User did not upload image
-            $update_product = "UPDATE Signup_table  SET First_name='$fname',Email='$email',sec_email='$recemail',Username='$username' where Id = '$id' ";
+            $update_product = "UPDATE Signup_table  SET First_name='$fname',Last_name='$lname',sec_email='$recemail' where Id = '$id' ";
         }
     }
 

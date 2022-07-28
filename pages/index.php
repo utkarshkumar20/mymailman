@@ -1,5 +1,9 @@
 <?php
+session_start();
 include('../includes/config.php');
+if(isset($_SESSION['id'])){
+    header("location:dashboard.php");
+  }
 ?>
 <!doctype html>
 <html lang="en">

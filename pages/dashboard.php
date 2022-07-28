@@ -9,6 +9,9 @@ $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
   $user_data = $result->fetch_assoc();
 }
+if(!isset($_SESSION['id'])){
+  header("location:index.php");
+}
 
 ?>
 <!doctype html>
@@ -70,11 +73,7 @@ if (mysqli_num_rows($result) > 0) {
           <form class="d-flex d-grid gap-1 d-md-flex ">
             <li type="button" class="nav-item dropdown btn btn-sm">
               <a class="form-control nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php
-                //  print_r($_SESSION);
-                echo $user_data['Username'];
-                //  die("vjhghj");
-                ?>
+                <?php echo $user_data['Username']; ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="profile.php">Edit profile</a></li>
